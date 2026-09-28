@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580" width="900" height="580" fill="none">
+  <defs>
+    <filter id="mac-drop-shadow" x="-20%" y="-20%" width="140%" height="140%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#05070B" flood-opacity="0.36" />
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#05070B" flood-opacity="0.20" />
+    </filter>
+    <filter id="mac-ground-shadow" x="-20%" y="-20%" width="140%" height="140%" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="18" />
+    </filter>
+    <linearGradient id="mac-lid-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#374151" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+    <linearGradient id="mac-bezel-rim" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4B5563" />
+      <stop offset="50%" stop-color="#9CA3AF" />
+      <stop offset="100%" stop-color="#374151" />
+    </linearGradient>
+    <linearGradient id="mac-base-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E5E7EB" />
+      <stop offset="30%" stop-color="#D1D5DB" />
+      <stop offset="100%" stop-color="#9CA3AF" />
+    </linearGradient>
+    <linearGradient id="mac-screen-glare" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.14" />
+      <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.03" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0" />
+    </linearGradient>
+    <clipPath id="mac-screen-clip">
+      <rect x="110" y="46" width="680" height="428" rx="8" />
+    </clipPath>
+  </defs>
+
+  <!-- Diffused Ground Shadow on Transparent Canvas -->
+  <ellipse cx="450" cy="530" rx="380" ry="18" fill="#000000" opacity="0.35" filter="url(#mac-ground-shadow)" />
+
+  <g filter="url(#mac-drop-shadow)">
+    <!-- Laptop Top Lid Backing & Outer Rim -->
+    <rect x="96" y="32" width="708" height="456" rx="20" fill="url(#mac-lid-grad)" stroke="url(#mac-bezel-rim)" stroke-width="2" />
+    <!-- Inner Dark Bezel Area -->
+    <rect x="104" y="40" width="692" height="440" rx="14" fill="#0A0C10" />
+
+    <!-- Top WebCam Notch & Indicator -->
+    <circle cx="450" cy="43" r="2.5" fill="#1F2937" />
+    <circle cx="450" cy="43" r="1.2" fill="#10B981" opacity="0.8" />
+
+    <!-- Screen Canvas -->
+    <g clip-path="url(#mac-screen-clip)">
+      <!-- Browser Top Window Bar -->
+      <rect x="110" y="46" width="680" height="32" fill="#1E293B" />
+      <circle cx="126" cy="62" r="5" fill="#EF4444" />
+      <circle cx="142" cy="62" r="5" fill="#F59E0B" />
+      <circle cx="158" cy="62" r="5" fill="#10B981" />
+      <rect x="220" y="51" width="460" height="22" rx="6" fill="#0F172A" />
+      <text x="236" y="66" fill="#94A3B8" font-family="monospace" font-size="10">🔒 padds.sman1suwawatimur.sch.id/dashboard</text>
+      <rect x="696" y="52" width="84" height="20" rx="10" fill="#15803D" />
+      <text x="738" y="65" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700" text-anchor="middle">SMANSAT 1</text>
+
+      <!-- App Header Bar -->
+      <rect x="110" y="78" width="680" height="48" fill="#FFFFFF" />
+      <line x1="110" y1="126" x2="790" y2="126" stroke="#E2E8F0" stroke-width="1" />
+      <rect x="126" y="88" width="28" height="28" rx="6" fill="#1E3A8A" />
+      <text x="140" y="106" fill="#FFFFFF" font-family="sans-serif" font-size="13" font-weight="900" text-anchor="middle">P</text>
+      <text x="162" y="99" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="12" font-weight="800">PADDS SMANSAT</text>
+      <text x="162" y="112" fill="#64748B" font-family="-apple-system, sans-serif" font-size="9">Pusat Arsip &amp; Dokumen Digital Sekolah</text>
+
+      <!-- User Info -->
+      <rect x="640" y="88" width="138" height="28" rx="14" fill="#F1F5F9" />
+      <circle cx="654" cy="102" r="9" fill="#3B82F6" />
+      <text x="654" y="105" fill="#FFFFFF" font-family="sans-serif" font-size="8" font-weight="700" text-anchor="middle">TU</text>
+      <text x="670" y="105" fill="#1E293B" font-family="-apple-system, sans-serif" font-size="9" font-weight="700">Admin Tata Usaha</text>
+
+      <!-- Left Sidebar Menu -->
+      <rect x="110" y="126" width="148" height="348" fill="#F8FAFC" />
+      <line x1="258" y1="126" x2="258" y2="474" stroke="#E2E8F0" stroke-width="1" />
+
+      <!-- Sidebar Items -->
+      <g transform="translate(120, 136)">
+        <rect x="0" y="0" width="128" height="28" rx="6" fill="#1E3A8A" />
+        <text x="12" y="18" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="10" font-weight="700">📊 Ringkasan Arsip</text>
+
+        <rect x="0" y="34" width="128" height="26" rx="6" fill="transparent" />
+        <text x="12" y="51" fill="#475569" font-family="-apple-system, sans-serif" font-size="10">📁 Manajemen Surat</text>
+
+        <rect x="0" y="64" width="128" height="26" rx="6" fill="transparent" />
+        <text x="12" y="81" fill="#475569" font-family="-apple-system, sans-serif" font-size="10">🔍 Pencarian Pintar</text>
+
+        <rect x="0" y="94" width="128" height="26" rx="6" fill="transparent" />
+        <text x="12" y="111" fill="#475569" font-family="-apple-system, sans-serif" font-size="10">📈 Laporan Retensi</text>
+
+        <rect x="0" y="124" width="128" height="26" rx="6" fill="transparent" />
+        <text x="12" y="141" fill="#475569" font-family="-apple-system, sans-serif" font-size="10">🔲 QR Code Arsip</text>
+
+        <rect x="0" y="154" width="128" height="26" rx="6" fill="transparent" />
+        <text x="12" y="171" fill="#475569" font-family="-apple-system, sans-serif" font-size="10">⚙️ Pengaturan Modul</text>
+      </g>
+
+      <!-- Right Dashboard Content -->
+      <rect x="258" y="126" width="532" height="348" fill="#FFFFFF" />
+
+      <!-- Welcome Banner -->
+      <g transform="translate(276, 142)">
+        <rect x="0" y="0" width="496" height="52" rx="10" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1" />
+        <text x="16" y="22" fill="#1E3A8A" font-family="-apple-system, sans-serif" font-size="12" font-weight="800">Sistem Arsip &amp; Dokumen Digital Terintegrasi</text>
+        <text x="16" y="38" fill="#3B82F6" font-family="-apple-system, sans-serif" font-size="9.5">6 Modul Utama: Dashboard, Pencatatan Surat, Klasifikasi, Retensi, Log, dan QR Code</text>
+      </g>
+
+      <!-- 3 Metrics KPI Cards -->
+      <g transform="translate(276, 204)">
+        <rect x="0" y="0" width="156" height="58" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1" />
+        <text x="14" y="18" fill="#64748B" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700" text-transform="uppercase">TOTAL DOKUMEN</text>
+        <text x="14" y="42" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="18" font-weight="900">1.428</text>
+        <rect x="100" y="10" width="44" height="18" rx="9" fill="#DCFCE7" />
+        <text x="122" y="22" fill="#15803D" font-family="sans-serif" font-size="8" font-weight="700" text-anchor="middle">+12 Baru</text>
+
+        <rect x="170" y="0" width="156" height="58" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1" />
+        <text x="184" y="18" fill="#64748B" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700" text-transform="uppercase">STATUS RETENSI</text>
+        <text x="184" y="42" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="18" font-weight="900">98.4%</text>
+        <rect x="274" y="10" width="44" height="18" rx="9" fill="#EFF6FF" />
+        <text x="296" y="22" fill="#1D4ED8" font-family="sans-serif" font-size="8" font-weight="700" text-anchor="middle">Aman</text>
+
+        <rect x="340" y="0" width="156" height="58" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1" />
+        <text x="354" y="18" fill="#64748B" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700" text-transform="uppercase">QR VERIFIED</text>
+        <text x="354" y="42" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="18" font-weight="900">100%</text>
+        <rect x="444" y="10" width="44" height="18" rx="9" fill="#FEF3C7" />
+        <text x="466" y="22" fill="#B45309" font-family="sans-serif" font-size="8" font-weight="700" text-anchor="middle">Aktif</text>
+      </g>
+
+      <!-- Live Archive Table -->
+      <g transform="translate(276, 274)">
+        <rect x="0" y="0" width="496" height="190" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1" />
+        <rect x="0" y="0" width="496" height="28" rx="8" fill="#F1F5F9" />
+        <text x="16" y="18" fill="#475569" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700">NO. REGISTER</text>
+        <text x="110" y="18" fill="#475569" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700">PERIHAL DOKUMEN / SURAT</text>
+        <text x="320" y="18" fill="#475569" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700">KATEGORI</text>
+        <text x="424" y="18" fill="#475569" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700">STATUS</text>
+
+        <!-- Row 1 -->
+        <line x1="0" y1="28" x2="496" y2="28" stroke="#E2E8F0" stroke-width="1" />
+        <text x="16" y="48" fill="#0F172A" font-family="monospace" font-size="9">SK-2024/089</text>
+        <text x="110" y="48" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="9" font-weight="600">Surat Keputusan Kelulusan Siswa TA 2024</text>
+        <text x="320" y="48" fill="#64748B" font-family="-apple-system, sans-serif" font-size="9">Kesiswaan</text>
+        <rect x="420" y="36" width="66" height="18" rx="9" fill="#DCFCE7" />
+        <text x="453" y="48" fill="#166534" font-family="sans-serif" font-size="8" font-weight="700" text-anchor="middle">Tersimpan</text>
+
+        <!-- Row 2 -->
+        <line x1="0" y1="62" x2="496" y2="62" stroke="#E2E8F0" stroke-width="1" />
+        <text x="16" y="82" fill="#0F172A" font-family="monospace" font-size="9">SM-2024/112</text>
+        <text x="110" y="82" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="9" font-weight="600">Surat Masuk Dinas Pendidikan Prov. Gorontalo</text>
+        <text x="320" y="82" fill="#64748B" font-family="-apple-system, sans-serif" font-size="9">Kedinasan</text>
+        <rect x="420" y="70" width="66" height="18" rx="9" fill="#EFF6FF" />
+        <text x="453" y="82" fill="#1E40AF" font-family="sans-serif" font-size="8" font-weight="700" text-anchor="middle">Arsip Aktif</text>
+
+        <!-- Row 3 -->
+        <line x1="0" y1="96" x2="496" y2="96" stroke="#E2E8F0" stroke-width="1" />
+        <text x="16" y="116" fill="#0F172A" font-family="monospace" font-size="9">BA-2024/045</text>
+        <text x="110" y="116" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="9" font-weight="600">Berita Acara Rapat Evaluasi Kurikulum Merdeka</text>
+        <text x="320" y="116" fill="#64748B" font-family="-apple-system, sans-serif" font-size="9">Kurikulum</text>
+        <rect x="420" y="104" width="66" height="18" rx="9" fill="#FEF3C7" />
+        <text x="453" y="116" fill="#92400E" font-family="sans-serif" font-size="8" font-weight="700" text-anchor="middle">Verifikasi</text>
+
+        <!-- Row 4 -->
+        <line x1="0" y1="130" x2="496" y2="130" stroke="#E2E8F0" stroke-width="1" />
+        <text x="16" y="150" fill="#0F172A" font-family="monospace" font-size="9">SK-2024/014</text>
+        <text x="110" y="150" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="9" font-weight="600">Surat Pengesahan Sarana &amp; Laboratorium</text>
+        <text x="320" y="150" fill="#64748B" font-family="-apple-system, sans-serif" font-size="9">Sarpras</text>
+        <rect x="420" y="138" width="66" height="18" rx="9" fill="#F3E8FF" />
+        <text x="453" y="150" fill="#6B21A8" font-family="sans-serif" font-size="8" font-weight="700" text-anchor="middle">QR Ready</text>
+      </g>
+
+      <polygon points="110,46 360,46 220,474 110,474" fill="url(#mac-screen-glare)" pointer-events="none" />
+    </g>
+
+    <!-- Laptop Base (Keyboard Deck & Trackpad Lip) -->
+    <path d="M40 484 L860 484 L810 508 L90 508 Z" fill="url(#mac-base-grad)" stroke="#6B7280" stroke-width="1" />
+    <rect x="90" y="508" width="720" height="8" rx="3" fill="#D1D5DB" />
+    <path d="M410 508 h80 c0 4 -4 8 -8 8 h-64 c-4 0 -8 -4 -8 -8 z" fill="#9CA3AF" />
+  </g>
+</svg>

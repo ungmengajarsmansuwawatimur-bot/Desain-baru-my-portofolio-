@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 600" width="840" height="600" fill="none">
+  <defs>
+    <filter id="pos-drop-shadow" x="-25%" y="-20%" width="150%" height="150%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#05070B" flood-opacity="0.36" />
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#05070B" flood-opacity="0.22" />
+    </filter>
+    <filter id="pos-ground-shadow" x="-20%" y="-20%" width="140%" height="140%" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="18" />
+    </filter>
+    <linearGradient id="pos-chassis-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4B5563" />
+      <stop offset="30%" stop-color="#6B7280" />
+      <stop offset="70%" stop-color="#1F2937" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+    <linearGradient id="pos-screen-glare" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.15" />
+      <stop offset="45%" stop-color="#FFFFFF" stop-opacity="0.03" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0" />
+    </linearGradient>
+    <linearGradient id="pos-stand-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6B7280" />
+      <stop offset="100%" stop-color="#374151" />
+    </linearGradient>
+    <clipPath id="pos-screen-clip">
+      <rect x="116" y="44" width="608" height="420" rx="14" />
+    </clipPath>
+  </defs>
+
+  <!-- Diffused Ground Shadow on Transparent Canvas -->
+  <ellipse cx="420" cy="554" rx="280" ry="18" fill="#000000" opacity="0.32" filter="url(#pos-ground-shadow)" />
+
+  <!-- Tablet Desktop Stand Base Behind -->
+  <path d="M370 460 L470 460 L490 540 L350 540 Z" fill="url(#pos-stand-grad)" />
+  <rect x="330" y="536" width="180" height="12" rx="6" fill="#1F2937" stroke="#4B5563" stroke-width="1" />
+
+  <g filter="url(#pos-drop-shadow)">
+    <!-- Tablet Outer Aluminum Chassis -->
+    <rect x="100" y="28" width="640" height="452" rx="26" fill="url(#pos-chassis-grad)" stroke="#9CA3AF" stroke-width="1.5" />
+    <rect x="108" y="36" width="624" height="436" rx="20" fill="#0F1117" />
+
+    <!-- Screen Canvas -->
+    <g clip-path="url(#pos-screen-clip)">
+      <!-- POS Top Bar -->
+      <rect x="116" y="44" width="608" height="44" fill="#0F172A" />
+      <circle cx="138" cy="66" r="10" fill="#F9B51B" />
+      <text x="138" y="70" fill="#171717" font-family="sans-serif" font-size="10" font-weight="900" text-anchor="middle">🏪</text>
+      <text x="156" y="64" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="12" font-weight="800">TOKO KELUARGA &amp; RITEL FISIK</text>
+      <text x="156" y="77" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="9">Sistem Kasir, Stok FIFO &amp; Operasional Harian</text>
+
+      <!-- Shift Pill -->
+      <rect x="560" y="54" width="150" height="24" rx="12" fill="#1E293B" stroke="#334155" stroke-width="1" />
+      <circle cx="574" cy="66" r="4" fill="#10B981" />
+      <text x="640" y="70" fill="#F8FAFC" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" text-anchor="middle">Kasir: Taufik (Shift Pagi)</text>
+
+      <!-- Split View Body -->
+      <rect x="116" y="88" width="350" height="376" fill="#F8FAFC" />
+
+      <!-- Left Header -->
+      <g transform="translate(130, 102)">
+        <rect x="0" y="0" width="322" height="28" rx="6" fill="#E2E8F0" />
+        <text x="12" y="18" fill="#1E293B" font-family="-apple-system, sans-serif" font-size="9.5" font-weight="800">📦 MONITORING RAK &amp; METODE FIFO</text>
+
+        <!-- Product 1: Beras 5kg -->
+        <g transform="translate(0, 36)">
+          <rect x="0" y="0" width="322" height="60" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
+          <rect x="10" y="10" width="40" height="40" rx="6" fill="#FEF3C7" />
+          <text x="30" y="35" font-size="18" text-anchor="middle">🍚</text>
+          <text x="60" y="24" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="10.5" font-weight="700">Beras Premium 5kg</text>
+          <text x="60" y="38" fill="#64748B" font-family="-apple-system, sans-serif" font-size="8.5">Stok Fisik: 42 Sak · Posisi Rak Depan</text>
+          <rect x="60" y="42" width="100" height="14" rx="7" fill="#DCFCE7" />
+          <text x="110" y="52" fill="#166534" font-family="sans-serif" font-size="7.5" font-weight="700" text-anchor="middle">FIFO: Batch Masuk Awal</text>
+          <text x="312" y="34" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="11" font-weight="800" text-anchor="end">Rp 75.000</text>
+        </g>
+
+        <!-- Product 2: Minyak Goreng 2L -->
+        <g transform="translate(0, 104)">
+          <rect x="0" y="0" width="322" height="60" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
+          <rect x="10" y="10" width="40" height="40" rx="6" fill="#FEE2E2" />
+          <text x="30" y="35" font-size="18" text-anchor="middle">🌻</text>
+          <text x="60" y="24" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="10.5" font-weight="700">Minyak Goreng Pouch 2L</text>
+          <text x="60" y="38" fill="#64748B" font-family="-apple-system, sans-serif" font-size="8.5">Stok Fisik: 36 Pcs · Expired Check Aman</text>
+          <rect x="60" y="42" width="100" height="14" rx="7" fill="#DCFCE7" />
+          <text x="110" y="52" fill="#166534" font-family="sans-serif" font-size="7.5" font-weight="700" text-anchor="middle">FIFO: Rak Terdepan</text>
+          <text x="312" y="34" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="11" font-weight="800" text-anchor="end">Rp 35.000</text>
+        </g>
+
+        <!-- Product 3: Gula Pasir 1kg -->
+        <g transform="translate(0, 172)">
+          <rect x="0" y="0" width="322" height="60" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
+          <rect x="10" y="10" width="40" height="40" rx="6" fill="#E0F2FE" />
+          <text x="30" y="35" font-size="18" text-anchor="middle">🍬</text>
+          <text x="60" y="24" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="10.5" font-weight="700">Gula Pasir Kristal 1kg</text>
+          <text x="60" y="38" fill="#64748B" font-family="-apple-system, sans-serif" font-size="8.5">Stok Fisik: 50 Pcs · Rotasi Barang Rutin</text>
+          <rect x="60" y="42" width="94" height="14" rx="7" fill="#FEF3C7" />
+          <text x="107" y="52" fill="#B45309" font-family="sans-serif" font-size="7.5" font-weight="700" text-anchor="middle">Stok Rak Siap Jual</text>
+          <text x="312" y="34" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="11" font-weight="800" text-anchor="end">Rp 16.000</text>
+        </g>
+
+        <!-- Service & Cashier Operational Note -->
+        <g transform="translate(0, 240)">
+          <rect x="0" y="0" width="322" height="74" rx="8" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1" />
+          <text x="12" y="18" fill="#1E293B" font-family="-apple-system, sans-serif" font-size="9" font-weight="800">KOMITMEN OPERASIONAL RITEL:</text>
+          <text x="12" y="34" fill="#475569" font-family="-apple-system, sans-serif" font-size="8.5">✓ Pelayanan ramah, sigap, dan cekatan terhadap pembeli</text>
+          <text x="12" y="48" fill="#475569" font-family="-apple-system, sans-serif" font-size="8.5">✓ Ketelitian uang kembalian dan pembukuan kas harian</text>
+          <text x="12" y="62" fill="#475569" font-family="-apple-system, sans-serif" font-size="8.5">✓ Kedisiplinan restock rak toko setiap pergantian shift</text>
+        </g>
+      </g>
+
+      <!-- Right Panel: Live Cashier Checkout (258px wide) -->
+      <line x1="466" y1="88" x2="466" y2="464" stroke="#E2E8F0" stroke-width="1" />
+      <rect x="466" y="88" width="258" height="376" fill="#FFFFFF" />
+
+      <g transform="translate(480, 102)">
+        <rect x="0" y="0" width="230" height="28" rx="6" fill="#1E293B" />
+        <text x="115" y="18" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="9.5" font-weight="800" text-anchor="middle">🧾 STRUK TRANSAKSI AKTIF</text>
+
+        <!-- Receipt Box -->
+        <rect x="0" y="36" width="230" height="186" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1" />
+        <text x="12" y="54" fill="#64748B" font-family="monospace" font-size="8.5">NO: TRX-2024-8829</text>
+        <text x="218" y="54" fill="#64748B" font-family="monospace" font-size="8.5" text-anchor="end">09:48 WIB</text>
+        <line x1="12" y1="62" x2="218" y2="62" stroke="#CBD5E1" stroke-dasharray="3,3" stroke-width="1" />
+
+        <text x="12" y="78" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="9" font-weight="600">2x Minyak Goreng 2L</text>
+        <text x="218" y="78" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" text-anchor="end">70.000</text>
+
+        <text x="12" y="96" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="9" font-weight="600">1x Beras Premium 5kg</text>
+        <text x="218" y="96" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" text-anchor="end">75.000</text>
+
+        <text x="12" y="114" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="9" font-weight="600">2x Gula Pasir 1kg</text>
+        <text x="218" y="114" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" text-anchor="end">32.000</text>
+
+        <line x1="12" y1="124" x2="218" y2="124" stroke="#CBD5E1" stroke-dasharray="3,3" stroke-width="1" />
+
+        <text x="12" y="142" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="10" font-weight="800">TOTAL BELANJA:</text>
+        <text x="218" y="142" fill="#15803D" font-family="-apple-system, sans-serif" font-size="12" font-weight="900" text-anchor="end">Rp 177.000</text>
+
+        <text x="12" y="160" fill="#64748B" font-family="-apple-system, sans-serif" font-size="8.5">Tunai Dibayar:</text>
+        <text x="218" y="160" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" text-anchor="end">Rp 200.000</text>
+
+        <text x="12" y="178" fill="#1E3A8A" font-family="-apple-system, sans-serif" font-size="9" font-weight="700">Kembalian:</text>
+        <text x="218" y="178" fill="#1E3A8A" font-family="-apple-system, sans-serif" font-size="10" font-weight="900" text-anchor="end">Rp 23.000</text>
+
+        <rect x="12" y="188" width="206" height="24" rx="12" fill="#DCFCE7" />
+        <text x="115" y="204" fill="#166534" font-family="sans-serif" font-size="8.5" font-weight="800" text-anchor="middle">✓ TRANSAKSI SUKSES &amp; LUNAS</text>
+
+        <!-- Big Checkout Action Button -->
+        <g transform="translate(0, 232)">
+          <rect x="0" y="0" width="230" height="42" rx="8" fill="#31543A" />
+          <text x="115" y="26" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="11" font-weight="800" text-anchor="middle">SELESAIKAN &amp; CETAK STRUK</text>
+        </g>
+        <g transform="translate(0, 282)">
+          <rect x="0" y="0" width="230" height="32" rx="6" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1" />
+          <text x="115" y="20" fill="#475569" font-family="-apple-system, sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">Tutup Kasir &amp; Setor Shift</text>
+        </g>
+      </g>
+
+      <polygon points="116,44 380,44 260,464 116,464" fill="url(#pos-screen-glare)" pointer-events="none" />
+    </g>
+  </g>
+</svg>

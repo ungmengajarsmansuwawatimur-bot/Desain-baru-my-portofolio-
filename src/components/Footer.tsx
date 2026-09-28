@@ -52,7 +52,7 @@ export const Footer: React.FC<FooterProps> = () => {
   };
 
   return (
-    <footer className="w-full bg-[#FFFFFF] dark:bg-[#121212] text-[#171717] dark:text-white border-t-2 border-[#171717] dark:border-[#333333] transition-colors duration-200">
+    <footer className="w-full bg-[#FFFFFF] dark:bg-[#121212] text-[#171717] dark:text-white border-t border-[#171717]/15 dark:border-white/10 transition-colors duration-200">
       {/* FAQ: Steve Mengelkoch Editorial Accordion */}
       <section
         id="faq"
@@ -122,7 +122,7 @@ export const Footer: React.FC<FooterProps> = () => {
       </section>
 
       {/* Bottom Footer Bar */}
-      <div className="border-t-2 border-[#171717] dark:border-[#333333] bg-[#F5F5F5] dark:bg-[#181818] py-6 sm:py-8 transition-colors">
+      <div className="border-t border-[#171717]/15 dark:border-white/10 bg-[#F5F5F5] dark:bg-[#181818] py-6 sm:py-8 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#666666] dark:text-[#A3A3A3]">
             {/* Left: Brand & Title */}

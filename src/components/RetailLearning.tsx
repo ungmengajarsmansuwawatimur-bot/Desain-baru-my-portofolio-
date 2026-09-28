@@ -31,7 +31,7 @@ const RetailLearningComponent: React.FC = () => {
   );
 
   return (
-    <section id="learning" className="py-20 md:py-28 bg-[#FFFFFF] dark:bg-[#121212] border-t-2 border-[#171717] dark:border-[#333333] transition-colors duration-200">
+    <section id="learning" className="py-20 md:py-28 bg-[#FFFFFF] dark:bg-[#121212] border-t border-[#171717]/15 dark:border-white/10 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Top Header Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -100,7 +100,7 @@ const RetailLearningComponent: React.FC = () => {
         </div>
 
         {/* Section: Daftar Materi Pembelajaran */}
-        <div className="pt-10 border-t-2 border-[#171717] dark:border-[#333333] space-y-8">
+        <div className="pt-10 border-t border-[#171717]/15 dark:border-white/10 space-y-8">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <span className="w-3 h-3 rounded-full bg-[#F9B51B]" />
@@ -167,7 +167,7 @@ const RetailLearningComponent: React.FC = () => {
                   </div>
 
                   {/* Yang Saya Pelajari */}
-                  <div className="pt-3 border-t-2 border-[#E9E9E9] dark:border-[#2A2A2A] space-y-2">
+                  <div className="pt-3 border-t border-[#171717]/15 dark:border-[#2A2A2A] space-y-2">
                     <span className="text-[11px] font-black text-[#171717] dark:text-white uppercase tracking-wide block">
                       Yang Saya Pelajari:
                     </span>
@@ -183,7 +183,7 @@ const RetailLearningComponent: React.FC = () => {
                 </div>
 
                 {/* Bottom CTA */}
-                <div className="pt-3 border-t-2 border-[#E9E9E9] dark:border-[#2A2A2A]">
+                <div className="pt-3 border-t border-[#171717]/15 dark:border-[#2A2A2A]">
                   <button
                     type="button"
                     onClick={() => setSelectedItem(item)}
@@ -201,7 +201,7 @@ const RetailLearningComponent: React.FC = () => {
         </div>
 
         {/* Bottom Section: Dark Green Banner + Book Stack + Goals */}
-        <div className="pt-10 border-t-2 border-[#171717] dark:border-[#333333] grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        <div className="pt-10 border-t border-[#171717]/15 dark:border-white/10 grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           {/* Col 1-5: Green Banner */}
           <div className="lg:col-span-5 bg-[#31543A] text-white rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-4 border-2 border-[#171717] shadow-[5px_5px_0px_#171717]">
             <div className="space-y-3">

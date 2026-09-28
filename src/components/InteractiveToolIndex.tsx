@@ -95,22 +95,22 @@ export const InteractiveToolIndex: React.FC<InteractiveToolIndexProps> = ({ tool
       className="relative focus:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981] rounded-2xl"
     >
       {/* Editorial Top Bar (clean, open layout without card box) */}
-      <div className="py-3 sm:py-4 border-b border-[#E5E7EB] dark:border-[#27272A] flex items-center justify-between gap-4">
+      <div className="py-3 sm:py-4 border-b border-white/20 flex items-center justify-between gap-4">
         {/* Counter & Label */}
         <div className="flex items-center gap-3">
           <div className="flex items-baseline gap-1.5 font-mono">
-            <span className="text-xl sm:text-2xl font-extrabold text-[#10B981] tracking-tight">
+            <span className="text-xl sm:text-2xl font-extrabold text-[#F9B51B] tracking-tight">
               {formatIndex(currentIndex + 1)}
             </span>
-            <span className="text-sm font-medium text-[#6B7280] dark:text-[#9CA3AF]">/</span>
-            <span className="text-sm font-semibold text-[#6B7280] dark:text-[#9CA3AF]">
+            <span className="text-sm font-medium text-white/50">/</span>
+            <span className="text-sm font-semibold text-white/70">
               {formatIndex(totalTools)}
             </span>
           </div>
 
-          <span className="hidden sm:inline-block w-px h-4 bg-[#E5E7EB] dark:border-[#27272A]" />
+          <span className="hidden sm:inline-block w-px h-4 bg-white/20" />
 
-          <span className="text-[11px] font-bold uppercase tracking-widest text-[#6B7280] dark:text-[#9CA3AF]">
+          <span className="text-[11px] font-bold uppercase tracking-widest text-white/70">
             Indeks Alat Kerja
           </span>
         </div>
@@ -128,7 +128,7 @@ export const InteractiveToolIndex: React.FC<InteractiveToolIndexProps> = ({ tool
           onClick={handlePrev}
           disabled={currentIndex === 0}
           aria-label="Tool sebelumnya (Panah Kiri)"
-          className="group shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-[#E5E7EB] dark:border-[#27272A] text-[#111827] dark:text-white bg-white dark:bg-[#18181B] hover:border-[#10B981] dark:hover:border-[#10B981] hover:text-[#10B981] dark:hover:text-[#10B981] hover:shadow-sm active:scale-95 disabled:opacity-25 disabled:cursor-not-allowed disabled:hover:border-[#E5E7EB] dark:disabled:hover:border-[#27272A] disabled:hover:text-inherit disabled:active:scale-100 flex items-center justify-center transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981] cursor-pointer"
+          className="group shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-[#171717] text-[#171717] bg-white hover:bg-[#F5F5F5] hover:shadow-md active:scale-95 disabled:opacity-25 disabled:cursor-not-allowed disabled:hover:bg-white disabled:active:scale-100 flex items-center justify-center transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer shadow-sm"
         >
           <svg
             className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:-translate-x-0.5"
@@ -155,7 +155,7 @@ export const InteractiveToolIndex: React.FC<InteractiveToolIndexProps> = ({ tool
         >
           {/* Top Eyebrow & Category */}
           <div className="flex items-center justify-center">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider bg-[#10B981]/10 text-[#059669] dark:text-[#34D399] border border-[#10B981]/20">
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider bg-white/15 text-white border border-white/30">
               {activeTool.category}
             </span>
           </div>
@@ -172,12 +172,12 @@ export const InteractiveToolIndex: React.FC<InteractiveToolIndexProps> = ({ tool
 
             {/* Name & Role */}
             <div className="min-w-0 space-y-1.5 text-center">
-              <h4 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111827] dark:text-white tracking-tight leading-tight">
+              <h4 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
                 {activeTool.name}
               </h4>
 
               {cleanRole && (
-                <p className="text-sm sm:text-base font-semibold text-[#10B981] dark:text-[#34D399] tracking-normal">
+                <p className="text-sm sm:text-base font-bold text-white tracking-normal">
                   Fungsi: {cleanRole}
                 </p>
               )}
@@ -186,9 +186,9 @@ export const InteractiveToolIndex: React.FC<InteractiveToolIndexProps> = ({ tool
 
           {/* Context Note (based on available data) */}
           <div className="pt-1 text-center max-w-md sm:max-w-lg mx-auto">
-            <p className="text-xs sm:text-sm text-[#6B7280] dark:text-[#9CA3AF] leading-relaxed">
+            <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
               Alat kerja dalam kategori{' '}
-              <span className="font-semibold text-[#111827] dark:text-white">
+              <span className="font-bold text-white">
                 {activeTool.category}
               </span>
               {cleanRole ? ` yang digunakan untuk keperluan ${cleanRole.toLowerCase()}` : ''} guna
@@ -203,7 +203,7 @@ export const InteractiveToolIndex: React.FC<InteractiveToolIndexProps> = ({ tool
           onClick={handleNext}
           disabled={currentIndex === totalTools - 1}
           aria-label="Tool berikutnya (Panah Kanan)"
-          className="group shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-[#E5E7EB] dark:border-[#27272A] text-[#111827] dark:text-white bg-white dark:bg-[#18181B] hover:border-[#10B981] dark:hover:border-[#10B981] hover:text-[#10B981] dark:hover:text-[#10B981] hover:shadow-sm active:scale-95 disabled:opacity-25 disabled:cursor-not-allowed disabled:hover:border-[#E5E7EB] dark:disabled:hover:border-[#27272A] disabled:hover:text-inherit disabled:active:scale-100 flex items-center justify-center transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981] cursor-pointer"
+          className="group shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-[#171717] text-[#171717] bg-white hover:bg-[#F5F5F5] hover:shadow-md active:scale-95 disabled:opacity-25 disabled:cursor-not-allowed disabled:hover:bg-white disabled:active:scale-100 flex items-center justify-center transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer shadow-sm"
         >
           <svg
             className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-0.5"

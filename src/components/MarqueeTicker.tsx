@@ -24,7 +24,7 @@ export const MarqueeTicker: React.FC<MarqueeTickerProps> = ({
 }) => {
   return (
     <div
-      className={`w-full overflow-hidden bg-[#F9B51B] py-3.5 select-none border-y-2 border-[#171717] ${className}`}
+      className={`w-full overflow-hidden bg-[#F9B51B] py-3.5 select-none border-y border-[#171717]/20 ${className}`}
       aria-label="Keterampilan & Layanan Berjalan"
     >
       <div className="animate-ticker flex items-center">

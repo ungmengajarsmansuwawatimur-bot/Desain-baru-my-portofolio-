@@ -4,6 +4,8 @@ import { ThemeToggle } from './ThemeToggle';
 interface NavbarProps {
   onOpenCvModal?: () => void;
   activeSection?: string;
+  onNavigateHome?: (targetSection?: string) => void;
+  isDetailPage?: boolean;
 }
 
 const NAV_LINKS = [
@@ -16,7 +18,12 @@ const NAV_LINKS = [
   { label: 'Kontak', href: '#contact', id: 'contact' },
 ] as const;
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenCvModal, activeSection: externalActiveSection }) => {
+export const Navbar: React.FC<NavbarProps> = ({
+  onOpenCvModal,
+  activeSection: externalActiveSection,
+  onNavigateHome,
+  isDetailPage = false,
+}) => {
   const [internalActiveSection, setInternalActiveSection] = useState<string>('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -79,12 +86,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCvModal, activeSection: ex
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 transform-gpu bg-white/95 dark:bg-[#121212]/95 backdrop-blur-xl border-b-2 border-[#171717] dark:border-[#333333] transition-all duration-200">
+    <header className="fixed top-0 left-0 right-0 z-40 transform-gpu bg-white/95 dark:bg-[#121212]/95 backdrop-blur-xl border-b border-[#171717]/15 dark:border-white/10 transition-all duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Brand Logo (Steve Mengelkoch style: First name Black, Last name Yellow) */}
           <a
             href="#home"
+            onClick={(e) => {
+              if (isDetailPage && onNavigateHome) {
+                e.preventDefault();
+                onNavigateHome('home');
+              }
+            }}
             className="group flex items-center gap-2 select-none"
             aria-label="Taufik Hidayat Malii - Kembali ke Beranda"
           >
@@ -96,11 +109,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCvModal, activeSection: ex
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1 bg-[#F5F5F5] dark:bg-[#1E1E1E] p-1.5 rounded-full border border-[#171717]/20 dark:border-[#333333]" aria-label="Navigasi Utama">
             {NAV_LINKS.map((link) => {
-              const isActive = activeSection === link.id;
+              const isActive = !isDetailPage && activeSection === link.id;
               return (
                 <a
                   key={link.id}
                   href={link.href}
+                  onClick={(e) => {
+                    if (isDetailPage && onNavigateHome) {
+                      e.preventDefault();
+                      onNavigateHome(link.id);
+                    }
+                  }}
                   className={`relative px-4 py-2 text-xs font-bold rounded-full transition-all duration-150 ${
                     isActive
                       ? 'bg-[#171717] text-white dark:bg-white dark:text-[#171717] shadow-sm'
@@ -113,14 +132,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCvModal, activeSection: ex
             })}
           </nav>
 
-          {/* Desktop Right Controls: Split Pill CTA (HIRE ME / LIHAT CV) + Theme Toggle */}
+          {/* Desktop Right Controls: Split Pill CTA (HIRE ME) + Theme Toggle */}
           <div className="hidden sm:flex items-center gap-3">
             <button
               type="button"
               onClick={onOpenCvModal}
               className="group inline-flex items-center gap-2 pl-4 pr-1.5 py-1.5 rounded-full text-xs font-black bg-[#31543A] text-white hover:bg-[#26432E] border-2 border-[#171717] transition-all duration-150 cursor-pointer shadow-sm active:scale-95"
             >
-              <span>LIHAT CV</span>
+              <span>HIRE ME</span>
               <span className="w-7 h-7 rounded-full bg-[#F9B51B] text-[#171717] flex items-center justify-center font-bold text-sm shrink-0 transition-transform group-hover:translate-x-0.5">
                 &rarr;
               </span>
@@ -136,7 +155,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCvModal, activeSection: ex
               onClick={onOpenCvModal}
               className="inline-flex items-center gap-1.5 pl-3 pr-1 py-1 rounded-full text-[11px] font-black bg-[#31543A] text-white border border-[#171717]"
             >
-              <span>CV</span>
+              <span>HIRE ME</span>
               <span className="w-5 h-5 rounded-full bg-[#F9B51B] text-[#171717] flex items-center justify-center text-xs">
                 &rarr;
               </span>
@@ -168,14 +187,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCvModal, activeSection: ex
 
       {/* Mobile Drawer */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden border-b-2 border-[#171717] bg-white dark:bg-[#121212] px-4 pt-3 pb-6 space-y-2 transition-colors duration-200 shadow-xl">
+        <div className="lg:hidden border-b border-[#171717]/15 dark:border-white/10 bg-white dark:bg-[#121212] px-4 pt-3 pb-6 space-y-2 transition-colors duration-200 shadow-xl">
           {NAV_LINKS.map((link) => {
             const isActive = activeSection === link.id;
             return (
               <a
                 key={link.id}
                 href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={(e) => {
+                  setIsMobileMenuOpen(false);
+                  if (isDetailPage && onNavigateHome) {
+                    e.preventDefault();
+                    onNavigateHome(link.id);
+                  }
+                }}
                 className={`flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-black transition-all ${
                   isActive
                     ? 'bg-[#F9B51B] text-[#171717] border-2 border-[#171717]'

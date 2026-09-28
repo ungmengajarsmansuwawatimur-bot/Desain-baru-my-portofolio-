@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620" width="800" height="620" fill="none">
+  <defs>
+    <filter id="phone-drop-shadow" x="-30%" y="-20%" width="160%" height="160%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#05070B" flood-opacity="0.38" />
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#05070B" flood-opacity="0.22" />
+    </filter>
+    <filter id="ground-shadow" x="-20%" y="-20%" width="140%" height="140%" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="16" />
+    </filter>
+    <linearGradient id="phone-outer-rim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4B5563" />
+      <stop offset="25%" stop-color="#9CA3AF" />
+      <stop offset="50%" stop-color="#374151" />
+      <stop offset="75%" stop-color="#1F2937" />
+      <stop offset="100%" stop-color="#4B5563" />
+    </linearGradient>
+    <linearGradient id="phone-inner-bezel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#030712" />
+    </linearGradient>
+    <linearGradient id="wa-header-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#075E54" />
+      <stop offset="100%" stop-color="#128C7E" />
+    </linearGradient>
+    <linearGradient id="glass-glare" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.18" />
+      <stop offset="35%" stop-color="#FFFFFF" stop-opacity="0.04" />
+      <stop offset="70%" stop-color="#FFFFFF" stop-opacity="0.0" />
+    </linearGradient>
+    <clipPath id="phone-screen-clip">
+      <rect x="256" y="32" width="288" height="528" rx="40" />
+    </clipPath>
+  </defs>
+
+  <!-- Diffused Ground Shadow on Transparent Canvas -->
+  <ellipse cx="400" cy="580" rx="200" ry="18" fill="#000000" opacity="0.32" filter="url(#ground-shadow)" />
+
+  <!-- Smartphone Outer Body with 3D Bevel -->
+  <g filter="url(#phone-drop-shadow)">
+    <!-- Side buttons (Volume up, Volume down, Power) -->
+    <rect x="248" y="140" width="4" height="42" rx="2" fill="#4B5563" />
+    <rect x="248" y="196" width="4" height="42" rx="2" fill="#4B5563" />
+    <rect x="548" y="160" width="4" height="64" rx="2" fill="#4B5563" />
+
+    <!-- Main Chassis Outer Rim -->
+    <rect x="250" y="26" width="300" height="540" rx="46" fill="url(#phone-outer-rim)" />
+    <!-- Inner Dark Bezel -->
+    <rect x="253" y="29" width="294" height="534" rx="43" fill="url(#phone-inner-bezel)" />
+
+    <!-- Screen Area (Clipped for rounded corners) -->
+    <g clip-path="url(#phone-screen-clip)">
+      <!-- WhatsApp Wallpaper Canvas -->
+      <rect x="256" y="32" width="288" height="528" fill="#EFEAE2" />
+
+      <!-- Subtle Wallpaper Doodle Pattern Overlay -->
+      <g opacity="0.06" stroke="#111827" stroke-width="1.5" fill="none">
+        <circle cx="280" cy="180" r="14" />
+        <path d="M320 220 l12 -12 l12 12" />
+        <rect x="480" y="200" width="20" height="20" rx="4" />
+        <circle cx="500" cy="340" r="16" />
+        <path d="M290 380 q15 -15 30 0" />
+        <rect x="360" y="440" width="24" height="16" rx="4" />
+      </g>
+
+      <!-- WhatsApp Header -->
+      <rect x="256" y="32" width="288" height="88" fill="url(#wa-header-grad)" />
+
+      <!-- Status Bar Time & Icons -->
+      <text x="276" y="52" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700">09:41</text>
+      <!-- WiFi, Signal & Battery Icons -->
+      <g fill="#FFFFFF" transform="translate(492, 42)">
+        <rect x="0" y="8" width="3" height="4" rx="0.5" />
+        <rect x="5" y="6" width="3" height="6" rx="0.5" />
+        <rect x="10" y="3" width="3" height="9" rx="0.5" />
+        <rect x="15" y="0" width="3" height="12" rx="0.5" />
+        <rect x="26" y="1" width="18" height="10" rx="2.5" fill="none" stroke="#FFFFFF" stroke-width="1.5" />
+        <rect x="28" y="3" width="12" height="6" rx="1" fill="#FFFFFF" />
+        <path d="M45 4 v4" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" />
+      </g>
+
+      <!-- Dynamic Island Capsule -->
+      <rect x="355" y="40" width="90" height="22" rx="11" fill="#000000" />
+      <circle cx="430" cy="51" r="4.5" fill="#111827" />
+      <circle cx="430" cy="51" r="2" fill="#1E3A8A" opacity="0.8" />
+
+      <!-- WhatsApp Profile Bar (Header Contents) -->
+      <g transform="translate(264, 72)">
+        <path d="M4 14 L12 6 M4 14 L12 22" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <circle cx="28" cy="14" r="14" fill="#25D366" />
+        <text x="28" y="19" fill="#FFFFFF" font-family="sans-serif" font-size="12" font-weight="900" text-anchor="middle">JD</text>
+        <text x="48" y="11" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="12" font-weight="700">Jasa Publikasi Mahasiswa</text>
+        <circle cx="52" cy="22" r="3" fill="#4ADE80" />
+        <text x="60" y="24" fill="#D1FAE5" font-family="-apple-system, sans-serif" font-size="9" font-weight="500">Online · Terverifikasi</text>
+        <g fill="#FFFFFF" opacity="0.9" transform="translate(232, 4)">
+          <path d="M4 4 h16 v16 h-16 z" fill="none" />
+          <circle cx="10" cy="10" r="2" />
+          <circle cx="16" cy="10" r="2" />
+          <circle cx="22" cy="10" r="2" />
+        </g>
+      </g>
+
+      <!-- Date Badge -->
+      <g transform="translate(400, 134)">
+        <rect x="-42" y="0" width="84" height="18" rx="9" fill="#FFFFFF" opacity="0.88" />
+        <text x="0" y="13" fill="#4B5563" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" text-anchor="middle">HARI INI</text>
+      </g>
+
+      <!-- CHAT BUBBLE 1: Client Question (Incoming Left) -->
+      <g transform="translate(266, 160)">
+        <path d="M10 0 h184 a12 12 0 0 1 12 12 v40 a12 12 0 0 1 -12 12 h-184 a12 12 0 0 1 -12 -12 v-40 a12 12 0 0 1 12 -12 z" fill="#FFFFFF" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.08))" />
+        <path d="M0 6 L-6 10 L0 14 Z" fill="#FFFFFF" />
+        <text x="10" y="18" fill="#111827" font-family="-apple-system, sans-serif" font-size="10" font-weight="500">Halo kak, artikel tugas kuliah saya</text>
+        <text x="10" y="32" fill="#111827" font-family="-apple-system, sans-serif" font-size="10" font-weight="500">bisa dibantu koordinasi publikasi ke</text>
+        <text x="10" y="46" fill="#111827" font-family="-apple-system, sans-serif" font-size="10" font-weight="500">jurnal terakreditasi nasional?</text>
+        <text x="184" y="58" fill="#9CA3AF" font-family="-apple-system, sans-serif" font-size="8" font-weight="500">09:42</text>
+      </g>
+
+      <!-- CHAT BUBBLE 2: Admin Response (Outgoing Right) -->
+      <g transform="translate(322, 238)">
+        <path d="M10 0 h196 a12 12 0 0 1 12 12 v82 a12 12 0 0 1 -12 12 h-196 a12 12 0 0 1 -12 -12 v-82 a12 12 0 0 1 12 -12 z" fill="#D9FDD3" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.08))" />
+        <path d="M218 6 L224 10 L218 14 Z" fill="#D9FDD3" />
+        <text x="10" y="18" fill="#111827" font-family="-apple-system, sans-serif" font-size="10" font-weight="600">Halo kak! Tentu bisa sekali.</text>
+        <text x="10" y="32" fill="#374151" font-family="-apple-system, sans-serif" font-size="9.5" font-weight="400">Kami bantu cek kesesuaian format,</text>
+        <text x="10" y="45" fill="#374151" font-family="-apple-system, sans-serif" font-size="9.5" font-weight="400">uji plagiasi Turnitin, hingga naskah</text>
+        <text x="10" y="58" fill="#374151" font-family="-apple-system, sans-serif" font-size="9.5" font-weight="400">diterima dan LoA resmi terbit ya kak.</text>
+
+        <!-- Document Attachment Sub-Card -->
+        <rect x="10" y="65" width="196" height="28" rx="6" fill="#C8F2C2" stroke="#A7E49D" stroke-width="1" />
+        <rect x="16" y="70" width="18" height="18" rx="3" fill="#2563EB" />
+        <text x="25" y="83" fill="#FFFFFF" font-family="sans-serif" font-size="9" font-weight="900" text-anchor="middle">W</text>
+        <text x="40" y="79" fill="#065F46" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700">Format_Artikel_Jurnal.docx</text>
+        <text x="40" y="89" fill="#047857" font-family="-apple-system, sans-serif" font-size="7.5">2.4 MB · Template Resmi</text>
+
+        <text x="184" y="102" fill="#059669" font-family="-apple-system, sans-serif" font-size="8" font-weight="700">09:43 ✓✓</text>
+      </g>
+
+      <!-- CHAT BUBBLE 3: Client Satisfaction (Incoming Left) -->
+      <g transform="translate(266, 358)">
+        <path d="M10 0 h190 a12 12 0 0 1 12 12 v48 a12 12 0 0 1 -12 12 h-190 a12 12 0 0 1 -12 -12 v-48 a12 12 0 0 1 12 -12 z" fill="#FFFFFF" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.08))" />
+        <path d="M0 6 L-6 10 L0 14 Z" fill="#FFFFFF" />
+        <text x="10" y="18" fill="#111827" font-family="-apple-system, sans-serif" font-size="10" font-weight="500">Wah responsnya cepat sekali kak!</text>
+        <text x="10" y="32" fill="#111827" font-family="-apple-system, sans-serif" font-size="10" font-weight="500">Tarifnya juga transparan dan sangat</text>
+        <text x="10" y="46" fill="#111827" font-family="-apple-system, sans-serif" font-size="10" font-weight="500">membantu mahasiswa akhir 👍🎓</text>
+        <text x="188" y="66" fill="#9CA3AF" font-family="-apple-system, sans-serif" font-size="8" font-weight="500">09:45</text>
+      </g>
+
+      <!-- Bottom Chat Input Bar -->
+      <g transform="translate(256, 502)">
+        <rect x="0" y="0" width="288" height="58" fill="#F0F2F5" />
+        <rect x="12" y="10" width="224" height="38" rx="19" fill="#FFFFFF" />
+        <circle cx="30" cy="29" r="8" fill="#9CA3AF" opacity="0.3" />
+        <text x="46" y="33" fill="#9CA3AF" font-family="-apple-system, sans-serif" font-size="11">Ketik pesan balasan...</text>
+        <circle cx="260" cy="29" r="18" fill="#128C7E" />
+        <path d="M260 21 a3 3 0 0 1 3 3 v6 a3 3 0 0 1 -6 0 v-6 a3 3 0 0 1 3 -3 z M254 28 a6 6 0 0 0 12 0 M260 34 v4" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" fill="none" />
+      </g>
+
+      <!-- Home Indicator Line -->
+      <rect x="330" y="548" width="140" height="4" rx="2" fill="#111827" opacity="0.6" />
+
+      <!-- Screen Glass Diagonal Specular Glare -->
+      <polygon points="256,32 460,32 340,560 256,560" fill="url(#glass-glare)" pointer-events="none" />
+    </g>
+  </g>
+</svg>

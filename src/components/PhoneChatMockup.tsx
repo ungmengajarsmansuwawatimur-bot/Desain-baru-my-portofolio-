@@ -5,9 +5,10 @@ import { OptimizedPicture } from './OptimizedPicture';
 interface PhoneChatMockupProps {
   item: WorkflowEvidenceItem;
   onClick?: (activeScreenshot?: string) => void;
+  onOpenEvidence?: (item: WorkflowEvidenceItem, activeScreenshot?: string) => void;
 }
 
-const PhoneChatMockupComponent: React.FC<PhoneChatMockupProps> = ({ item, onClick }) => {
+const PhoneChatMockupComponent: React.FC<PhoneChatMockupProps> = ({ item, onClick, onOpenEvidence }) => {
   const screenshots = item.screenshots && item.screenshots.length > 0
     ? item.screenshots
     : [item.screenshotUrl || '/assets/chat/chat_real_evidence_01.svg'];
@@ -16,6 +17,11 @@ const PhoneChatMockupComponent: React.FC<PhoneChatMockupProps> = ({ item, onClic
   const [isVisible, setIsVisible] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+
+  const handleTriggerOpen = useCallback((src: string) => {
+    onClick?.(src);
+    onOpenEvidence?.(item, src);
+  }, [item, onClick, onOpenEvidence]);
 
   // Track viewport visibility to pause auto-slideshow when offscreen
   useEffect(() => {
@@ -80,7 +86,7 @@ const PhoneChatMockupComponent: React.FC<PhoneChatMockupProps> = ({ item, onClic
 
         {/* INNER SCREEN CONTAINER */}
         <div
-          onClick={() => onClick?.(activeSrc)}
+          onClick={() => handleTriggerOpen(activeSrc)}
           className="relative w-full h-full rounded-[34px] overflow-hidden bg-[#0B141A] cursor-pointer flex flex-col justify-between select-none shadow-inner"
         >
           {/* Top Speaker / Dynamic Camera Notch */}
@@ -206,7 +212,7 @@ const PhoneChatMockupComponent: React.FC<PhoneChatMockupProps> = ({ item, onClic
         <div className="pt-1.5 flex justify-center">
           <button
             type="button"
-            onClick={() => onClick?.(activeSrc)}
+            onClick={() => handleTriggerOpen(activeSrc)}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white dark:bg-[#1E1E1E] border-2 border-[#171717] dark:border-[#333333] hover:border-[#F9B51B] text-[11px] font-bold text-[#171717] dark:text-white transition-colors cursor-pointer shadow-[2px_2px_0px_#171717]"
           >
             <svg className="w-3.5 h-3.5 text-[#F9B51B]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">

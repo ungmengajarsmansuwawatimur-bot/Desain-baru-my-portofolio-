@@ -46,7 +46,7 @@ const PaddsShowcaseSectionComponent: React.FC = () => {
   }, [isOpen, handlePrev, handleNext]);
 
   return (
-    <div className="space-y-8 pt-12 border-t-2 border-[#171717] dark:border-[#333333]">
+    <div className="space-y-8 pt-12 border-t border-[#171717]/15 dark:border-white/10">
       {/* Header & Detail PADDS */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div className="space-y-3 max-w-3xl">
@@ -72,10 +72,10 @@ const PaddsShowcaseSectionComponent: React.FC = () => {
           <button
             type="button"
             onClick={() => setIsOpen((prev) => !prev)}
-            className="group inline-flex items-center gap-3 pl-6 pr-2 py-2 rounded-full text-xs sm:text-sm font-black bg-[#31543A] text-white hover:bg-[#26432E] border-2 border-[#171717] transition-all duration-150 shadow-[4px_4px_0px_#171717] active:scale-95 cursor-pointer"
+            className="group inline-flex items-center gap-2.5 text-xs sm:text-sm font-black text-[#31543A] dark:text-[#F9B51B] hover:text-[#171717] dark:hover:text-white cursor-pointer transition-colors"
           >
-            <span>{isOpen ? 'Sembunyikan Modul Video' : 'Buka 6 Video Modul & Detail'}</span>
-            <span className="w-7 h-7 rounded-full bg-[#F9B51B] text-[#171717] flex items-center justify-center font-bold text-xs shrink-0 transition-transform">
+            <span className="hover:underline">{isOpen ? 'Sembunyikan Modul Video' : 'Buka 6 Video Modul & Detail'}</span>
+            <span className="w-7 h-7 rounded-full bg-[#F9B51B] text-[#171717] flex items-center justify-center font-bold text-xs shrink-0 shadow-xs transition-transform group-hover:scale-105">
               {isOpen ? '↑' : '↓'}
             </span>
           </button>
@@ -84,7 +84,7 @@ const PaddsShowcaseSectionComponent: React.FC = () => {
 
       {/* Konten Terbuka (Pemutar Video YouTube Asli & 4 Kotak Fokus Kontribusi) */}
       {isOpen && (
-        <div className="space-y-6 pt-4 border-t-2 border-[#E9E9E9] dark:border-[#2A2A2A] animate-fadeIn">
+        <div className="space-y-6 pt-4 border-t border-[#171717]/15 dark:border-[#2A2A2A] animate-fadeIn">
           {/* Pemutar Video Embed Asli */}
           <div className="relative w-full aspect-video max-h-[620px] bg-black rounded-3xl overflow-hidden shadow-[6px_6px_0px_#171717] border-2 border-[#171717] dark:border-[#333333]">
             <iframe

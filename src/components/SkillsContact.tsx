@@ -77,7 +77,7 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
       {/* ========================================================================= */}
       <section
         id="skills"
-        className="py-20 md:py-28 bg-[#31543A] text-white transition-colors duration-200 border-t-2 border-[#171717]"
+        className="py-20 md:py-28 bg-[#31543A] text-white transition-colors duration-200 border-t border-white/20"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           {/* Section Kicker & Title */}
@@ -104,7 +104,7 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
               >
                 <div>
                   {/* Top Bar: Code Badge + Percentage Pill */}
-                  <div className="flex items-center justify-between pb-4 border-b-2 border-[#E9E9E9]">
+                  <div className="flex items-center justify-between pb-4 border-b border-[#E9E9E9]">
                     <span
                       className={`inline-flex items-center justify-center w-12 h-12 rounded-2xl font-black text-sm border-2 border-[#171717] ${card.badgeColor}`}
                     >
@@ -140,10 +140,10 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
           </div>
 
           {/* Tools yang Saya Gunakan inside Skills Section */}
-          <div className="pt-10 border-t-2 border-white/20 space-y-6">
+          <div className="pt-10 border-t border-white/20 space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
-                <span className="text-xs font-black tracking-widest text-[#F9B51B] uppercase block">
+                <span className="text-xs font-black tracking-widest text-white uppercase block">
                   DIGITAL TOOLS &amp; PLATFORMS
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-black text-white mt-1">
@@ -155,10 +155,8 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
               </p>
             </div>
 
-            {/* Interactive Tool Carousel */}
-            <div className="bg-white/5 border-2 border-white/20 rounded-3xl p-6 sm:p-8 backdrop-blur-xs">
-              <InteractiveToolIndex tools={toolsData} />
-            </div>
+            {/* Interactive Tool Carousel (Clean open layout without box wrapper) */}
+            <InteractiveToolIndex tools={toolsData} />
           </div>
         </div>
       </section>
@@ -168,7 +166,7 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
       {/* ========================================================================= */}
       <section
         id="testimonials"
-        className="py-20 md:py-28 bg-[#F5F5F5] dark:bg-[#18181B] text-[#171717] dark:text-white transition-colors duration-200 border-t-2 border-[#171717] dark:border-[#333333]"
+        className="py-20 md:py-28 bg-[#F5F5F5] dark:bg-[#18181B] text-[#171717] dark:text-white transition-colors duration-200 border-t border-[#171717]/15 dark:border-white/10"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           {/* Section Kicker & Title */}
@@ -210,7 +208,7 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
                   </p>
 
                   {/* Author Meta */}
-                  <div className="pt-4 border-t-2 border-[#E9E9E9] dark:border-[#2A2A2A] flex items-center gap-3">
+                  <div className="pt-4 border-t border-[#171717]/15 dark:border-[#2A2A2A] flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-[#F9B51B] border-2 border-[#171717] flex items-center justify-center font-black text-xs text-[#171717] shrink-0">
                       {testi.name.slice(0, 2).toUpperCase()}
                     </div>
@@ -248,7 +246,7 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
       {/* ========================================================================= */}
       <section
         id="cv"
-        className="py-20 md:py-24 bg-white dark:bg-[#121212] text-[#171717] dark:text-white transition-colors duration-200 border-t-2 border-[#171717] dark:border-[#333333]"
+        className="py-20 md:py-24 bg-white dark:bg-[#121212] text-[#171717] dark:text-white transition-colors duration-200 border-t border-[#171717]/15 dark:border-white/10"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           {/* Section Kicker */}
@@ -304,7 +302,7 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
                     <p>• Portofolio: Jasa Digital &amp; Sistem PADDS</p>
                   </div>
 
-                  <div className="flex items-center justify-between text-xs font-black text-[#171717] dark:text-white border-t-2 border-[#E9E9E9] dark:border-[#333333] pt-3">
+                  <div className="flex items-center justify-between text-xs font-black text-[#171717] dark:text-white border-t border-[#171717]/15 dark:border-[#333333] pt-3">
                     <span>Gorontalo, Indonesia</span>
                     <span>Update 2025</span>
                   </div>
@@ -346,11 +344,11 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
       {/* ========================================================================= */}
       <section
         id="contact"
-        className="py-20 md:py-28 bg-[#171717] text-white transition-colors duration-200 border-t-2 border-[#171717]"
+        className="py-20 md:py-28 bg-[#171717] text-white transition-colors duration-200 border-t border-white/20"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           {/* Top Banner Headline */}
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 pb-12 border-b-2 border-white/20">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 pb-12 border-b border-white/20">
             <div className="space-y-3 max-w-2xl">
               <div className="inline-flex items-center gap-2 text-xs font-black tracking-widest uppercase text-[#F9B51B]">
                 <span aria-hidden="true">✦</span>

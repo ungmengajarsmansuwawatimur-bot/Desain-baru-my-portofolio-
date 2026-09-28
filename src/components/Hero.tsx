@@ -1,6 +1,5 @@
 import React from 'react';
 import { candidateProfile } from '../data/portfolioData';
-import { portfolioImages } from '../assets/images';
 import { MarqueeTicker } from './MarqueeTicker';
 
 interface HeroProps {
@@ -22,15 +21,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
               <span aria-hidden="true">✦</span>
             </div>
 
-            {/* Giant Display Headline (Steve Mengelkoch 2-Tone Color Stacking) */}
-            <div className="space-y-1">
+            {/* Giant Display Headline (Steve Mengelkoch Display) */}
+            <div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-[#171717] dark:text-white leading-[1.05]">
                 {candidateProfile.fullName}
               </h1>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.08]">
-                <span className="text-[#F9B51B]">Pramuniaga &amp; </span>
-                <span className="text-[#171717] dark:text-white">Store Operations Professional.</span>
-              </h2>
             </div>
 
             {/* Bio Description Text */}
@@ -61,16 +56,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
                 </span>
               </button>
             </div>
-
-            {/* Metadata / Location Indicator */}
-            <div className="flex items-center gap-4 pt-2 text-xs font-bold text-[#666666] dark:text-[#A3A3A3]">
-              <span className="inline-flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#31543A] animate-pulse" aria-hidden="true" />
-                Siap Rekrutmen &bull; Gorontalo, Indonesia
-              </span>
-              <span>&bull;</span>
-              <span>{candidateProfile.lastEducation}</span>
-            </div>
           </div>
 
           {/* Right Column (Col 8-12): Steve Mengelkoch Signature Portrait with Yellow Circle & Retro Lightning */}
@@ -92,24 +77,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
               <div
                 className="absolute inset-x-4 bottom-0 top-12 rounded-[50%_50%_45%_45%] bg-[#F9B51B] border-4 border-[#171717] shadow-[6px_6px_0px_#171717] overflow-hidden"
                 aria-hidden="true"
-              >
-                {/* Subtle retro half-tone / radial dot accent */}
-                <div
-                  className="absolute inset-0 opacity-15"
-                  style={{
-                    backgroundImage: 'radial-gradient(#171717 1.5px, transparent 1.5px)',
-                    backgroundSize: '16px 16px',
-                  }}
-                />
-              </div>
-
-              {/* Cutout Portrait Image of Candidate */}
-              <img
-                src={portfolioImages.heroPortrait || portfolioImages.cashierHero}
-                alt="Taufik Hidayat Malii - Pramuniaga & Retail Operations"
-                className="relative z-10 w-full h-[92%] object-contain object-bottom drop-shadow-xl"
-                loading="eager"
-                decoding="sync"
               />
 
               {/* Floating Pill Badge 1: Pelayanan Konsumen (Top Right) */}

@@ -62,7 +62,7 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({
         className="relative w-full max-w-2xl bg-white dark:bg-[#1E1E1E] border-2 border-[#171717] dark:border-[#333333] rounded-3xl shadow-[8px_8px_0px_#171717] overflow-hidden flex flex-col max-h-[90vh]"
       >
         {/* Header */}
-        <div className="flex items-start justify-between p-5 md:p-6 border-b-2 border-[#E9E9E9] dark:border-[#2A2A2A] bg-[#F5F5F5] dark:bg-[#1E1E1E]">
+        <div className="flex items-start justify-between p-5 md:p-6 border-b border-[#171717]/15 dark:border-[#2A2A2A] bg-[#F5F5F5] dark:bg-[#1E1E1E]">
           <div>
             {badge && (
               <span className="text-[11px] font-black tracking-widest text-[#F9B51B] uppercase mb-1 block">

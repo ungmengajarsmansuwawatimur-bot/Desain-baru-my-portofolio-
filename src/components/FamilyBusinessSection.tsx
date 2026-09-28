@@ -52,7 +52,7 @@ export const FamilyBusinessSection: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-8 pt-12 border-t-2 border-[#171717] dark:border-[#333333]">
+    <div className="space-y-8 pt-12 border-t border-[#171717]/15 dark:border-white/10">
       {/* Header & Detail Usaha Keluarga */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div className="space-y-3 max-w-3xl">
@@ -78,10 +78,10 @@ export const FamilyBusinessSection: React.FC = () => {
           <button
             type="button"
             onClick={() => setIsOpen((prev) => !prev)}
-            className="group inline-flex items-center gap-3 pl-6 pr-2 py-2 rounded-full text-xs sm:text-sm font-black bg-[#31543A] text-white hover:bg-[#26432E] border-2 border-[#171717] transition-all duration-150 shadow-[4px_4px_0px_#171717] active:scale-95 cursor-pointer"
+            className="group inline-flex items-center gap-2.5 text-xs sm:text-sm font-black text-[#31543A] dark:text-[#F9B51B] hover:text-[#171717] dark:hover:text-white cursor-pointer transition-colors"
           >
-            <span>{isOpen ? 'Sembunyikan Detail Usaha' : 'Buka Detail Pengelolaan Usaha'}</span>
-            <span className="w-7 h-7 rounded-full bg-[#F9B51B] text-[#171717] flex items-center justify-center font-bold text-xs shrink-0 transition-transform">
+            <span className="hover:underline">{isOpen ? 'Sembunyikan Detail Usaha' : 'Buka Detail Pengelolaan Usaha'}</span>
+            <span className="w-7 h-7 rounded-full bg-[#F9B51B] text-[#171717] flex items-center justify-center font-bold text-xs shrink-0 shadow-xs transition-transform group-hover:scale-105">
               {isOpen ? '↑' : '↓'}
             </span>
           </button>
@@ -90,7 +90,7 @@ export const FamilyBusinessSection: React.FC = () => {
 
       {/* Konten Terbuka (4 Peran Lapangan, Visual Toko, dan Relevansi Kompetensi) */}
       {isOpen && (
-        <div className="space-y-8 pt-4 border-t-2 border-[#E9E9E9] dark:border-[#2A2A2A] animate-fadeIn">
+        <div className="space-y-8 pt-4 border-t border-[#171717]/15 dark:border-[#2A2A2A] animate-fadeIn">
           {/* 4 Komponen Kotak Peran & Aktivitas Lapangan */}
           <div className="space-y-3">
             <div className="flex items-center gap-2">
@@ -158,7 +158,7 @@ export const FamilyBusinessSection: React.FC = () => {
               </div>
 
               {/* List Kompetensi Nyata */}
-              <div className="space-y-2.5 pt-2 border-t-2 border-[#E9E9E9] dark:border-[#2A2A2A]">
+              <div className="space-y-2.5 pt-2 border-t border-[#171717]/15 dark:border-[#2A2A2A]">
                 {competencies.map((c, i) => (
                   <div
                     key={i}

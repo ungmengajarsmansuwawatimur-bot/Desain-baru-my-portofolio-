@@ -24,7 +24,7 @@ export const CvModal: React.FC<CvModalProps> = ({ isOpen, onClose }) => {
       <div className="space-y-6">
         {/* CV Visual Preview */}
         <div className="p-6 bg-white dark:bg-[#1E1E1E] rounded-3xl border-2 border-[#171717] dark:border-[#333333] shadow-[4px_4px_0px_#171717] space-y-4">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b-2 border-[#E9E9E9] dark:border-[#2A2A2A] gap-2">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-[#171717]/15 dark:border-[#2A2A2A] gap-2">
             <div>
               <span className="text-xl font-black text-[#F9B51B]">{candidateProfile.brandMark}</span>
               <h4 className="text-lg font-black text-[#171717] dark:text-white">
@@ -45,7 +45,7 @@ export const CvModal: React.FC<CvModalProps> = ({ isOpen, onClose }) => {
             <p>{candidateProfile.summary}</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs border-t-2 border-[#E9E9E9] dark:border-[#2A2A2A]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs border-t border-[#171717]/15 dark:border-[#2A2A2A]">
             <div>
               <span className="font-bold text-[#171717] dark:text-white block mb-1">Pendidikan:</span>
               <span className="text-[#666666] dark:text-[#A3A3A3]">{candidateProfile.lastEducation}</span>

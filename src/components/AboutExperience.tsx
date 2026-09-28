@@ -1,19 +1,100 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   candidateProfile,
   experienceData,
   coreValues,
 } from '../data/portfolioData';
-import { portfolioImages } from '../assets/images';
-import { EditableImage } from './EditableImage';
 
 interface AboutExperienceProps {
   onOpenStoreModal?: () => void;
 }
 
 export const AboutExperience: React.FC<AboutExperienceProps> = () => {
+  const [activeTab, setActiveTab] = useState<'all' | 'experience' | 'education'>('all');
+
+  const backgroundItems = [
+    {
+      id: 'bg-1',
+      type: 'experience' as const,
+      category: 'Pengalaman Kerja',
+      period: '2016 – Sekarang (± 8 Tahun)',
+      periodBadge: 'Paruh Waktu',
+      title: 'Pengelolaan Usaha Keluarga',
+      subtitle: 'Operasional Usaha Mandiri',
+      description:
+        'Membantu operasional toko fisik keluarga sejak 2016, menangani interaksi langsung dengan konsumen, penjelasan produk, penerimaan pembayaran tunai, serta menjaga kerapian stok barang secara konsisten.',
+      tags: ['Pelayanan Langsung', 'Kasir POS', 'Penataan Barang', 'Manajemen Stok'],
+      isFeatured: false,
+      icon: (
+        <svg className="w-8 h-8 sm:w-9 sm:h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.75">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.25A2.25 2.25 0 010 18.75V10.5m13.5 10.5h7.5A2.25 2.25 0 0023.25 18.75V10.5M3 10.5l9-7.5 9 7.5M3 10.5v8.25A2.25 2.25 0 005.25 21h3" />
+        </svg>
+      ),
+    },
+    {
+      id: 'bg-2',
+      type: 'experience' as const,
+      category: 'Pengalaman Kerja',
+      period: 'Desember 2024 – Sekarang',
+      periodBadge: 'Layanan Mandiri',
+      title: 'Pelayanan & Pengelolaan Jasa Digital',
+      subtitle: 'Komunikasi Klien & Publikasi Naskah',
+      description:
+        'Memberikan layanan langsung kepada pelanggan melalui WhatsApp dalam memahami kebutuhan publikasi naskah/berita tugas, koordinasi pengerjaan, transparansi tarif, penanganan revisi, hingga follow-up kepuasan klien.',
+      tags: ['Komunikasi Konsumen', 'Publikasi Media', 'Manajemen Revisi', 'Pelayanan Cepat'],
+      isFeatured: true, // Yellow circular arrow matching row 2 of the example screenshot
+      icon: (
+        <svg className="w-8 h-8 sm:w-9 sm:h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.75">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+        </svg>
+      ),
+    },
+    {
+      id: 'bg-3',
+      type: 'experience' as const,
+      category: 'Pengalaman Kerja & Pembelajaran',
+      period: 'Februari 2025 – Sekarang',
+      periodBadge: 'Pengembangan Mandiri',
+      title: 'Pembelajaran Retail & Operasional Toko',
+      subtitle: 'Standar Ritel Modern & Penataan Rak',
+      description:
+        'Mendalami prinsip operasional ritel modern secara intensif, mencakup pelayanan ramah konsumen, display barang metode FIFO, pemahaman planogram rak, sistem kasir POS, dan komunikasi pelayanan pembeli.',
+      tags: ['Customer Service', 'Display FIFO', 'Planogram Rak', 'Kasir POS'],
+      isFeatured: false,
+      icon: (
+        <svg className="w-8 h-8 sm:w-9 sm:h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.75">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+        </svg>
+      ),
+    },
+    {
+      id: 'bg-4',
+      type: 'education' as const,
+      category: 'Pendidikan Formal',
+      period: '2020 – 2023',
+      periodBadge: 'SMA',
+      title: 'SMA Negeri 1 Kabila',
+      subtitle: 'Pendidikan Menengah Atas (Suwawa Timur)',
+      description:
+        'Menyelesaikan pendidikan menengah atas dengan rekam jejak kedisiplinan yang baik, keterlibatan aktif dalam kegiatan kesiswaan, tata kelola administrasi sekolah, serta pembentukan etika komunikasi dan kerja sama tim.',
+      tags: ['Kesiswaan', 'Administrasi Dasar', 'Disiplin & Tanggung Jawab'],
+      isFeatured: false,
+      icon: (
+        <svg className="w-8 h-8 sm:w-9 sm:h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.75">
+          <path d="M12 14l9-5-9-5-9 5 9 5z" />
+          <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+        </svg>
+      ),
+    },
+  ];
+
+  const filteredItems = backgroundItems.filter((item) => {
+    if (activeTab === 'all') return true;
+    return item.type === activeTab;
+  });
+
   return (
-    <section id="about" className="py-20 md:py-28 bg-[#F5F5F5] dark:bg-[#18181B] border-t-2 border-[#171717] dark:border-[#333333] transition-colors duration-200">
+    <section id="about" className="py-20 md:py-28 bg-[#F5F5F5] dark:bg-[#18181B] border-t border-[#171717]/15 dark:border-white/10 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
         {/* ========================================================================= */}
         {/* PART 1: ABOUT TAUFIK HIDAYAT MALII (Steve Mengelkoch Screenshots 2 & 3)   */}
@@ -45,7 +126,7 @@ export const AboutExperience: React.FC<AboutExperienceProps> = () => {
               </div>
 
               {/* 3 Steve Mengelkoch Signature Stat Columns */}
-              <div className="grid grid-cols-3 gap-4 sm:gap-6 py-6 border-y-2 border-[#171717] dark:border-[#333333]">
+              <div className="grid grid-cols-3 gap-4 sm:gap-6 py-6 border-y border-[#171717]/15 dark:border-white/10">
                 <div>
                   <span className="text-xs font-bold text-[#666666] dark:text-[#A3A3A3] block uppercase tracking-wide">
                     Pelanggan &amp; Transaksi
@@ -97,14 +178,6 @@ export const AboutExperience: React.FC<AboutExperienceProps> = () => {
                   aria-hidden="true"
                 />
 
-                {/* Portrait Cutout Photo */}
-                <img
-                  src={portfolioImages.heroPortrait || portfolioImages.cashierHero}
-                  alt="Taufik Hidayat Malii"
-                  className="relative z-10 w-full h-[90%] object-contain object-bottom drop-shadow-xl"
-                  loading="lazy"
-                />
-
                 {/* 4 Floating Badges (Exactly like Screenshot 3) */}
                 <div className="absolute top-20 -left-2 z-20 bg-[#31543A] text-white text-xs sm:text-sm font-black px-4 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717]">
                   Pelayanan Retail
@@ -127,11 +200,11 @@ export const AboutExperience: React.FC<AboutExperienceProps> = () => {
         </div>
 
         {/* ========================================================================= */}
-        {/* PART 2: EXPERIENCE & EDUCATION (Steve Mengelkoch Screenshots 5 & 6)       */}
+        {/* PART 2: EXPERIENCE & EDUCATION (Steve Mengelkoch Editorial Row Layout)    */}
         {/* ========================================================================= */}
-        <div id="background" className="space-y-10 pt-10 border-t-2 border-[#171717] dark:border-[#333333]">
+        <div id="background" className="space-y-8 pt-10 border-t border-[#171717]/15 dark:border-white/10">
           {/* Section Kicker & Title */}
-          <div className="text-center space-y-2">
+          <div className="text-center space-y-2 max-w-2xl mx-auto">
             <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-black tracking-widest uppercase text-[#F9B51B]">
               <span aria-hidden="true">✦</span>
               <span>BACKGROUND</span>
@@ -140,94 +213,103 @@ export const AboutExperience: React.FC<AboutExperienceProps> = () => {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#171717] dark:text-white">
               Experience &amp; Education
             </h2>
+            <p className="text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3] pt-1">
+              Rekam jejak pengalaman kerja operasional, pelayanan pelanggan langsung, dan riwayat pendidikan formal.
+            </p>
+
+            {/* Filter Tabs matching platform aesthetic */}
+            <div className="flex flex-wrap items-center justify-center gap-2 pt-4">
+              <button
+                type="button"
+                onClick={() => setActiveTab('all')}
+                className={`px-4 py-1.5 rounded-full text-xs font-black transition-all cursor-pointer ${
+                  activeTab === 'all'
+                    ? 'bg-[#31543A] text-white border-2 border-[#171717] shadow-xs'
+                    : 'bg-transparent text-[#666666] dark:text-[#A3A3A3] hover:text-[#171717] dark:hover:text-white border border-[#171717]/20 dark:border-white/20'
+                }`}
+              >
+                Semua ({backgroundItems.length})
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveTab('experience')}
+                className={`px-4 py-1.5 rounded-full text-xs font-black transition-all cursor-pointer ${
+                  activeTab === 'experience'
+                    ? 'bg-[#31543A] text-white border-2 border-[#171717] shadow-xs'
+                    : 'bg-transparent text-[#666666] dark:text-[#A3A3A3] hover:text-[#171717] dark:hover:text-white border border-[#171717]/20 dark:border-white/20'
+                }`}
+              >
+                Pengalaman Kerja ({backgroundItems.filter((i) => i.type === 'experience').length})
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveTab('education')}
+                className={`px-4 py-1.5 rounded-full text-xs font-black transition-all cursor-pointer ${
+                  activeTab === 'education'
+                    ? 'bg-[#31543A] text-white border-2 border-[#171717] shadow-xs'
+                    : 'bg-transparent text-[#666666] dark:text-[#A3A3A3] hover:text-[#171717] dark:hover:text-white border border-[#171717]/20 dark:border-white/20'
+                }`}
+              >
+                Pendidikan Formal ({backgroundItems.filter((i) => i.type === 'education').length})
+              </button>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-            {/* Card 1: Education (Steve's Card Layout with Yellow Header & Thick Border) */}
-            <div className="bg-white dark:bg-[#1E1E1E] border-2 border-[#171717] dark:border-[#333333] rounded-3xl p-6 sm:p-8 space-y-6 shadow-sm">
-              <div className="flex items-center gap-3 pb-4 border-b-2 border-[#E9E9E9] dark:border-[#2A2A2A]">
-                <div className="w-12 h-12 rounded-full bg-[#F9B51B] border-2 border-[#171717] flex items-center justify-center shrink-0 text-[#171717]">
-                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-black text-[#F9B51B] tracking-tight">
-                  Education
-                </h3>
-              </div>
-
-              {/* Education Rows */}
-              <div className="space-y-6 divide-y divide-[#E9E9E9] dark:divide-[#2A2A2A]">
-                <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                  <div>
-                    <h4 className="text-base sm:text-lg font-black text-[#171717] dark:text-white">
-                      SMA Negeri 1 Kabila (Suwawa Timur)
-                    </h4>
-                    <p className="text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3] mt-0.5">
-                      Pendidikan Menengah Atas &bull; Kesiswaan &amp; Administrasi
-                    </p>
-                  </div>
-                  <span className="self-start sm:self-auto text-xs font-bold px-3 py-1 rounded-full bg-[#F5F5F5] dark:bg-[#2A2A2A] text-[#171717] dark:text-white border border-[#171717]/20 shrink-0">
-                    2020 &ndash; 2023
-                  </span>
-                </div>
-
-                <div className="pt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                  <div>
-                    <h4 className="text-base sm:text-lg font-black text-[#171717] dark:text-white">
-                      SMP Negeri 1 Suwawa Timur
-                    </h4>
-                    <p className="text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3] mt-0.5">
-                      Pendidikan Menengah Pertama &bull; Fondasi Karakter &amp; Disiplin
-                    </p>
-                  </div>
-                  <span className="self-start sm:self-auto text-xs font-bold px-3 py-1 rounded-full bg-[#F5F5F5] dark:bg-[#2A2A2A] text-[#171717] dark:text-white border border-[#171717]/20 shrink-0">
-                    2017 &ndash; 2020
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 2: Work Experience (Steve's Card Layout with Yellow Header & Thick Border) */}
-            <div className="bg-white dark:bg-[#1E1E1E] border-2 border-[#171717] dark:border-[#333333] rounded-3xl p-6 sm:p-8 space-y-6 shadow-sm">
-              <div className="flex items-center gap-3 pb-4 border-b-2 border-[#E9E9E9] dark:border-[#2A2A2A]">
-                <div className="w-12 h-12 rounded-full bg-[#F9B51B] border-2 border-[#171717] flex items-center justify-center shrink-0 text-[#171717]">
-                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-black text-[#F9B51B] tracking-tight">
-                  Work Experience
-                </h3>
-              </div>
-
-              {/* Work Experience Rows */}
-              <div className="space-y-6 divide-y divide-[#E9E9E9] dark:divide-[#2A2A2A]">
-                {experienceData.map((exp) => (
-                  <div key={exp.id} className="pt-4 first:pt-0 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                    <div>
-                      <h4 className="text-base sm:text-lg font-black text-[#171717] dark:text-white">
-                        {exp.title}
-                      </h4>
-                      <p className="text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3] mt-0.5">
-                        {exp.responsibilities[0]}
+          {/* Full-width Stacked Horizontal Rows (Screenshot-identical layout) */}
+          <div className="border-t border-[#171717]/15 dark:border-white/10 divide-y divide-[#171717]/15 dark:divide-white/10">
+            {filteredItems.map((item) => (
+              <div
+                key={item.id}
+                className="py-8 sm:py-10 md:py-12 group transition-colors hover:bg-black/[0.01] dark:hover:bg-white/[0.01]"
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start lg:items-center">
+                  {/* Left Column (col 1-4): Icon + Title & Category */}
+                  <div className="lg:col-span-4 flex items-start gap-4 sm:gap-5">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-transparent flex items-center justify-center shrink-0 text-[#171717] dark:text-white transition-transform group-hover:scale-105">
+                      {item.icon}
+                    </div>
+                    <div className="space-y-1">
+                      <span className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-[#31543A] dark:text-[#F9B51B] block">
+                        {item.category}
+                      </span>
+                      <h3 className="text-xl sm:text-2xl font-black text-[#171717] dark:text-white tracking-tight leading-snug">
+                        {item.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3] font-medium">
+                        {item.subtitle}
                       </p>
                     </div>
-                    <span className="self-start sm:self-auto text-xs font-bold px-3 py-1 rounded-full bg-[#F5F5F5] dark:bg-[#2A2A2A] text-[#171717] dark:text-white border border-[#171717]/20 shrink-0">
-                      {exp.period}
-                    </span>
                   </div>
-                ))}
+
+                  {/* Middle Column (col 5-12): Rich Description & Tags */}
+                  <div className="lg:col-span-8 space-y-3">
+                    <p className="text-sm sm:text-base text-[#555555] dark:text-[#A3A3A3] leading-relaxed">
+                      {item.description}
+                    </p>
+                    <div className="flex flex-wrap items-center gap-2 pt-0.5">
+                      <span className="inline-flex items-center text-xs font-bold px-2.5 py-1 rounded-full bg-[#31543A]/10 text-[#31543A] dark:bg-white/10 dark:text-[#F9B51B]">
+                        {item.period}
+                      </span>
+                      {item.tags.map((t, idx) => (
+                        <span
+                          key={idx}
+                          className="text-xs text-[#777777] dark:text-[#888888] font-medium"
+                        >
+                          &bull; {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
 
         {/* ========================================================================= */}
         {/* PART 3: MINDSET SAYA & 3 VALUE CARDS                                      */}
         {/* ========================================================================= */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
           {/* Left: Mindset Box with Dark Green Accent */}
           <div className="lg:col-span-4 bg-[#31543A] text-white rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-4 border-2 border-[#171717] shadow-sm">
             <div className="space-y-2">
@@ -243,18 +325,18 @@ export const AboutExperience: React.FC<AboutExperienceProps> = () => {
             </div>
           </div>
 
-          {/* Right: 3 Core Value Cards */}
-          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-5">
+          {/* Right: 3 Core Values (Clean Columns without Box Wrappers) */}
+          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             {coreValues.map((val) => (
               <div
                 key={val.number}
-                className="bg-white dark:bg-[#1E1E1E] rounded-3xl border-2 border-[#171717] dark:border-[#333333] p-6 flex flex-col justify-between space-y-3 shadow-sm hover:border-[#F9B51B] transition-colors"
+                className="border-t border-[#171717]/15 dark:border-white/10 pt-4 flex flex-col justify-between space-y-3"
               >
                 <div>
-                  <div className="text-3xl font-black text-[#F9B51B] leading-none mb-2">
+                  <div className="text-3xl sm:text-4xl font-black text-[#F9B51B] leading-none mb-2">
                     {val.number}
                   </div>
-                  <h4 className="text-lg font-black text-[#171717] dark:text-white">
+                  <h4 className="text-base sm:text-lg font-black text-[#171717] dark:text-white">
                     {val.title}
                   </h4>
                 </div>
