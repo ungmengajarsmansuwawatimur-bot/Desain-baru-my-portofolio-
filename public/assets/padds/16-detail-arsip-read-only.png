@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="100%" height="100%">
+  <rect width="1280" height="800" fill="#F8FAFC"/>
+  <!-- Sidebar -->
+  <rect width="210" height="800" fill="#0F172A"/>
+  <g transform="translate(14, 16)">
+    <circle cx="16" cy="16" r="14" fill="#0066FF"/>
+    <text x="16" y="21" text-anchor="middle" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="12" font-weight="bold">S</text>
+    <text x="38" y="15" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="11" font-weight="700">PADDS SMANSAT</text>
+    <text x="38" y="27" fill="#64748B" font-family="-apple-system, sans-serif" font-size="8">Pusat Arsip &amp; Dokumen</text>
+  </g>
+  <!-- Topbar -->
+  <rect x="210" y="0" width="1070" height="52" fill="#FFFFFF"/>
+  <line x1="210" y1="52" x2="1280" y2="52" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="232" y="26" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="15" font-weight="700">Detail Arsip</text>
+  <text x="232" y="40" fill="#64748B" font-family="-apple-system, sans-serif" font-size="10">Peninjauan dokumen arsip terdaftar</text>
+  <!-- User badge -->
+  <g transform="translate(1040, 10)">
+    <circle cx="16" cy="16" r="14" fill="#0066FF"/>
+    <text x="16" y="20" text-anchor="middle" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="10" font-weight="bold">U</text>
+    <text x="36" y="14" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="9" font-weight="600">UngmengajarSMAN1...</text>
+    <text x="36" y="25" fill="#64748B" font-family="-apple-system, sans-serif" font-size="8" font-weight="700">VIEWER</text>
+  </g>
+  <!-- Content -->
+  <g transform="translate(230, 68)">
+    
+<rect width="1020" height="520" rx="12" fill="#FFFFFF" stroke="#CBD5E1"/>
+<text x="32" y="44" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="18" font-weight="800">SURAT TUGAS</text>
+<rect x="180" y="28" width="60" height="22" rx="4" fill="#EFF6FF"/>
+<text x="210" y="43" text-anchor="middle" fill="#2563EB" font-family="-apple-system, sans-serif" font-size="10" font-weight="600">Internal</text>
+<rect x="246" y="28" width="50" height="22" rx="4" fill="#ECFDF5"/>
+<text x="271" y="43" text-anchor="middle" fill="#059669" font-family="-apple-system, sans-serif" font-size="10" font-weight="600">Aktif</text>
+<text x="720" y="43" fill="#64748B" font-family="-apple-system, sans-serif" font-size="11">422/SMAN 1 SWW -TIM/173/VII/2026</text>
+
+<!-- Details 2x3 Grid -->
+<g transform="translate(32, 70)">
+  <rect width="460" height="66" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="20" y="26" fill="#64748B" font-family="-apple-system, sans-serif" font-size="10">NOMOR SURAT</text>
+  <text x="20" y="48" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="12" font-weight="700">422/SMAN 1 SWW -TIM/173/VII/2026</text>
+
+  <g transform="translate(480, 0)">
+    <rect width="460" height="66" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <text x="20" y="26" fill="#64748B" font-family="-apple-system, sans-serif" font-size="10">KATEGORI</text>
+    <text x="20" y="48" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="12" font-weight="700">Surat Tugas</text>
+  </g>
+
+  <g transform="translate(0, 80)">
+    <rect width="460" height="66" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <text x="20" y="26" fill="#64748B" font-family="-apple-system, sans-serif" font-size="10">TAHUN</text>
+    <text x="20" y="48" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="12" font-weight="700">2026</text>
+  </g>
+
+  <g transform="translate(480, 80)">
+    <rect width="460" height="66" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <text x="20" y="26" fill="#64748B" font-family="-apple-system, sans-serif" font-size="10">LOKASI FISIK</text>
+    <text x="20" y="48" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="12" font-weight="700">—</text>
+  </g>
+</g>
+
+<g transform="translate(32, 240)">
+  <rect width="940" height="84" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="20" y="26" fill="#64748B" font-family="-apple-system, sans-serif" font-size="10">DESKRIPSI</text>
+  <text x="20" y="48" fill="#334155" font-family="-apple-system, sans-serif" font-size="11">Surat tugas yang dikeluarkan oleh Kepala SMA Negeri 1 Suwawa Timur kepada sejumlah guru dan staf...</text>
+</g>
+
+<g transform="translate(32, 340)">
+  <rect width="940" height="54" rx="8" fill="#F1F5F9"/>
+  <text x="20" y="32" fill="#64748B" font-family="-apple-system, sans-serif" font-size="10">PUBLIC LINK</text>
+  <text x="110" y="32" fill="#0066FF" font-family="-apple-system, sans-serif" font-size="11">https://sipastera-unify.lovable.app/p/arsip/0e2257eb-7c73-496e-b8f3-76b436...</text>
+</g>
+
+<g transform="translate(32, 410)">
+  <rect width="130" height="38" rx="6" fill="#0066FF"/>
+  <text x="97" y="24" text-anchor="middle" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="11" font-weight="600">Preview PDF</text>
+  <rect x="146" y="0" width="110" height="38" rx="6" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="201" y="24" text-anchor="middle" fill="#334155" font-family="-apple-system, sans-serif" font-size="11" font-weight="600">Lihat QR</text>
+</g>
+
+  </g>
+  <!-- Watermark -->
+  <g transform="translate(1160, 770)">
+    <rect width="105" height="22" rx="4" fill="#18181B"/>
+    <text x="8" y="15" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="8">Made with <tspan fill="#F43F5E" font-weight="bold">Lovable</tspan></text>
+  </g>
+</svg>

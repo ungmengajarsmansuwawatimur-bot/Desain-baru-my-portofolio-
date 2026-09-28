@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 840" width="100%" height="100%">
+  <defs>
+    <filter id="shadowDark" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.3" />
+    </filter>
+    <pattern id="waDarkDoodle" x="0" y="0" width="140" height="140" patternUnits="userSpaceOnUse">
+      <path d="M20 30 Q30 10 40 30 T60 30" fill="none" stroke="#18252D" stroke-width="1.2" opacity="0.6"/>
+      <circle cx="85" cy="40" r="8" fill="none" stroke="#18252D" stroke-width="1.2" opacity="0.6"/>
+      <rect x="25" y="75" width="16" height="12" rx="3" fill="none" stroke="#18252D" stroke-width="1.2" opacity="0.6"/>
+      <path d="M80 85 L95 100 M95 85 L80 100" stroke="#18252D" stroke-width="1.2" opacity="0.6"/>
+      <circle cx="120" cy="115" r="5" fill="none" stroke="#18252D" stroke-width="1.2" opacity="0.5"/>
+      <path d="M10 110 L25 125" stroke="#18252D" stroke-width="1.2" opacity="0.5"/>
+    </pattern>
+  </defs>
+  <!-- Background Wallpaper -->
+  <rect width="400" height="840" fill="#0B141A" />
+  <rect width="400" height="840" fill="url(#waDarkDoodle)" />
+
+  <!-- WhatsApp Top App Bar -->
+  <rect width="400" height="74" fill="#121B22" />
+  <path d="M24 48 L12 48 M18 42 L11 48 L18 54" stroke="#E9EDEF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="58" cy="48" r="18" fill="#4B2338" />
+  <text x="58" y="54" text-anchor="middle" fill="#E87FA1" font-family="-apple-system, sans-serif" font-size="16" font-weight="bold">C</text>
+  <text x="88" y="44" fill="#E9EDEF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="600">Customer Mahasiswa</text>
+  <text x="88" y="59" fill="#8696A0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">ketuk untuk info kontak</text>
+
+  <g fill="#E9EDEF" transform="translate(270, 38)">
+    <path d="M4 4 L14 4 C15.1 4 16 4.9 16 6 L16 14 C16 15.1 15.1 16 14 16 L4 16 C2.9 16 2 15.1 2 14 L2 6 C2 4.9 2.9 4 4 4 Z M16 8 L22 4 L22 16 L16 12 Z" />
+    <path d="M48 4 C47 3 45 3 44 4 L42 6 C41 7 41 8 42 10 C44 13 47 16 50 18 C52 19 53 19 54 18 L56 16 C57 15 57 13 56 12 L53 10 C52 9 51 9 50 10 L49 11 C47 10 46 9 45 7 L46 6 C47 5 47 4 46 3 Z" />
+    <circle cx="85" cy="4" r="2" />
+    <circle cx="85" cy="10" r="2" />
+    <circle cx="85" cy="16" r="2" />
+  </g>
+  <g transform="translate(14, 82)" filter="url(#shadowDark)">
+    <rect width="186" height="34" rx="8" fill="#202C33" />
+    <path d="M0 8 L-6 0 L6 0 Z" fill="#202C33" />
+    <text x="12" y="22" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="12">maaf slow rspn ka 🙏</text>
+  </g>
+
+  <g transform="translate(48, 126)" filter="url(#shadowDark)">
+    <rect width="340" height="52" rx="8" fill="#005C4B" />
+    <path d="M340 8 L346 0 L334 0 Z" fill="#005C4B" />
+    <text x="12" y="20" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="11.5">Iya nda apa2 ka, sy cmn b tnya revisi</text>
+    <text x="12" y="38" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="11.5">bgtu soalnya kurang kage dosen m tolak 🙏</text>
+    <text x="290" y="42" fill="#8696A0" font-family="-apple-system, sans-serif" font-size="9.5">17.51</text>
+    <path d="M320 38 L324 42 L332 33 M321 38 L325 42 L333 33" stroke="#53BDEB" stroke-width="1.6" fill="none" stroke-linecap="round" />
+  </g>
+
+  <g transform="translate(14, 188)" filter="url(#shadowDark)">
+    <rect width="280" height="280" rx="8" fill="#202C33" />
+    <path d="M0 8 L-6 0 L6 0 Z" fill="#202C33" />
+    <rect x="8" y="8" width="264" height="264" rx="6" fill="#FFFFFF" />
+    <rect x="8" y="8" width="264" height="54" rx="6" fill="#118EEA" />
+    <text x="140" y="42" text-anchor="middle" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="22" font-weight="900">DANA</text>
+    <text x="24" y="80" fill="#111111" font-family="-apple-system, sans-serif" font-size="9.5">Kirim Uang Rp100.000 ke TAUFIK HIDAYAT MALII</text>
+    <text x="24" y="96" fill="#8A8A8A" font-family="-apple-system, sans-serif" font-size="9">Seabank Indonesia ••••5424</text>
+    <line x1="20" y1="108" x2="260" y2="108" stroke="#E8E8E6" stroke-width="1" />
+    <text x="24" y="128" fill="#8A8A8A" font-family="-apple-system, sans-serif" font-size="9.5">Total Bayar</text>
+    <text x="260" y="128" text-anchor="end" fill="#111111" font-family="-apple-system, sans-serif" font-size="12" font-weight="bold">Rp100.000</text>
+    <rect x="24" y="160" width="232" height="34" rx="17" fill="#F7F7F5" stroke="#E8E8E6" stroke-width="1" />
+    <text x="140" y="182" text-anchor="middle" fill="#118EEA" font-family="-apple-system, sans-serif" font-size="11" font-weight="bold">BAGIKAN BUKTI</text>
+  </g>
+
+  <g transform="translate(14, 480)" filter="url(#shadowDark)">
+    <rect width="134" height="34" rx="8" fill="#202C33" />
+    <path d="M0 8 L-6 0 L6 0 Z" fill="#202C33" />
+    <text x="12" y="22" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="12">suda ka</text>
+    <text x="92" y="24" fill="#8696A0" font-family="-apple-system, sans-serif" font-size="9.5">17.52</text>
+  </g>
+
+  <g transform="translate(14, 524)" filter="url(#shadowDark)">
+    <rect width="144" height="34" rx="8" fill="#202C33" />
+    <path d="M0 8 L-6 0 L6 0 Z" fill="#202C33" />
+    <text x="12" y="22" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="12">makasi ka 🙏</text>
+    <text x="102" y="24" fill="#8696A0" font-family="-apple-system, sans-serif" font-size="9.5">17.54</text>
+  </g>
+
+  <g transform="translate(182, 568)" filter="url(#shadowDark)">
+    <rect width="206" height="52" rx="8" fill="#005C4B" />
+    <path d="M206 8 L212 0 L200 0 Z" fill="#005C4B" />
+    <text x="12" y="21" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="12">Iya sama2</text>
+    <text x="12" y="38" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="12">Makasih juga 🙏🙏</text>
+    <text x="154" y="40" fill="#8696A0" font-family="-apple-system, sans-serif" font-size="9.5">17.55</text>
+    <path d="M184 36 L188 40 L196 31 M185 36 L189 40 L197 31" stroke="#53BDEB" stroke-width="1.6" fill="none" stroke-linecap="round" />
+    <!-- Heart reaction -->
+    <rect x="174" y="42" width="26" height="20" rx="10" fill="#202C33" stroke="#0B141A" stroke-width="1.5" />
+    <text x="187" y="56" text-anchor="middle" font-size="11">❤️</text>
+  </g>
+  <!-- Floating Scroll-down arrow -->
+  <g transform="translate(356, 700)">
+    <circle cx="16" cy="16" r="16" fill="#182229" stroke="#222E35" stroke-width="1" />
+    <path d="M11 14 L16 19 L21 14" stroke="#8696A0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  </g>
+
+  <!-- Bottom Message Input Bar -->
+  <g transform="translate(0, 770)">
+    <rect width="400" height="70" fill="#0B141A" />
+    <rect x="12" y="10" width="324" height="46" rx="23" fill="#202C33" />
+    <circle cx="34" cy="33" r="10" fill="none" stroke="#8696A0" stroke-width="1.8" />
+    <circle cx="30" cy="30" r="1.2" fill="#8696A0" />
+    <circle cx="38" cy="30" r="1.2" fill="#8696A0" />
+    <path d="M29 36 Q34 40 39 36" stroke="#8696A0" stroke-width="1.5" fill="none" stroke-linecap="round" />
+    <text x="54" y="38" fill="#8696A0" font-family="-apple-system, sans-serif" font-size="14">Ketik pesan</text>
+    <path d="M268 28 L278 38 C281 41 286 36 283 33 L272 22 C268 18 262 24 266 28 L277 39" fill="none" stroke="#8696A0" stroke-width="1.8" stroke-linecap="round" />
+    <path d="M304 28 L308 28 L310 25 L318 25 L320 28 L324 28 C326 28 327 29 327 31 L327 40 C327 42 326 43 324 43 L304 43 C302 43 301 42 301 40 L301 31 C301 29 302 28 304 28 Z" fill="none" stroke="#8696A0" stroke-width="1.6" />
+    <circle cx="314" cy="35" r="4.5" fill="none" stroke="#8696A0" stroke-width="1.5" />
+    <circle cx="366" cy="33" r="23" fill="#00A884" />
+    <rect x="362" y="24" width="8" height="12" rx="4" fill="#FFFFFF" />
+    <path d="M358 31 C358 35 362 38 366 38 C370 38 374 35 374 31" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" />
+    <line x1="366" y1="38" x2="366" y2="43" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+  </g>
+</svg>

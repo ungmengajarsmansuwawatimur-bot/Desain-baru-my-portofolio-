@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 840" width="100%" height="100%">
+  <defs>
+    <filter id="shadowDark" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.3" />
+    </filter>
+    <pattern id="waDarkDoodle" x="0" y="0" width="140" height="140" patternUnits="userSpaceOnUse">
+      <path d="M20 30 Q30 10 40 30 T60 30" fill="none" stroke="#18252D" stroke-width="1.2" opacity="0.6"/>
+      <circle cx="85" cy="40" r="8" fill="none" stroke="#18252D" stroke-width="1.2" opacity="0.6"/>
+      <rect x="25" y="75" width="16" height="12" rx="3" fill="none" stroke="#18252D" stroke-width="1.2" opacity="0.6"/>
+      <path d="M80 85 L95 100 M95 85 L80 100" stroke="#18252D" stroke-width="1.2" opacity="0.6"/>
+      <circle cx="120" cy="115" r="5" fill="none" stroke="#18252D" stroke-width="1" opacity="0.5"/>
+      <path d="M10 110 L25 125" stroke="#18252D" stroke-width="1" opacity="0.5"/>
+    </pattern>
+    <clipPath id="avatarClip">
+      <circle cx="58" cy="48" r="18" />
+    </clipPath>
+  </defs>
+
+  <!-- Background Wallpaper -->
+  <rect width="400" height="840" fill="#0B141A" />
+  <rect width="400" height="840" fill="url(#waDarkDoodle)" />
+
+  <!-- WhatsApp Top App Bar -->
+  <rect width="400" height="74" fill="#121B22" />
+  <!-- Back Arrow -->
+  <path d="M24 48 L12 48 M18 42 L11 48 L18 54" stroke="#E9EDEF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Avatar (Customer initial 'C' on dark plum) -->
+  <circle cx="58" cy="48" r="18" fill="#4B2338" />
+  <text x="58" y="54" text-anchor="middle" fill="#E87FA1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="bold">C</text>
+  <!-- Contact Name -->
+  <text x="88" y="44" fill="#E9EDEF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="600">Customer Mahasi...</text>
+  <text x="88" y="59" fill="#8696A0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">ketuk untuk info kontak</text>
+
+  <!-- Icons: Video, Call, 3 Dots -->
+  <g fill="#E9EDEF" transform="translate(270, 38)">
+    <!-- Video Icon -->
+    <path d="M4 4 L14 4 C15.1 4 16 4.9 16 6 L16 14 C16 15.1 15.1 16 14 16 L4 16 C2.9 16 2 15.1 2 14 L2 6 C2 4.9 2.9 4 4 4 Z M16 8 L22 4 L22 16 L16 12 Z" />
+    <!-- Call Icon -->
+    <path d="M48 4 C47 3 45 3 44 4 L42 6 C41 7 41 8 42 10 C44 13 47 16 50 18 C52 19 53 19 54 18 L56 16 C57 15 57 13 56 12 L53 10 C52 9 51 9 50 10 L49 11 C47 10 46 9 45 7 L46 6 C47 5 47 4 46 3 Z" />
+    <!-- Three Dots -->
+    <circle cx="85" cy="4" r="2" />
+    <circle cx="85" cy="10" r="2" />
+    <circle cx="85" cy="16" r="2" />
+  </g>
+
+  <!-- Action Bar: Blokir & Tambah Buttons -->
+  <g transform="translate(16, 84)">
+    <!-- Blokir Button -->
+    <rect x="0" y="0" width="176" height="38" rx="19" fill="#182229" stroke="#222E35" stroke-width="1" />
+    <circle cx="50" cy="19" r="6.5" fill="none" stroke="#EA4335" stroke-width="1.5" />
+    <line x1="45.5" y1="14.5" x2="54.5" y2="23.5" stroke="#EA4335" stroke-width="1.5" />
+    <text x="64" y="24" fill="#EA4335" font-family="-apple-system, sans-serif" font-size="13" font-weight="600">Blokir</text>
+
+    <!-- Tambah Button -->
+    <rect x="192" y="0" width="176" height="38" rx="19" fill="#182229" stroke="#222E35" stroke-width="1" />
+    <path d="M240 19 L250 19 M245 14 L245 24" stroke="#25D366" stroke-width="2" stroke-linecap="round" />
+    <circle cx="236" cy="17" r="3.5" fill="none" stroke="#25D366" stroke-width="1.5" />
+    <text x="256" y="24" fill="#25D366" font-family="-apple-system, sans-serif" font-size="13" font-weight="600">Tambah</text>
+  </g>
+
+  <!-- CHAT BUBBLES -->
+  <!-- 1. Customer: Inquiry harga upload (Incoming) -->
+  <g transform="translate(14, 134)" filter="url(#shadowDark)">
+    <rect width="280" height="66" rx="8" fill="#202C33" />
+    <path d="M0 8 L-6 0 L6 0 Z" fill="#202C33" />
+    <text x="12" y="22" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="12.5" font-weight="400">assalamualaikum kak, untuk upload</text>
+    <text x="12" y="39" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="12.5" font-weight="400">kegiatan di berita atau portal begitu</text>
+    <text x="12" y="56" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="12.5" font-weight="400">kira-kira berapa ya?</text>
+    <text x="240" y="58" fill="#8696A0" font-family="-apple-system, sans-serif" font-size="10">08.58</text>
+  </g>
+
+  <!-- 2. Taufik: 50-100k ka (Outgoing) -->
+  <g transform="translate(98, 208)" filter="url(#shadowDark)">
+    <rect width="288" height="66" rx="8" fill="#005C4B" />
+    <path d="M288 8 L294 0 L282 0 Z" fill="#005C4B" />
+    <text x="14" y="22" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="13" font-weight="500">Walaikumsalam</text>
+    <text x="14" y="40" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="13" font-weight="500">50-100k ka tergantung isi teks dalam</text>
+    <text x="14" y="57" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="13" font-weight="500">naskah</text>
+    <text x="238" y="58" fill="#8696A0" font-family="-apple-system, sans-serif" font-size="10">09.01</text>
+    <!-- Double Blue Checkmark -->
+    <path d="M266 54 L270 58 L278 49 M271 54 L275 58 L283 49" stroke="#53BDEB" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- 3. Customer: isi teks dari kita? (Incoming) -->
+  <g transform="translate(14, 282)" filter="url(#shadowDark)">
+    <rect width="260" height="50" rx="8" fill="#202C33" />
+    <path d="M0 8 L-6 0 L6 0 Z" fill="#202C33" />
+    <text x="12" y="22" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="12.5">isi teks dalam naskah dari kita yang</text>
+    <text x="12" y="40" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="12.5">sediakan kak?</text>
+    <text x="220" y="42" fill="#8696A0" font-family="-apple-system, sans-serif" font-size="10">09.02</text>
+  </g>
+
+  <!-- 4. Taufik: tidak juga (Outgoing) -->
+  <g transform="translate(162, 338)" filter="url(#shadowDark)">
+    <rect width="224" height="48" rx="8" fill="#005C4B" />
+    <path d="M224 8 L230 0 L218 0 Z" fill="#005C4B" />
+    <text x="14" y="21" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="12.5">tidak juga</text>
+    <text x="14" y="38" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="12.5">Mau upl berita apa de</text>
+    <text x="174" y="40" fill="#8696A0" font-family="-apple-system, sans-serif" font-size="10">09.04</text>
+    <path d="M202 36 L206 40 L214 31 M207 36 L211 40 L219 31" stroke="#53BDEB" stroke-width="1.6" fill="none" stroke-linecap="round" />
+  </g>
+
+  <!-- 5. Customer: kegiatan sosialisasi kak (Incoming) -->
+  <g transform="translate(14, 394)" filter="url(#shadowDark)">
+    <rect width="216" height="34" rx="8" fill="#202C33" />
+    <path d="M0 8 L-6 0 L6 0 Z" fill="#202C33" />
+    <text x="12" y="22" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="12.5">kegiatan sosialisasi kak</text>
+    <text x="176" y="24" fill="#8696A0" font-family="-apple-system, sans-serif" font-size="10">09.04</text>
+  </g>
+
+  <!-- 6. Taufik: Oh bisa coba kirim dpe detil kegiatan (Outgoing) -->
+  <g transform="translate(108, 436)" filter="url(#shadowDark)">
+    <rect width="278" height="38" rx="8" fill="#005C4B" />
+    <path d="M278 8 L284 0 L272 0 Z" fill="#005C4B" />
+    <text x="14" y="23" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="12.5">Oh bisa coba kirim dpe detil kegiatan</text>
+    <text x="228" y="28" fill="#8696A0" font-family="-apple-system, sans-serif" font-size="10">09.05</text>
+    <path d="M256 24 L260 28 L268 19 M261 24 L265 28 L273 19" stroke="#53BDEB" stroke-width="1.6" fill="none" stroke-linecap="round" />
+  </g>
+
+  <!-- 7. Customer: dlam bentuk laporan kegiatan bisa kak? (Incoming) -->
+  <g transform="translate(14, 482)" filter="url(#shadowDark)">
+    <rect width="270" height="48" rx="8" fill="#202C33" />
+    <path d="M0 8 L-6 0 L6 0 Z" fill="#202C33" />
+    <text x="12" y="21" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="12.5">dlam bentuk laporan kegiatan bisa</text>
+    <text x="12" y="38" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="12.5">kak?</text>
+    <text x="230" y="40" fill="#8696A0" font-family="-apple-system, sans-serif" font-size="10">09.05</text>
+  </g>
+
+  <!-- 8. Taufik: Iya bisaa (Outgoing) -->
+  <g transform="translate(236, 538)" filter="url(#shadowDark)">
+    <rect width="150" height="34" rx="8" fill="#005C4B" />
+    <path d="M150 8 L156 0 L144 0 Z" fill="#005C4B" />
+    <text x="14" y="22" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="12.5">Iya bisaa</text>
+    <text x="100" y="24" fill="#8696A0" font-family="-apple-system, sans-serif" font-size="10">09.05</text>
+    <path d="M128 20 L132 24 L140 15 M133 20 L137 24 L145 15" stroke="#53BDEB" stroke-width="1.6" fill="none" stroke-linecap="round" />
+  </g>
+
+  <!-- 9. Customer PDF Attachment (Laporan kegiatan fiks.pdf) -->
+  <g transform="translate(14, 580)" filter="url(#shadowDark)">
+    <rect width="292" height="72" rx="8" fill="#202C33" />
+    <path d="M0 8 L-6 0 L6 0 Z" fill="#202C33" />
+    <!-- PDF Card Inner -->
+    <rect x="8" y="8" width="276" height="52" rx="6" fill="#182229" />
+    <!-- PDF Icon Box -->
+    <rect x="16" y="14" width="32" height="40" rx="4" fill="#B91C1C" />
+    <text x="32" y="38" text-anchor="middle" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="11" font-weight="900">PDF</text>
+    <!-- PDF Details -->
+    <text x="56" y="31" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="13" font-weight="600">Laporan kegiatan fiks.pdf</text>
+    <text x="56" y="47" fill="#8696A0" font-family="-apple-system, sans-serif" font-size="11">14 halaman • 779 KB • PDF</text>
+    <!-- Forward Arrow -->
+    <path d="M260 30 L270 30 M266 25 L271 30 L266 35" stroke="#8696A0" stroke-width="1.8" stroke-linecap="round" fill="none" />
+    <text x="250" y="66" fill="#8696A0" font-family="-apple-system, sans-serif" font-size="10">09.05</text>
+  </g>
+
+  <!-- Bottom Message Input Bar -->
+  <g transform="translate(0, 770)">
+    <rect width="400" height="70" fill="#0B141A" />
+    <!-- Input Capsule -->
+    <rect x="12" y="10" width="324" height="46" rx="23" fill="#202C33" />
+    <!-- Smiley Face -->
+    <circle cx="34" cy="33" r="10" fill="none" stroke="#8696A0" stroke-width="1.8" />
+    <circle cx="30" cy="30" r="1.2" fill="#8696A0" />
+    <circle cx="38" cy="30" r="1.2" fill="#8696A0" />
+    <path d="M29 36 Q34 40 39 36" stroke="#8696A0" stroke-width="1.5" fill="none" stroke-linecap="round" />
+    <!-- Placeholder Text -->
+    <text x="54" y="38" fill="#8696A0" font-family="-apple-system, sans-serif" font-size="14">Ketik pesan</text>
+    <!-- Paperclip / Attachment -->
+    <path d="M268 28 L278 38 C281 41 286 36 283 33 L272 22 C268 18 262 24 266 28 L277 39" fill="none" stroke="#8696A0" stroke-width="1.8" stroke-linecap="round" />
+    <!-- Camera -->
+    <path d="M304 28 L308 28 L310 25 L318 25 L320 28 L324 28 C326 28 327 29 327 31 L327 40 C327 42 326 43 324 43 L304 43 C302 43 301 42 301 40 L301 31 C301 29 302 28 304 28 Z" fill="none" stroke="#8696A0" stroke-width="1.6" />
+    <circle cx="314" cy="35" r="4.5" fill="none" stroke="#8696A0" stroke-width="1.5" />
+    <!-- Voice Record Circle Button -->
+    <circle cx="366" cy="33" r="23" fill="#00A884" />
+    <!-- Mic Icon -->
+    <rect x="362" y="24" width="8" height="12" rx="4" fill="#FFFFFF" />
+    <path d="M358 31 C358 35 362 38 366 38 C370 38 374 35 374 31" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" />
+    <line x1="366" y1="38" x2="366" y2="43" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+  </g>
+</svg>

@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 2340" width="100%" height="100%">
+  <!-- Dimmed Blurred Background Dashboard -->
+  <rect width="1080" height="2340" fill="#0B132B" fill-opacity="0.75" />
+
+  <!-- Right Side Background Preview (Dimmed Screen) -->
+  <g transform="translate(680, 0)" opacity="0.25">
+    <rect width="400" height="2340" fill="#FFFFFF"/>
+    <rect x="20" y="30" width="360" height="40" rx="20" fill="#E2E8F0"/>
+    <circle cx="340" cy="50" r="18" fill="#0066FF"/>
+    <rect x="20" y="90" width="360" height="140" rx="12" fill="#0052CC"/>
+  </g>
+
+  <!-- DRAWER SIDEBAR CONTAINER (Left 780px wide) -->
+  <g id="drawer">
+    <rect width="780" height="2340" fill="#0B111E" />
+    <line x1="780" y1="0" x2="780" y2="2340" stroke="#1E293B" stroke-width="1.5" />
+
+    <!-- DRAWER HEADER -->
+    <g transform="translate(36, 44)">
+      <!-- Logo S -->
+      <circle cx="24" cy="24" r="24" fill="#0066FF" />
+      <text x="24" y="32" text-anchor="middle" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="22" font-weight="900">S</text>
+
+      <!-- App Title -->
+      <text x="64" y="24" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="800" letter-spacing="-0.3">PADDS SMANSAT</text>
+      <text x="64" y="44" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Pusat Arsip &amp; Dokumen Digital</text>
+
+      <!-- Close X Button -->
+      <g transform="translate(670, 10)">
+        <circle cx="16" cy="16" r="18" fill="#1E293B" fill-opacity="0.6"/>
+        <line x1="9" y1="9" x2="23" y2="23" stroke="#94A3B8" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="23" y1="9" x2="9" y2="23" stroke="#94A3B8" stroke-width="2.2" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- SECTION 1: UTAMA -->
+    <g transform="translate(36, 140)">
+      <text x="14" y="20" fill="#64748B" font-family="-apple-system, sans-serif" font-size="11" font-weight="800" letter-spacing="1">UTAMA</text>
+
+      <!-- Item 1: Dashboard -->
+      <g transform="translate(0, 36)">
+        <rect width="708" height="54" rx="10" fill="transparent"/>
+        <g transform="translate(18, 17)">
+          <rect x="0" y="0" width="7" height="7" rx="1.5" stroke="#94A3B8" stroke-width="1.8" fill="none"/>
+          <rect x="11" y="0" width="7" height="7" rx="1.5" stroke="#94A3B8" stroke-width="1.8" fill="none"/>
+          <rect x="0" y="11" width="7" height="7" rx="1.5" stroke="#94A3B8" stroke-width="1.8" fill="none"/>
+          <rect x="11" y="11" width="7" height="7" rx="1.5" stroke="#94A3B8" stroke-width="1.8" fill="none"/>
+        </g>
+        <text x="56" y="34" fill="#CBD5E1" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">Dashboard</text>
+      </g>
+
+      <!-- Item 2: Manajemen Arsip -->
+      <g transform="translate(0, 96)">
+        <rect width="708" height="54" rx="10" fill="transparent"/>
+        <g transform="translate(18, 17)">
+          <path d="M1 3 L7 3 L9 6 L17 6 C18 6 19 7 19 8 L19 15 C19 16 18 17 17 17 L1 17 C0 17 0 16 0 15 L0 4 C0 3 1 3 1 3 Z" fill="none" stroke="#94A3B8" stroke-width="1.8"/>
+        </g>
+        <text x="56" y="34" fill="#CBD5E1" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">Manajemen Arsip</text>
+      </g>
+
+      <!-- Item 3: Upload Arsip -->
+      <g transform="translate(0, 156)">
+        <rect width="708" height="54" rx="10" fill="transparent"/>
+        <g transform="translate(18, 17)">
+          <path d="M9 14 L9 3 M4 8 L9 3 L14 8 M2 14 L16 14" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <text x="56" y="34" fill="#CBD5E1" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">Upload Arsip</text>
+      </g>
+
+      <!-- Item 4: Import Arsip -->
+      <g transform="translate(0, 216)">
+        <rect width="708" height="54" rx="10" fill="transparent"/>
+        <g transform="translate(18, 17)">
+          <path d="M9 3 L9 14 M4 9 L9 14 L14 9 M2 14 L16 14" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <text x="56" y="34" fill="#CBD5E1" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">Import Arsip</text>
+      </g>
+
+      <!-- Item 5: Cari Arsip (ACTIVE BLUE PILL) -->
+      <g transform="translate(0, 276)">
+        <rect width="708" height="56" rx="28" fill="#0066FF"/>
+        <g transform="translate(20, 18)">
+          <path d="M14 14 L18 18 M15 9 A6 6 0 1 1 3 9 A6 6 0 1 1 15 9" stroke="#FFFFFF" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        </g>
+        <text x="58" y="35" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="15" font-weight="700">Cari Arsip</text>
+        <circle cx="672" cy="28" r="4.5" fill="#FFFFFF"/>
+      </g>
+    </g>
+
+    <!-- SECTION 2: MANAJEMEN -->
+    <g transform="translate(36, 520)">
+      <text x="14" y="20" fill="#64748B" font-family="-apple-system, sans-serif" font-size="11" font-weight="800" letter-spacing="1">MANAJEMEN</text>
+
+      <!-- Item: Kategori Arsip -->
+      <g transform="translate(0, 36)">
+        <rect width="708" height="54" rx="10" fill="transparent"/>
+        <g transform="translate(18, 17)">
+          <path d="M3 2 L10 2 L16 8 L9 15 L2 9 Z" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linejoin="round"/>
+          <circle cx="6" cy="5" r="1.5" fill="#94A3B8"/>
+        </g>
+        <text x="56" y="34" fill="#CBD5E1" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">Kategori Arsip</text>
+      </g>
+
+      <!-- Item: Lokasi Fisik -->
+      <g transform="translate(0, 96)">
+        <rect width="708" height="54" rx="10" fill="transparent"/>
+        <g transform="translate(18, 17)">
+          <path d="M9 1 C5 1 2 4 2 8 C2 13 9 19 9 19 C9 19 16 13 16 8 C16 4 13 1 9 1 Z M9 10 C7.8 10 7 9.2 7 8 C7 6.8 7.8 6 9 6 C10.2 6 11 6.8 11 8 C11 9.2 10.2 10 9 10 Z" fill="none" stroke="#94A3B8" stroke-width="1.6"/>
+        </g>
+        <text x="56" y="34" fill="#CBD5E1" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">Lokasi Fisik</text>
+      </g>
+
+      <!-- Item: Statistik &amp; Laporan -->
+      <g transform="translate(0, 156)">
+        <rect width="708" height="54" rx="10" fill="transparent"/>
+        <g transform="translate(18, 17)">
+          <path d="M3 17 L3 9 M9 17 L9 3 M15 17 L15 12" stroke="#94A3B8" stroke-width="2" stroke-linecap="round"/>
+        </g>
+        <text x="56" y="34" fill="#CBD5E1" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">Statistik &amp; Laporan</text>
+      </g>
+
+      <!-- Item: Retensi Dokumen -->
+      <g transform="translate(0, 216)">
+        <rect width="708" height="54" rx="10" fill="transparent"/>
+        <g transform="translate(18, 17)">
+          <path d="M9 2 L15 4 L15 9 C15 13 12 16 9 17 C6 16 3 13 3 9 L3 4 Z" fill="none" stroke="#94A3B8" stroke-width="1.8"/>
+        </g>
+        <text x="56" y="34" fill="#CBD5E1" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">Retensi Dokumen</text>
+      </g>
+
+      <!-- Item: QR Code -->
+      <g transform="translate(0, 276)">
+        <rect width="708" height="54" rx="10" fill="transparent"/>
+        <g transform="translate(18, 17)">
+          <rect x="2" y="2" width="5" height="5" stroke="#94A3B8" stroke-width="1.8" fill="none"/>
+          <rect x="11" y="2" width="5" height="5" stroke="#94A3B8" stroke-width="1.8" fill="none"/>
+          <rect x="2" y="11" width="5" height="5" stroke="#94A3B8" stroke-width="1.8" fill="none"/>
+          <rect x="11" y="11" width="5" height="5" stroke="#94A3B8" stroke-width="1.8" fill="none"/>
+        </g>
+        <text x="56" y="34" fill="#CBD5E1" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">QR Code</text>
+      </g>
+
+      <!-- Item: Log Aktivitas -->
+      <g transform="translate(0, 336)">
+        <rect width="708" height="54" rx="10" fill="transparent"/>
+        <g transform="translate(18, 17)">
+          <path d="M1 9 L5 9 L8 2 L12 16 L15 9 L19 9" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <text x="56" y="34" fill="#CBD5E1" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">Log Aktivitas</text>
+      </g>
+    </g>
+
+    <!-- SECTION 3: AI -->
+    <g transform="translate(36, 960)">
+      <text x="14" y="20" fill="#64748B" font-family="-apple-system, sans-serif" font-size="11" font-weight="800" letter-spacing="1">AI</text>
+
+      <!-- Item: AI Assistant -->
+      <g transform="translate(0, 36)">
+        <rect width="708" height="54" rx="10" fill="transparent"/>
+        <g transform="translate(18, 17)">
+          <path d="M9 2 L11 7 L16 9 L11 11 L9 16 L7 11 L2 9 L7 7 Z" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linejoin="round"/>
+        </g>
+        <text x="56" y="34" fill="#CBD5E1" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">AI Assistant</text>
+      </g>
+
+      <!-- Item: AI Statistics -->
+      <g transform="translate(0, 96)">
+        <rect width="708" height="54" rx="10" fill="transparent"/>
+        <g transform="translate(18, 17)">
+          <path d="M2 16 L6 10 L10 13 L16 5" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <text x="56" y="34" fill="#CBD5E1" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">AI Statistics</text>
+      </g>
+    </g>
+
+    <!-- SECTION 4: SISTEM -->
+    <g transform="translate(36, 1140)">
+      <text x="14" y="20" fill="#64748B" font-family="-apple-system, sans-serif" font-size="11" font-weight="800" letter-spacing="1">SISTEM</text>
+
+      <!-- Item: Pusat Informasi -->
+      <g transform="translate(0, 36)">
+        <rect width="708" height="54" rx="10" fill="transparent"/>
+        <g transform="translate(18, 17)">
+          <circle cx="9" cy="9" r="8" fill="none" stroke="#94A3B8" stroke-width="1.8"/>
+          <line x1="9" y1="8" x2="9" y2="13" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="9" cy="5" r="1" fill="#94A3B8"/>
+        </g>
+        <text x="56" y="34" fill="#CBD5E1" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">Pusat Informasi</text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,195 @@
+import React, { useState, useEffect, useMemo } from 'react';
+import { ThemeToggle } from './ThemeToggle';
+
+interface NavbarProps {
+  onOpenCvModal?: () => void;
+  activeSection?: string;
+}
+
+const NAV_LINKS = [
+  { label: 'Beranda', href: '#home', id: 'home' },
+  { label: 'Tentang', href: '#about', id: 'about' },
+  { label: 'Portofolio', href: '#work', id: 'work' },
+  { label: 'Belajar', href: '#learning', id: 'learning' },
+  { label: 'Keahlian', href: '#skills', id: 'skills' },
+  { label: 'Ulasan', href: '#testimonials', id: 'testimonials' },
+  { label: 'Kontak', href: '#contact', id: 'contact' },
+] as const;
+
+export const Navbar: React.FC<NavbarProps> = ({ onOpenCvModal, activeSection: externalActiveSection }) => {
+  const [internalActiveSection, setInternalActiveSection] = useState<string>('home');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const activeSection = externalActiveSection || internalActiveSection;
+
+  useEffect(() => {
+    // High-performance section observer (0 reflow, 0 main-thread scroll blocking)
+    if (typeof IntersectionObserver !== 'undefined') {
+      const sectionElements = NAV_LINKS.map((link) => document.getElementById(link.id)).filter(
+        (el): el is HTMLElement => Boolean(el)
+      );
+
+      if (sectionElements.length > 0) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (entry.isIntersecting) {
+                setInternalActiveSection((prev) =>
+                  prev !== entry.target.id ? entry.target.id : prev
+                );
+              }
+            }
+          },
+          {
+            rootMargin: '-15% 0px -65% 0px',
+            threshold: 0,
+          }
+        );
+
+        sectionElements.forEach((el) => observer.observe(el));
+        return () => observer.disconnect();
+      }
+    }
+
+    // Lightweight fallback with rAF throttling if IntersectionObserver is unavailable
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollPos = window.scrollY + 200;
+          for (const link of NAV_LINKS) {
+            const el = document.getElementById(link.id);
+            if (el) {
+              const top = el.offsetTop;
+              const height = el.offsetHeight;
+              if (scrollPos >= top && scrollPos < top + height) {
+                setInternalActiveSection((prev) => (prev !== link.id ? link.id : prev));
+                break;
+              }
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <header className="fixed top-0 left-0 right-0 z-40 transform-gpu bg-white/95 dark:bg-[#121212]/95 backdrop-blur-xl border-b-2 border-[#171717] dark:border-[#333333] transition-all duration-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20">
+          {/* Brand Logo (Steve Mengelkoch style: First name Black, Last name Yellow) */}
+          <a
+            href="#home"
+            className="group flex items-center gap-2 select-none"
+            aria-label="Taufik Hidayat Malii - Kembali ke Beranda"
+          >
+            <span className="text-xl sm:text-2xl font-black tracking-tight text-[#171717] dark:text-white uppercase transition-colors">
+              TAUFIK <span className="text-[#F9B51B]">MALII</span>
+            </span>
+          </a>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-1 bg-[#F5F5F5] dark:bg-[#1E1E1E] p-1.5 rounded-full border border-[#171717]/20 dark:border-[#333333]" aria-label="Navigasi Utama">
+            {NAV_LINKS.map((link) => {
+              const isActive = activeSection === link.id;
+              return (
+                <a
+                  key={link.id}
+                  href={link.href}
+                  className={`relative px-4 py-2 text-xs font-bold rounded-full transition-all duration-150 ${
+                    isActive
+                      ? 'bg-[#171717] text-white dark:bg-white dark:text-[#171717] shadow-sm'
+                      : 'text-[#666666] dark:text-[#A3A3A3] hover:text-[#171717] dark:hover:text-white hover:bg-white dark:hover:bg-[#2A2A2A]'
+                  }`}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
+          </nav>
+
+          {/* Desktop Right Controls: Split Pill CTA (HIRE ME / LIHAT CV) + Theme Toggle */}
+          <div className="hidden sm:flex items-center gap-3">
+            <button
+              type="button"
+              onClick={onOpenCvModal}
+              className="group inline-flex items-center gap-2 pl-4 pr-1.5 py-1.5 rounded-full text-xs font-black bg-[#31543A] text-white hover:bg-[#26432E] border-2 border-[#171717] transition-all duration-150 cursor-pointer shadow-sm active:scale-95"
+            >
+              <span>LIHAT CV</span>
+              <span className="w-7 h-7 rounded-full bg-[#F9B51B] text-[#171717] flex items-center justify-center font-bold text-sm shrink-0 transition-transform group-hover:translate-x-0.5">
+                &rarr;
+              </span>
+            </button>
+
+            <ThemeToggle />
+          </div>
+
+          {/* Mobile quick controls: Split Pill + Theme Toggle + Yellow Hamburger */}
+          <div className="flex sm:hidden items-center gap-2">
+            <button
+              type="button"
+              onClick={onOpenCvModal}
+              className="inline-flex items-center gap-1.5 pl-3 pr-1 py-1 rounded-full text-[11px] font-black bg-[#31543A] text-white border border-[#171717]"
+            >
+              <span>CV</span>
+              <span className="w-5 h-5 rounded-full bg-[#F9B51B] text-[#171717] flex items-center justify-center text-xs">
+                &rarr;
+              </span>
+            </button>
+
+            <ThemeToggle />
+
+            {/* Steve Mengelkoch signature Yellow Circular Hamburger Button */}
+            <button
+              type="button"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="w-10 h-10 rounded-full bg-[#F9B51B] hover:bg-[#e0a012] border-2 border-[#171717] text-[#171717] flex items-center justify-center transition-all active:scale-90 cursor-pointer shadow-xs"
+              aria-expanded={isMobileMenuOpen}
+              aria-label="Buka Menu"
+            >
+              {isMobileMenuOpen ? (
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Drawer */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden border-b-2 border-[#171717] bg-white dark:bg-[#121212] px-4 pt-3 pb-6 space-y-2 transition-colors duration-200 shadow-xl">
+          {NAV_LINKS.map((link) => {
+            const isActive = activeSection === link.id;
+            return (
+              <a
+                key={link.id}
+                href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-black transition-all ${
+                  isActive
+                    ? 'bg-[#F9B51B] text-[#171717] border-2 border-[#171717]'
+                    : 'text-[#171717] dark:text-[#F9FAFB] hover:bg-[#F5F5F5] dark:hover:bg-[#1E1E1E]'
+                }`}
+              >
+                <span>{link.label}</span>
+                {isActive && <span className="text-xs font-bold">✦</span>}
+              </a>
+            );
+          })}
+        </div>
+      )}
+    </header>
+  );
+};
+

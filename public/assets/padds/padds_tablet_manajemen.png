@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="100%" height="100%">
+  <rect width="1280" height="800" fill="#F8FAFC"/>
+  <!-- Sidebar -->
+  <rect width="210" height="800" fill="#0F172A"/>
+  <g transform="translate(14, 16)">
+    <circle cx="16" cy="16" r="14" fill="#0066FF"/>
+    <text x="16" y="21" text-anchor="middle" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="12" font-weight="bold">S</text>
+    <text x="38" y="15" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="11" font-weight="700">PADDS SMANSAT</text>
+    <text x="38" y="27" fill="#64748B" font-family="-apple-system, sans-serif" font-size="8">Pusat Arsip &amp; Dokumen</text>
+  </g>
+  <!-- Topbar -->
+  <rect x="210" y="0" width="1070" height="52" fill="#FFFFFF"/>
+  <line x1="210" y1="52" x2="1280" y2="52" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="232" y="26" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="15" font-weight="700">Manajemen Arsip</text>
+  <text x="232" y="40" fill="#64748B" font-family="-apple-system, sans-serif" font-size="10">Kelola seluruh dokumen arsip</text>
+  <!-- User badge -->
+  <g transform="translate(1040, 10)">
+    <circle cx="16" cy="16" r="14" fill="#0066FF"/>
+    <text x="16" y="20" text-anchor="middle" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="10" font-weight="bold">U</text>
+    <text x="36" y="14" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="9" font-weight="600">UngmengajarSMAN1...</text>
+    <text x="36" y="25" fill="#64748B" font-family="-apple-system, sans-serif" font-size="8" font-weight="700">VIEWER</text>
+  </g>
+  <!-- Content -->
+  <g transform="translate(230, 68)">
+    
+<text x="0" y="24" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="18" font-weight="700">Daftar Arsip</text>
+<text x="0" y="42" fill="#64748B" font-family="-apple-system, sans-serif" font-size="11">80 dokumen tersedia</text>
+<rect x="910" y="8" width="110" height="34" rx="6" fill="#0066FF"/>
+<text x="965" y="29" text-anchor="middle" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="11" font-weight="600">+ Upload Arsip</text>
+
+<!-- Filter row -->
+<g transform="translate(0, 56)">
+  <rect width="260" height="36" rx="6" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="14" y="22" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="11">Cari judul, kode, nomor surat...</text>
+  <rect x="270" y="0" width="130" height="36" rx="6" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="282" y="22" fill="#334155" font-family="-apple-system, sans-serif" font-size="11">Semua Tahun ▾</text>
+  <rect x="410" y="0" width="140" height="36" rx="6" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="422" y="22" fill="#334155" font-family="-apple-system, sans-serif" font-size="11">Semua Kategori ▾</text>
+  <rect x="560" y="0" width="130" height="36" rx="6" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="572" y="22" fill="#334155" font-family="-apple-system, sans-serif" font-size="11">Semua Jenis ▾</text>
+  <rect x="700" y="0" width="130" height="36" rx="6" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="712" y="22" fill="#334155" font-family="-apple-system, sans-serif" font-size="11">Semua Status ▾</text>
+  <rect x="890" y="0" width="130" height="36" rx="6" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="902" y="22" fill="#334155" font-family="-apple-system, sans-serif" font-size="11">Terbaru ▾</text>
+</g>
+
+<!-- Table -->
+<g transform="translate(0, 108)">
+  <rect width="1020" height="380" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <!-- Header -->
+  <rect width="1020" height="36" fill="#F8FAFC" rx="8"/>
+  <text x="36" y="22" fill="#64748B" font-family="-apple-system, sans-serif" font-size="10" font-weight="700">NOMOR SURAT</text>
+  <text x="260" y="22" fill="#64748B" font-family="-apple-system, sans-serif" font-size="10" font-weight="700">JUDUL</text>
+  <text x="470" y="22" fill="#64748B" font-family="-apple-system, sans-serif" font-size="10" font-weight="700">KATEGORI</text>
+  <text x="590" y="22" fill="#64748B" font-family="-apple-system, sans-serif" font-size="10" font-weight="700">JENIS</text>
+  <text x="680" y="22" fill="#64748B" font-family="-apple-system, sans-serif" font-size="10" font-weight="700">TAHUN</text>
+  <text x="740" y="22" fill="#64748B" font-family="-apple-system, sans-serif" font-size="10" font-weight="700">LOKASI</text>
+  <text x="850" y="22" fill="#64748B" font-family="-apple-system, sans-serif" font-size="10" font-weight="700">STATUS</text>
+  <text x="940" y="22" fill="#64748B" font-family="-apple-system, sans-serif" font-size="10" font-weight="700">AKSI</text>
+
+  <!-- Row 1 -->
+  <line x1="0" y1="36" x2="1020" y2="36" stroke="#E2E8F0"/>
+  <text x="36" y="66" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="11">422/SMAN 1 SWW -TIM/173/VII/2026</text>
+  <text x="260" y="66" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="11" font-weight="600">SURAT TUGAS</text>
+  <text x="470" y="66" fill="#475569" font-family="-apple-system, sans-serif" font-size="11">Surat Tugas</text>
+  <rect x="590" y="52" width="60" height="20" rx="4" fill="#F1F5F9"/>
+  <text x="620" y="66" text-anchor="middle" fill="#475569" font-family="-apple-system, sans-serif" font-size="10">Internal</text>
+  <text x="680" y="66" fill="#475569" font-family="-apple-system, sans-serif" font-size="11">2026</text>
+  <text x="740" y="66" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="11">—</text>
+  <rect x="850" y="52" width="50" height="20" rx="4" fill="#ECFDF5"/>
+  <text x="875" y="66" text-anchor="middle" fill="#059669" font-family="-apple-system, sans-serif" font-size="10" font-weight="600">Aktif</text>
+  <text x="940" y="66" fill="#0066FF" font-family="-apple-system, sans-serif" font-size="11">👁</text>
+
+  <!-- Row 2 -->
+  <line x1="0" y1="84" x2="1020" y2="84" stroke="#E2E8F0"/>
+  <text x="36" y="114" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="11">422/SMAN 1 SWW/-TM/005/I/2025</text>
+  <text x="260" y="114" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="11" font-weight="600">SURAT PERINTAH TUGAS</text>
+  <text x="470" y="114" fill="#475569" font-family="-apple-system, sans-serif" font-size="11">Surat Tugas</text>
+  <rect x="590" y="100" width="60" height="20" rx="4" fill="#F1F5F9"/>
+  <text x="620" y="114" text-anchor="middle" fill="#475569" font-family="-apple-system, sans-serif" font-size="10">Internal</text>
+  <text x="680" y="114" fill="#475569" font-family="-apple-system, sans-serif" font-size="11">2025</text>
+  <text x="740" y="114" fill="#475569" font-family="-apple-system, sans-serif" font-size="11">Ruang Tata Usaha</text>
+  <rect x="850" y="100" width="50" height="20" rx="4" fill="#ECFDF5"/>
+  <text x="875" y="114" text-anchor="middle" fill="#059669" font-family="-apple-system, sans-serif" font-size="10" font-weight="600">Aktif</text>
+  <text x="940" y="114" fill="#0066FF" font-family="-apple-system, sans-serif" font-size="11">👁</text>
+</g>
+
+  </g>
+  <!-- Watermark -->
+  <g transform="translate(1160, 770)">
+    <rect width="105" height="22" rx="4" fill="#18181B"/>
+    <text x="8" y="15" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="8">Made with <tspan fill="#F43F5E" font-weight="bold">Lovable</tspan></text>
+  </g>
+</svg>

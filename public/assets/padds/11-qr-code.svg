@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="100%" height="100%">
+  <rect width="1280" height="800" fill="#F8FAFC"/>
+  <!-- Sidebar -->
+  <rect width="210" height="800" fill="#0F172A"/>
+  <g transform="translate(14, 16)">
+    <circle cx="16" cy="16" r="14" fill="#0066FF"/>
+    <text x="16" y="21" text-anchor="middle" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="12" font-weight="bold">S</text>
+    <text x="38" y="15" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="11" font-weight="700">PADDS SMANSAT</text>
+    <text x="38" y="27" fill="#64748B" font-family="-apple-system, sans-serif" font-size="8">Pusat Arsip &amp; Dokumen</text>
+  </g>
+  <!-- Topbar -->
+  <rect x="210" y="0" width="1070" height="52" fill="#FFFFFF"/>
+  <line x1="210" y1="52" x2="1280" y2="52" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="232" y="26" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="15" font-weight="700">QR Code</text>
+  <text x="232" y="40" fill="#64748B" font-family="-apple-system, sans-serif" font-size="10">QR Code Management</text>
+  <!-- User badge -->
+  <g transform="translate(1040, 10)">
+    <circle cx="16" cy="16" r="14" fill="#0066FF"/>
+    <text x="16" y="20" text-anchor="middle" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="10" font-weight="bold">U</text>
+    <text x="36" y="14" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="9" font-weight="600">UngmengajarSMAN1...</text>
+    <text x="36" y="25" fill="#64748B" font-family="-apple-system, sans-serif" font-size="8" font-weight="700">VIEWER</text>
+  </g>
+  <!-- Content -->
+  <g transform="translate(230, 68)">
+    
+<g transform="translate(0, 0)">
+  <rect width="240" height="80" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="20" y="44" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="24" font-weight="800">80</text>
+  <text x="20" y="64" fill="#64748B" font-family="-apple-system, sans-serif" font-size="10">QR AKTIF</text>
+  <g transform="translate(260, 0)">
+    <rect width="240" height="80" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="20" y="44" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="24" font-weight="800">0</text>
+    <text x="20" y="64" fill="#64748B" font-family="-apple-system, sans-serif" font-size="10">QR NONAKTIF</text>
+  </g>
+  <g transform="translate(520, 0)">
+    <rect width="240" height="80" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="20" y="44" fill="#10B981" font-family="-apple-system, sans-serif" font-size="24" font-weight="800">0</text>
+    <text x="20" y="64" fill="#64748B" font-family="-apple-system, sans-serif" font-size="10">TOTAL SCAN</text>
+  </g>
+  <g transform="translate(780, 0)">
+    <rect width="240" height="80" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="20" y="44" fill="#F59E0B" font-family="-apple-system, sans-serif" font-size="24" font-weight="800">0</text>
+    <text x="20" y="64" fill="#64748B" font-family="-apple-system, sans-serif" font-size="10">DIBUAT BULAN INI</text>
+  </g>
+</g>
+<g transform="translate(0, 100)">
+  <rect width="1020" height="260" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="24" y="32" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">Daftar QR Code — 80 QR Aktif</text>
+  <line x1="0" y1="50" x2="1020" y2="50" stroke="#E2E8F0"/>
+  <text x="24" y="80" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="11">422/SMAN 1 SWW -TIM/173/VII/2026</text>
+  <text x="320" y="80" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="11" font-weight="600">SURAT TUGAS</text>
+  <text x="640" y="80" fill="#0066FF" font-family="-apple-system, sans-serif" font-size="11">https://sipastera-unify.lovable.app/p/arsip/...</text>
+  <text x="920" y="80" fill="#10B981" font-family="-apple-system, sans-serif" font-size="11" font-weight="600">Aktif</text>
+</g>
+
+  </g>
+  <!-- Watermark -->
+  <g transform="translate(1160, 770)">
+    <rect width="105" height="22" rx="4" fill="#18181B"/>
+    <text x="8" y="15" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="8">Made with <tspan fill="#F43F5E" font-weight="bold">Lovable</tspan></text>
+  </g>
+</svg>

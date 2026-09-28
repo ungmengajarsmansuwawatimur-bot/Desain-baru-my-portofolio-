@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 840" width="100%" height="100%">
+  <defs>
+    <filter id="shadowDarkS4" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.3" />
+    </filter>
+    <pattern id="waDarkDoodleS4" x="0" y="0" width="140" height="140" patternUnits="userSpaceOnUse">
+      <path d="M20 30 Q30 10 40 30 T60 30" fill="none" stroke="#18252D" stroke-width="1.2" opacity="0.6"/>
+      <circle cx="85" cy="40" r="8" fill="none" stroke="#18252D" stroke-width="1.2" opacity="0.6"/>
+      <rect x="25" y="75" width="16" height="12" rx="3" fill="none" stroke="#18252D" stroke-width="1.2" opacity="0.6"/>
+      <path d="M80 85 L95 100 M95 85 L80 100" stroke="#18252D" stroke-width="1.2" opacity="0.6"/>
+      <circle cx="120" cy="115" r="5" fill="none" stroke="#18252D" stroke-width="1.2" opacity="0.5"/>
+      <path d="M10 110 L25 125" stroke="#18252D" stroke-width="1.2" opacity="0.5"/>
+    </pattern>
+  </defs>
+
+  <!-- Background Wallpaper -->
+  <rect width="400" height="840" fill="#0B141A" />
+  <rect width="400" height="840" fill="url(#waDarkDoodleS4)" />
+
+  <!-- WhatsApp Top App Bar -->
+  <rect width="400" height="74" fill="#121B22" />
+  <!-- Back Arrow -->
+  <path d="M24 48 L12 48 M18 42 L11 48 L18 54" stroke="#E9EDEF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Avatar: C on plum background -->
+  <circle cx="58" cy="48" r="18" fill="#4B2338" />
+  <text x="58" y="54" text-anchor="middle" fill="#E87FA1" font-family="-apple-system, sans-serif" font-size="16" font-weight="bold">C</text>
+
+  <!-- Contact Title Censored to Customer Mahasiswa -->
+  <text x="88" y="44" fill="#E9EDEF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="600">Customer Mahasiswa</text>
+  <text x="88" y="59" fill="#8696A0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">ketuk untuk info kontak</text>
+
+  <!-- Icons: Video, Call, 3 Dots -->
+  <g fill="#E9EDEF" transform="translate(270, 38)">
+    <path d="M4 4 L14 4 C15.1 4 16 4.9 16 6 L16 14 C16 15.1 15.1 16 14 16 L4 16 C2.9 16 2 15.1 2 14 L2 6 C2 4.9 2.9 4 4 4 Z M16 8 L22 4 L22 16 L16 12 Z" />
+    <path d="M48 4 C47 3 45 3 44 4 L42 6 C41 7 41 8 42 10 C44 13 47 16 50 18 C52 19 53 19 54 18 L56 16 C57 15 57 13 56 12 L53 10 C52 9 51 9 50 10 L49 11 C47 10 46 9 45 7 L46 6 C47 5 47 4 46 3 Z" />
+    <circle cx="85" cy="4" r="2" />
+    <circle cx="85" cy="10" r="2" />
+    <circle cx="85" cy="16" r="2" />
+  </g>
+
+  <!-- BUBBLE 1: Taufik outgoing - Cek ka -->
+  <g transform="translate(268, 86)" filter="url(#shadowDarkS4)">
+    <rect width="120" height="34" rx="8" fill="#005C4B" />
+    <path d="M120 8 L126 0 L114 0 Z" fill="#005C4B" />
+    <text x="12" y="22" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="12">Cek ka</text>
+    <text x="68" y="24" fill="#8696A0" font-family="-apple-system, sans-serif" font-size="9.5">18.21</text>
+    <path d="M98 20 L102 24 L110 15 M103 20 L107 24 L115 15" stroke="#53BDEB" stroke-width="1.6" fill="none" stroke-linecap="round" />
+  </g>
+
+  <!-- BUBBLE 2: Client incoming - Receipt preview card 57 kB -->
+  <g transform="translate(14, 128)" filter="url(#shadowDarkS4)">
+    <rect width="268" height="290" rx="8" fill="#202C33" />
+    <path d="M0 8 L-6 0 L6 0 Z" fill="#202C33" />
+    <rect x="6" y="6" width="256" height="278" rx="6" fill="#1565C0" opacity="0.85" />
+    <rect x="12" y="12" width="244" height="266" rx="4" fill="#E3F2FD" opacity="0.9" />
+
+    <!-- Center Download button pill -->
+    <rect x="84" y="130" width="100" height="34" rx="17" fill="#000000" fill-opacity="0.55" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="1" />
+    <path d="M102 144 L102 152 M98 148 L102 152 L106 148" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <text x="114" y="151" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="11.5" font-weight="600">57 kB</text>
+
+    <text x="226" y="272" fill="#54656F" font-family="-apple-system, sans-serif" font-size="9.5">18.37</text>
+  </g>
+
+  <!-- BUBBLE 3: Client incoming - Sudah kak -->
+  <g transform="translate(14, 426)" filter="url(#shadowDarkS4)">
+    <rect width="144" height="34" rx="8" fill="#202C33" />
+    <path d="M0 8 L-6 0 L6 0 Z" fill="#202C33" />
+    <text x="12" y="22" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="12">Sudah kak</text>
+    <text x="102" y="24" fill="#8696A0" font-family="-apple-system, sans-serif" font-size="9.5">18.38</text>
+  </g>
+
+  <!-- BUBBLE 4: Client incoming - Maaf juga kak ad t lama kirim soalnya lagi ad b uas -->
+  <g transform="translate(14, 468)" filter="url(#shadowDarkS4)">
+    <rect width="320" height="48" rx="8" fill="#202C33" />
+    <path d="M0 8 L-6 0 L6 0 Z" fill="#202C33" />
+    <text x="12" y="21" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="11.5">Maaf juga kak ad t lama kirim soalnya</text>
+    <text x="12" y="38" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="11.5">lagi ad b uas</text>
+    <text x="276" y="40" fill="#8696A0" font-family="-apple-system, sans-serif" font-size="9.5">18.38</text>
+  </g>
+
+  <!-- BUBBLE 5: Taufik outgoing - Okey makasih banyak maaf ini sba ganggu 🙏🙏🙏 -->
+  <g transform="translate(68, 524)" filter="url(#shadowDarkS4)">
+    <rect width="320" height="48" rx="8" fill="#005C4B" />
+    <path d="M320 8 L326 0 L314 0 Z" fill="#005C4B" />
+    <text x="12" y="21" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="12">Okey makasih banyak maaf ini sba</text>
+    <text x="12" y="38" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="12">ganggu 🙏🙏🙏</text>
+    <text x="268" y="40" fill="#8696A0" font-family="-apple-system, sans-serif" font-size="9.5">19.34</text>
+    <path d="M298 36 L302 40 L310 31 M303 36 L307 40 L315 31" stroke="#53BDEB" stroke-width="1.6" fill="none" stroke-linecap="round" />
+  </g>
+
+  <!-- BUBBLE 6: Client incoming - Saya yg minta maaf kak s lama b tf uang 🙏🙏 -->
+  <g transform="translate(14, 580)" filter="url(#shadowDarkS4)">
+    <rect width="310" height="48" rx="8" fill="#202C33" />
+    <path d="M0 8 L-6 0 L6 0 Z" fill="#202C33" />
+    <text x="12" y="21" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="11.5">Saya yg minta maaf kak s lama b tf</text>
+    <text x="12" y="38" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="11.5">uang 🙏🙏</text>
+    <text x="268" y="40" fill="#8696A0" font-family="-apple-system, sans-serif" font-size="9.5">19.35</text>
+  </g>
+
+  <!-- BUBBLE 7: Taufik outgoing - Iya ka 🙏 -->
+  <g transform="translate(254, 636)" filter="url(#shadowDarkS4)">
+    <rect width="134" height="34" rx="8" fill="#005C4B" />
+    <path d="M134 8 L140 0 L128 0 Z" fill="#005C4B" />
+    <text x="12" y="22" fill="#E9EDEF" font-family="-apple-system, sans-serif" font-size="12">Iya ka 🙏</text>
+    <text x="82" y="24" fill="#8696A0" font-family="-apple-system, sans-serif" font-size="9.5">20.11</text>
+    <path d="M112 20 L116 24 L124 15 M117 20 L121 24 L129 15" stroke="#53BDEB" stroke-width="1.6" fill="none" stroke-linecap="round" />
+  </g>
+
+  <!-- Floating Scroll-down arrow -->
+  <g transform="translate(356, 688)">
+    <circle cx="16" cy="16" r="16" fill="#182229" stroke="#222E35" stroke-width="1" />
+    <path d="M11 14 L16 19 L21 14" stroke="#8696A0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  </g>
+
+  <!-- Bottom Message Input Bar -->
+  <g transform="translate(0, 770)">
+    <rect width="400" height="70" fill="#0B141A" />
+    <rect x="12" y="10" width="324" height="46" rx="23" fill="#202C33" />
+    <circle cx="34" cy="33" r="10" fill="none" stroke="#8696A0" stroke-width="1.8" />
+    <circle cx="30" cy="30" r="1.2" fill="#8696A0" />
+    <circle cx="38" cy="30" r="1.2" fill="#8696A0" />
+    <path d="M29 36 Q34 40 39 36" stroke="#8696A0" stroke-width="1.5" fill="none" stroke-linecap="round" />
+    <text x="54" y="38" fill="#8696A0" font-family="-apple-system, sans-serif" font-size="14">Ketik pesan</text>
+    <path d="M268 28 L278 38 C281 41 286 36 283 33 L272 22 C268 18 262 24 266 28 L277 39" fill="none" stroke="#8696A0" stroke-width="1.8" stroke-linecap="round" />
+    <path d="M304 28 L308 28 L310 25 L318 25 L320 28 L324 28 C326 28 327 29 327 31 L327 40 C327 42 326 43 324 43 L304 43 C302 43 301 42 301 40 L301 31 C301 29 302 28 304 28 Z" fill="none" stroke="#8696A0" stroke-width="1.6" />
+    <circle cx="314" cy="35" r="4.5" fill="none" stroke="#8696A0" stroke-width="1.5" />
+    <circle cx="366" cy="33" r="23" fill="#00A884" />
+    <rect x="362" y="24" width="8" height="12" rx="4" fill="#FFFFFF" />
+    <path d="M358 31 C358 35 362 38 366 38 C370 38 374 35 374 31" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" />
+    <line x1="366" y1="38" x2="366" y2="43" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+  </g>
+</svg>
