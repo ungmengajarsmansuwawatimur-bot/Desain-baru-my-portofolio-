@@ -1,6 +1,8 @@
 import React from 'react';
 import { candidateProfile } from '../data/portfolioData';
 import { MarqueeTicker } from './MarqueeTicker';
+import { EditableImage } from './EditableImage';
+import { portfolioImages } from '../assets/images';
 
 interface HeroProps {
   onOpenCvModal: () => void;
@@ -9,13 +11,30 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
   return (
     <section id="home" className="pt-24 sm:pt-28 md:pt-32 bg-white dark:bg-[#121212] transition-colors duration-200">
+      {/* Yellow Accent Pill Tab Centered */}
+      <div className="flex justify-center mb-4">
+        <div className="w-12 sm:w-16 h-3.5 sm:h-4 rounded-full bg-[#F9B51B] shadow-xs" />
+      </div>
+
+      {/* Full-Bleed Banner Photo: Tersambung Penuh ke Sisi Kiri & Kanan Section Website */}
+      <div className="w-full mb-12 sm:mb-16 relative">
+        <EditableImage
+          storageKey="hero_creative_banner"
+          defaultSrc={portfolioImages.creativeDeskBanner}
+          alt="Aktivitas Meja Kerja & Perencanaan Profesional"
+          containerClassName="w-full h-60 sm:h-76 md:h-96 lg:h-[420px] relative overflow-hidden"
+          imgClassName="w-full h-full object-cover object-center"
+          buttonPosition="top-right"
+        />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16">
         {/* Main 12-Column Hero Grid: Left Typography + Right Steve-style Portrait Graphic */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Left Column (Col 1-7): Steve Mengelkoch Typography, Headline & CTAs */}
           <div className="lg:col-span-7 space-y-6">
             {/* Kicker with 4-point stars */}
-            <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-black tracking-widest uppercase text-[#F9B51B]">
+            <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold tracking-[0.08em] uppercase text-[#F9B51B]">
               <span aria-hidden="true">✦</span>
               <span>MY PORTFOLIO &bull; PROFIL RESMI</span>
               <span aria-hidden="true">✦</span>
@@ -23,13 +42,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
 
             {/* Giant Display Headline (Steve Mengelkoch Display) */}
             <div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-[#171717] dark:text-white leading-[1.05]">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[4.75rem] font-extrabold tracking-[-0.035em] text-[#171717] dark:text-white leading-[1.0] break-words">
                 {candidateProfile.fullName}
               </h1>
             </div>
 
             {/* Bio Description Text */}
-            <p className="text-sm sm:text-base md:text-lg text-[#666666] dark:text-[#A3A3A3] leading-relaxed max-w-xl font-normal">
+            <p className="text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] max-w-xl font-normal">
               {candidateProfile.summary}
             </p>
 
@@ -37,7 +56,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
             <div className="flex flex-wrap items-center gap-4 pt-3">
               <a
                 href="#work"
-                className="group inline-flex items-center gap-3 pl-6 pr-2 py-2 rounded-full text-sm font-black bg-[#31543A] text-white hover:bg-[#26432E] border-2 border-[#171717] transition-all duration-150 shadow-md active:scale-95 cursor-pointer"
+                className="group inline-flex items-center gap-3 pl-6 pr-2 py-2 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase bg-[#31543A] text-white hover:bg-[#26432E] border-2 border-[#171717] transition-all duration-150 shadow-md active:scale-95 cursor-pointer"
               >
                 <span>VIEW MY WORK</span>
                 <span className="w-9 h-9 rounded-full bg-[#F9B51B] text-[#171717] flex items-center justify-center font-bold text-base shrink-0 transition-transform group-hover:translate-x-1">
@@ -48,7 +67,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
               <button
                 type="button"
                 onClick={onOpenCvModal}
-                className="group inline-flex items-center gap-3 pl-6 pr-2 py-2 rounded-full text-sm font-black bg-white dark:bg-[#1E1E1E] text-[#171717] dark:text-white hover:bg-[#F5F5F5] dark:hover:bg-[#2A2A2A] border-2 border-[#171717] dark:border-white transition-all duration-150 shadow-md active:scale-95 cursor-pointer"
+                className="group inline-flex items-center gap-3 pl-6 pr-2 py-2 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase bg-white dark:bg-[#1E1E1E] text-[#171717] dark:text-white hover:bg-[#F5F5F5] dark:hover:bg-[#2A2A2A] border-2 border-[#171717] dark:border-white transition-all duration-150 shadow-md active:scale-95 cursor-pointer"
               >
                 <span>UNDUH CV RESMI</span>
                 <span className="w-9 h-9 rounded-full bg-[#171717] dark:bg-white text-white dark:text-[#171717] flex items-center justify-center font-bold text-sm shrink-0 transition-transform group-hover:translate-x-1">

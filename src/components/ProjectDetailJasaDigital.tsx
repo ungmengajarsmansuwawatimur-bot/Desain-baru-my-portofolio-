@@ -50,8 +50,8 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
           </div>
         </div>
 
-        {/* Hero Visual Mockup Focal Point */}
-        <div className="rounded-3xl p-6 sm:p-10 md:p-12 border-2 border-[#171717] dark:border-[#333333] shadow-[8px_8px_0px_#171717] dark:shadow-[8px_8px_0px_#333333] bg-gradient-to-b from-[#F5F5F5] to-white dark:from-[#1E1E1E] dark:to-[#121212] flex flex-col items-center justify-center relative overflow-hidden">
+        {/* Hero Visual Mockup Focal Point (Clean & Open, No Bento Box) */}
+        <div className="w-full py-4 sm:py-8 flex flex-col items-center justify-center relative select-none">
           <div className="w-full max-w-4xl mx-auto">
             <img
               src="/assets/mockups/mockup_01_jasa_digital.svg"
@@ -65,28 +65,28 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
         {/* Main Header Information */}
         <div className="space-y-4 max-w-4xl">
           <div className="flex items-center gap-3">
-            <span className="text-4xl sm:text-5xl font-black text-[#F9B51B]">01</span>
-            <span className="text-xs font-bold tracking-wider text-[#666666] dark:text-[#A3A3A3] uppercase">
+            <span className="text-4xl sm:text-5xl font-extrabold text-[#F9B51B] tracking-[-0.03em]">01</span>
+            <span className="text-xs font-medium tracking-wider text-[#666666] dark:text-[#A3A3A3] uppercase">
               Desember 2024 — Sekarang
             </span>
           </div>
-          <div className="text-xs font-black tracking-widest text-[#31543A] dark:text-[#F9B51B] uppercase">
+          <div className="text-xs font-bold tracking-[0.08em] text-[#31543A] dark:text-[#F9B51B] uppercase">
             PELAYANAN &amp; PENGELOLAAN
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#171717] dark:text-white tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#171717] dark:text-white tracking-[-0.025em] leading-[1.08]">
             Jasa Digital &amp; Publikasi Mahasiswa
           </h1>
-          <p className="text-sm sm:text-base text-[#666666] dark:text-[#A3A3A3] leading-relaxed pt-1">
+          <p className="text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] pt-1 font-normal">
             Memberikan layanan secara langsung kepada pelanggan dengan memahami kebutuhan, menjelaskan informasi, melakukan koordinasi selama proses, menangani revisi, dan menindaklanjuti hingga pekerjaan selesai. Pengalaman Jasa Digital dimulai pada Desember 2024 ketika seorang teman mahasiswa menghubungi saya karena membutuhkan bantuan untuk publikasi artikel tugas mata kuliahnya. Informasi mengenai jasa kemudian menyebar melalui promosi organik dan rekomendasi pelanggan (word of mouth) ke jaringan mahasiswa lainnya.
           </p>
         </div>
 
-        {/* PERAN SAYA & AKTIVITAS LAYANAN (8 KOMPONEN) */}
+        {/* PERAN SAYA & AKTIVITAS LAYANAN */}
         <div className="space-y-4 pt-6 border-t border-[#171717]/15 dark:border-white/10">
-          <span className="text-xs font-black tracking-widest text-[#171717] dark:text-white uppercase block">
+          <span className="text-xs font-bold tracking-[0.08em] text-[#171717] dark:text-white uppercase block">
             Peran Saya &amp; Aktivitas Layanan
           </span>
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
+          <div className="flex flex-wrap gap-2.5">
             {[
               'Komunikasi dengan pelanggan',
               'Memahami kebutuhan naskah',
@@ -99,12 +99,12 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
             ].map((role, idx) => (
               <div
                 key={idx}
-                className="p-3 bg-[#F5F5F5] dark:bg-[#1E1E1E] rounded-xl border border-[#171717] dark:border-[#333333] shadow-[2px_2px_0px_#171717] flex flex-col justify-between"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#F5F5F5] dark:bg-[#1E1E1E] rounded-full border border-[#171717]/20 dark:border-[#333333] shadow-xs"
               >
-                <span className="text-[10px] font-black text-[#F9B51B] block mb-1">
+                <span className="text-[11px] font-black text-[#F9B51B]">
                   0{idx + 1}.
                 </span>
-                <span className="text-[11px] font-bold text-[#171717] dark:text-white leading-tight">
+                <span className="text-xs font-bold text-[#171717] dark:text-white">
                   {role}
                 </span>
               </div>
@@ -112,7 +112,7 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
           </div>
         </div>
 
-        {/* BUKTI PEKERJAAN — PHONE EVIDENCE GALLERY */}
+        {/* BUKTI PEKERJAAN — PHONE EVIDENCE GALLERY (HORIZONTALLY SCROLLABLE SHOWCASE) */}
         <div className="space-y-6 pt-6 border-t border-[#171717]/15 dark:border-white/10">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
@@ -128,18 +128,19 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
             </span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 items-stretch">
+          <div className="flex items-stretch gap-6 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory">
             {workflowEvidenceData.map((item) => (
-              <PhoneChatMockup
-                key={item.id}
-                item={item}
-                onOpenEvidence={handleOpenEvidence}
-              />
+              <div key={item.id} className="min-w-[270px] sm:min-w-[300px] shrink-0 snap-start">
+                <PhoneChatMockup
+                  item={item}
+                  onOpenEvidence={handleOpenEvidence}
+                />
+              </div>
             ))}
           </div>
         </div>
 
-        {/* EVALUASI & ANALISIS LAYANAN (5 EVALUATION CARDS) */}
+        {/* EVALUASI & ANALISIS LAYANAN (LINEAR SCORECARD LIST) */}
         <div className="space-y-6 pt-6 border-t border-[#171717]/15 dark:border-white/10">
           <div className="flex items-center gap-2">
             <span className="w-3 h-3 rounded-full bg-[#F9B51B]" />
@@ -148,7 +149,7 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="divide-y divide-[#171717]/10 dark:divide-white/10 border-t border-b border-[#171717]/10 dark:border-white/10 bg-transparent">
             {[
               {
                 no: '01',
@@ -188,32 +189,36 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
             ].map((card, idx) => (
               <div
                 key={idx}
-                className="bg-[#F5F5F5] dark:bg-[#1E1E1E] rounded-3xl border-2 border-[#171717] dark:border-[#333333] p-6 space-y-3 shadow-[4px_4px_0px_#171717] flex flex-col justify-between"
+                className="p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-white dark:hover:bg-[#252528] transition-colors"
               >
-                <div>
-                  <div className="flex items-center justify-between pb-3 border-b border-[#171717]/10 dark:border-[#2A2A2A]">
-                    <span className="text-xs font-black text-[#F9B51B]">{card.no}.</span>
-                    <span className="text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full bg-[#31543A] text-white">
-                      {card.score}
-                    </span>
+                <div className="flex items-start gap-4">
+                  <span className="text-sm font-black text-[#F9B51B] shrink-0 pt-0.5">
+                    {card.no}.
+                  </span>
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-2.5 flex-wrap">
+                      <h4 className="text-sm sm:text-base font-black text-[#171717] dark:text-white">
+                        {card.title}
+                      </h4>
+                      <span className="text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full bg-[#31543A] text-white">
+                        {card.score}
+                      </span>
+                    </div>
+                    <p className="text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3] leading-relaxed">
+                      {card.desc}
+                    </p>
                   </div>
-                  <h4 className="text-sm font-black text-[#171717] dark:text-white mt-3 leading-snug">
-                    {card.title}
-                  </h4>
-                  <p className="text-xs text-[#666666] dark:text-[#A3A3A3] leading-relaxed mt-1.5">
-                    {card.desc}
-                  </p>
                 </div>
-                <div className="pt-2 border-t border-[#171717]/10 dark:border-[#2A2A2A] text-[10px] font-bold text-[#31543A] dark:text-[#F9B51B]">
+                <span className="text-xs font-bold text-[#31543A] dark:text-[#F9B51B] shrink-0 self-start sm:self-center">
                   &bull; {card.tag}
-                </div>
+                </span>
               </div>
             ))}
           </div>
 
           {/* Metode Layanan & Yang Saya Pelajari */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-            <div className="bg-[#F5F5F5] dark:bg-[#1E1E1E] rounded-3xl border-2 border-[#171717] dark:border-[#333333] p-6 sm:p-7 space-y-4 shadow-[4px_4px_0px_#171717]">
+          <div className="flex flex-col md:flex-row gap-6 pt-4">
+            <div className="w-full md:w-1/2 bg-[#F5F5F5] dark:bg-[#1E1E1E] rounded-3xl border-2 border-[#171717] dark:border-[#333333] p-6 sm:p-7 space-y-4 shadow-[4px_4px_0px_#171717]">
               <div className="flex items-center gap-2.5">
                 <span className="w-3 h-3 rounded-full bg-[#31543A]" />
                 <h4 className="text-sm font-black text-[#171717] dark:text-white uppercase tracking-wider">
@@ -227,12 +232,9 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
                     const label = item.slice(0, colonIndex);
                     const rest = item.slice(colonIndex + 1);
                     return (
-                      <li key={idx} className="grid grid-cols-[130px_10px_1fr] items-start gap-1">
-                        <span className="font-bold text-[#171717] dark:text-white leading-snug">
+                      <li key={idx} className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+                        <span className="font-bold text-[#171717] dark:text-white sm:w-36 shrink-0 leading-snug">
                           {label}
-                        </span>
-                        <span className="font-bold text-[#171717] dark:text-white text-center leading-snug">
-                          :
                         </span>
                         <span className="leading-relaxed text-[#666666] dark:text-[#A3A3A3]">
                           {rest}
@@ -250,7 +252,7 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
               </ul>
             </div>
 
-            <div className="bg-[#F5F5F5] dark:bg-[#1E1E1E] rounded-3xl border-2 border-[#171717] dark:border-[#333333] p-6 sm:p-7 space-y-4 shadow-[4px_4px_0px_#171717]">
+            <div className="w-full md:w-1/2 bg-[#F5F5F5] dark:bg-[#1E1E1E] rounded-3xl border-2 border-[#171717] dark:border-[#333333] p-6 sm:p-7 space-y-4 shadow-[4px_4px_0px_#171717]">
               <div className="flex items-center gap-2.5">
                 <span className="w-3 h-3 rounded-full bg-[#31543A]" />
                 <h4 className="text-sm font-black text-[#171717] dark:text-white uppercase tracking-wider">

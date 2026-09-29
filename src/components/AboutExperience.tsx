@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   candidateProfile,
   experienceData,
@@ -10,8 +10,6 @@ interface AboutExperienceProps {
 }
 
 export const AboutExperience: React.FC<AboutExperienceProps> = () => {
-  const [activeTab, setActiveTab] = useState<'all' | 'experience' | 'education'>('all');
-
   const backgroundItems = [
     {
       id: 'bg-1',
@@ -88,10 +86,7 @@ export const AboutExperience: React.FC<AboutExperienceProps> = () => {
     },
   ];
 
-  const filteredItems = backgroundItems.filter((item) => {
-    if (activeTab === 'all') return true;
-    return item.type === activeTab;
-  });
+  const filteredItems = backgroundItems;
 
   return (
     <section id="about" className="py-20 md:py-28 bg-[#F5F5F5] dark:bg-[#18181B] border-t border-[#171717]/15 dark:border-white/10 transition-colors duration-200">
@@ -102,12 +97,12 @@ export const AboutExperience: React.FC<AboutExperienceProps> = () => {
         <div className="space-y-12">
           {/* Section Kicker & Title */}
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-black tracking-widest uppercase text-[#F9B51B]">
+            <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold tracking-[0.08em] uppercase text-[#F9B51B]">
               <span aria-hidden="true">✦</span>
               <span>ABOUT</span>
               <span aria-hidden="true">✦</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-[#171717] dark:text-white">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-[-0.025em] text-[#171717] dark:text-white leading-[1.08]">
               About Taufik Hidayat Malii
             </h2>
           </div>
@@ -116,7 +111,7 @@ export const AboutExperience: React.FC<AboutExperienceProps> = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Col 1-7: Narrative Bio + 3 Key Metric Columns + Split Pill Button */}
             <div className="lg:col-span-7 space-y-8">
-              <div className="space-y-4 text-sm sm:text-base md:text-lg text-[#666666] dark:text-[#A3A3A3] leading-relaxed">
+              <div className="space-y-4 text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] font-normal">
                 <p>
                   Saya memiliki ketertarikan tinggi pada industri pelayanan retail dan operasional toko modern. Melalui pengalaman lebih dari 8 tahun membantu usaha keluarga, saya terlatih melayani berbagai karakter pembeli, mengelola transaksi kasir, menjaga stok barang, serta memastikan area penjualan selalu tertata rapi.
                 </p>
@@ -128,28 +123,28 @@ export const AboutExperience: React.FC<AboutExperienceProps> = () => {
               {/* 3 Steve Mengelkoch Signature Stat Columns */}
               <div className="grid grid-cols-3 gap-4 sm:gap-6 py-6 border-y border-[#171717]/15 dark:border-white/10">
                 <div>
-                  <span className="text-xs font-bold text-[#666666] dark:text-[#A3A3A3] block uppercase tracking-wide">
+                  <span className="text-xs font-medium text-[#666666] dark:text-[#A3A3A3] block uppercase tracking-wide">
                     Pelanggan &amp; Transaksi
                   </span>
-                  <span className="text-3xl sm:text-4xl md:text-5xl font-black text-[#171717] dark:text-white tracking-tight mt-1 block">
+                  <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#171717] dark:text-white tracking-[-0.03em] mt-1 block">
                     250+
                   </span>
                 </div>
 
                 <div>
-                  <span className="text-xs font-bold text-[#666666] dark:text-[#A3A3A3] block uppercase tracking-wide">
+                  <span className="text-xs font-medium text-[#666666] dark:text-[#A3A3A3] block uppercase tracking-wide">
                     Modul PADDS SMANSAT
                   </span>
-                  <span className="text-3xl sm:text-4xl md:text-5xl font-black text-[#171717] dark:text-white tracking-tight mt-1 block">
+                  <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#171717] dark:text-white tracking-[-0.03em] mt-1 block">
                     24
                   </span>
                 </div>
 
                 <div>
-                  <span className="text-xs font-bold text-[#666666] dark:text-[#A3A3A3] block uppercase tracking-wide">
+                  <span className="text-xs font-medium text-[#666666] dark:text-[#A3A3A3] block uppercase tracking-wide">
                     Kesiapan Kerja
                   </span>
-                  <span className="text-3xl sm:text-4xl md:text-5xl font-black text-[#171717] dark:text-white tracking-tight mt-1 block">
+                  <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#171717] dark:text-white tracking-[-0.03em] mt-1 block">
                     100%
                   </span>
                 </div>
@@ -159,7 +154,7 @@ export const AboutExperience: React.FC<AboutExperienceProps> = () => {
               <div>
                 <a
                   href="#background"
-                  className="group inline-flex items-center gap-3 pl-6 pr-2 py-2 rounded-full text-sm font-black bg-[#31543A] text-white hover:bg-[#26432E] border-2 border-[#171717] transition-all duration-150 shadow-md active:scale-95 cursor-pointer"
+                  className="group inline-flex items-center gap-3 pl-6 pr-2 py-2 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase bg-[#31543A] text-white hover:bg-[#26432E] border-2 border-[#171717] transition-all duration-150 shadow-md active:scale-95 cursor-pointer"
                 >
                   <span>BACA RIWAYAT LENGKAP</span>
                   <span className="w-8 h-8 rounded-full bg-[#F9B51B] text-[#171717] flex items-center justify-center font-bold text-sm shrink-0 transition-transform group-hover:translate-x-1">
@@ -205,54 +200,14 @@ export const AboutExperience: React.FC<AboutExperienceProps> = () => {
         <div id="background" className="space-y-8 pt-10 border-t border-[#171717]/15 dark:border-white/10">
           {/* Section Kicker & Title */}
           <div className="text-center space-y-2 max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-black tracking-widest uppercase text-[#F9B51B]">
+            <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold tracking-[0.08em] uppercase text-[#F9B51B]">
               <span aria-hidden="true">✦</span>
               <span>BACKGROUND</span>
               <span aria-hidden="true">✦</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#171717] dark:text-white">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-[-0.025em] text-[#171717] dark:text-white leading-[1.08]">
               Experience &amp; Education
             </h2>
-            <p className="text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3] pt-1">
-              Rekam jejak pengalaman kerja operasional, pelayanan pelanggan langsung, dan riwayat pendidikan formal.
-            </p>
-
-            {/* Filter Tabs matching platform aesthetic */}
-            <div className="flex flex-wrap items-center justify-center gap-2 pt-4">
-              <button
-                type="button"
-                onClick={() => setActiveTab('all')}
-                className={`px-4 py-1.5 rounded-full text-xs font-black transition-all cursor-pointer ${
-                  activeTab === 'all'
-                    ? 'bg-[#31543A] text-white border-2 border-[#171717] shadow-xs'
-                    : 'bg-transparent text-[#666666] dark:text-[#A3A3A3] hover:text-[#171717] dark:hover:text-white border border-[#171717]/20 dark:border-white/20'
-                }`}
-              >
-                Semua ({backgroundItems.length})
-              </button>
-              <button
-                type="button"
-                onClick={() => setActiveTab('experience')}
-                className={`px-4 py-1.5 rounded-full text-xs font-black transition-all cursor-pointer ${
-                  activeTab === 'experience'
-                    ? 'bg-[#31543A] text-white border-2 border-[#171717] shadow-xs'
-                    : 'bg-transparent text-[#666666] dark:text-[#A3A3A3] hover:text-[#171717] dark:hover:text-white border border-[#171717]/20 dark:border-white/20'
-                }`}
-              >
-                Pengalaman Kerja ({backgroundItems.filter((i) => i.type === 'experience').length})
-              </button>
-              <button
-                type="button"
-                onClick={() => setActiveTab('education')}
-                className={`px-4 py-1.5 rounded-full text-xs font-black transition-all cursor-pointer ${
-                  activeTab === 'education'
-                    ? 'bg-[#31543A] text-white border-2 border-[#171717] shadow-xs'
-                    : 'bg-transparent text-[#666666] dark:text-[#A3A3A3] hover:text-[#171717] dark:hover:text-white border border-[#171717]/20 dark:border-white/20'
-                }`}
-              >
-                Pendidikan Formal ({backgroundItems.filter((i) => i.type === 'education').length})
-              </button>
-            </div>
           </div>
 
           {/* Full-width Stacked Horizontal Rows (Screenshot-identical layout) */}
@@ -269,10 +224,10 @@ export const AboutExperience: React.FC<AboutExperienceProps> = () => {
                       {item.icon}
                     </div>
                     <div className="space-y-1">
-                      <span className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-[#31543A] dark:text-[#F9B51B] block">
+                      <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#31543A] dark:text-[#F9B51B] block">
                         {item.category}
                       </span>
-                      <h3 className="text-xl sm:text-2xl font-black text-[#171717] dark:text-white tracking-tight leading-snug">
+                      <h3 className="text-xl sm:text-2xl font-bold text-[#171717] dark:text-white tracking-[-0.015em] leading-snug">
                         {item.title}
                       </h3>
                       <p className="text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3] font-medium">
@@ -283,11 +238,11 @@ export const AboutExperience: React.FC<AboutExperienceProps> = () => {
 
                   {/* Middle Column (col 5-12): Rich Description & Tags */}
                   <div className="lg:col-span-8 space-y-3">
-                    <p className="text-sm sm:text-base text-[#555555] dark:text-[#A3A3A3] leading-relaxed">
+                    <p className="text-sm sm:text-base text-[#555555] dark:text-[#A3A3A3] leading-[1.65] font-normal">
                       {item.description}
                     </p>
                     <div className="flex flex-wrap items-center gap-2 pt-0.5">
-                      <span className="inline-flex items-center text-xs font-bold px-2.5 py-1 rounded-full bg-[#31543A]/10 text-[#31543A] dark:bg-white/10 dark:text-[#F9B51B]">
+                      <span className="text-xs font-bold text-[#31543A] dark:text-[#F9B51B]">
                         {item.period}
                       </span>
                       {item.tags.map((t, idx) => (
@@ -307,45 +262,27 @@ export const AboutExperience: React.FC<AboutExperienceProps> = () => {
         </div>
 
         {/* ========================================================================= */}
-        {/* PART 3: MINDSET SAYA & 3 VALUE CARDS                                      */}
+        {/* PART 3: 3 CORE VALUES (Clean Open Layout)                                 */}
         {/* ========================================================================= */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
-          {/* Left: Mindset Box with Dark Green Accent */}
-          <div className="lg:col-span-4 bg-[#31543A] text-white rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-4 border-2 border-[#171717] shadow-sm">
-            <div className="space-y-2">
-              <span className="text-xs font-black tracking-widest text-[#F9B51B] uppercase block">
-                MINDSET SAYA
-              </span>
-              <p className="text-sm sm:text-base text-white/95 leading-relaxed font-medium">
-                &ldquo;{candidateProfile.mindsetQuote}&rdquo;
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12">
+          {coreValues.map((val) => (
+            <div
+              key={val.number}
+              className="border-t border-[#171717]/15 dark:border-white/10 pt-4 flex flex-col justify-between space-y-3"
+            >
+              <div>
+                <div className="text-3xl sm:text-4xl font-extrabold text-[#F9B51B] leading-none mb-2 tracking-tight">
+                  {val.number}
+                </div>
+                <h4 className="text-base sm:text-lg font-bold text-[#171717] dark:text-white">
+                  {val.title}
+                </h4>
+              </div>
+              <p className="text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3] leading-[1.6] font-normal">
+                {val.description}
               </p>
             </div>
-            <div className="pt-3 border-t border-white/20 text-xs font-bold text-white/80">
-              Prinsip Kerja &bull; Integritas &bull; Komitmen
-            </div>
-          </div>
-
-          {/* Right: 3 Core Values (Clean Columns without Box Wrappers) */}
-          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
-            {coreValues.map((val) => (
-              <div
-                key={val.number}
-                className="border-t border-[#171717]/15 dark:border-white/10 pt-4 flex flex-col justify-between space-y-3"
-              >
-                <div>
-                  <div className="text-3xl sm:text-4xl font-black text-[#F9B51B] leading-none mb-2">
-                    {val.number}
-                  </div>
-                  <h4 className="text-base sm:text-lg font-black text-[#171717] dark:text-white">
-                    {val.title}
-                  </h4>
-                </div>
-                <p className="text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3] leading-relaxed">
-                  {val.description}
-                </p>
-              </div>
-            ))}
-          </div>
+          ))}
         </div>
       </div>
     </section>

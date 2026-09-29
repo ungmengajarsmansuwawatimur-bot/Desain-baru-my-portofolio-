@@ -5,7 +5,6 @@ import { AboutExperience } from './components/AboutExperience';
 import { RealWork } from './components/RealWork';
 import { RetailLearning } from './components/RetailLearning';
 import { SkillsContact } from './components/SkillsContact';
-import { Footer } from './components/Footer';
 import { CvModal } from './components/CvModal';
 import { PhotoGuideModal } from './components/PhotoGuideModal';
 import { ThemeTransitionOverlay } from './components/ThemeTransitionOverlay';
@@ -132,9 +131,6 @@ export default function App() {
           </>
         )}
       </main>
-
-      {/* Persistent Responsive Footer */}
-      <Footer onOpenCvModal={() => setIsCvModalOpen(true)} />
 
       {/* Interactive Global Modals */}
       <CvModal

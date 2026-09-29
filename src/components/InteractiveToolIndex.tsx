@@ -94,11 +94,11 @@ export const InteractiveToolIndex: React.FC<InteractiveToolIndexProps> = ({ tool
       aria-roledescription="carousel"
       className="relative focus:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981] rounded-2xl"
     >
-      {/* Editorial Top Bar (clean, open layout without card box) */}
-      <div className="py-3 sm:py-4 border-b border-white/20 flex items-center justify-between gap-4">
+      {/* Editorial Top Bar (clean, open layout without card box or divider line) */}
+      <div className="py-3 sm:py-4 flex items-center justify-between gap-4">
         {/* Counter & Label */}
         <div className="flex items-center gap-3">
-          <div className="flex items-baseline gap-1.5 font-mono">
+          <div className="flex items-baseline gap-1.5">
             <span className="text-xl sm:text-2xl font-extrabold text-[#F9B51B] tracking-tight">
               {formatIndex(currentIndex + 1)}
             </span>
@@ -107,8 +107,6 @@ export const InteractiveToolIndex: React.FC<InteractiveToolIndexProps> = ({ tool
               {formatIndex(totalTools)}
             </span>
           </div>
-
-          <span className="hidden sm:inline-block w-px h-4 bg-white/20" />
 
           <span className="text-[11px] font-bold uppercase tracking-widest text-white/70">
             Indeks Alat Kerja
@@ -128,7 +126,7 @@ export const InteractiveToolIndex: React.FC<InteractiveToolIndexProps> = ({ tool
           onClick={handlePrev}
           disabled={currentIndex === 0}
           aria-label="Tool sebelumnya (Panah Kiri)"
-          className="group shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-[#171717] text-[#171717] bg-white hover:bg-[#F5F5F5] hover:shadow-md active:scale-95 disabled:opacity-25 disabled:cursor-not-allowed disabled:hover:bg-white disabled:active:scale-100 flex items-center justify-center transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer shadow-sm"
+          className="group shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full text-[#171717] bg-white hover:bg-[#F5F5F5] hover:shadow-md active:scale-95 disabled:opacity-25 disabled:cursor-not-allowed disabled:hover:bg-white disabled:active:scale-100 flex items-center justify-center transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer shadow-sm"
         >
           <svg
             className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:-translate-x-0.5"
@@ -155,7 +153,7 @@ export const InteractiveToolIndex: React.FC<InteractiveToolIndexProps> = ({ tool
         >
           {/* Top Eyebrow & Category */}
           <div className="flex items-center justify-center">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider bg-white/15 text-white border border-white/30">
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider bg-white/15 text-white">
               {activeTool.category}
             </span>
           </div>
@@ -203,7 +201,7 @@ export const InteractiveToolIndex: React.FC<InteractiveToolIndexProps> = ({ tool
           onClick={handleNext}
           disabled={currentIndex === totalTools - 1}
           aria-label="Tool berikutnya (Panah Kanan)"
-          className="group shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-[#171717] text-[#171717] bg-white hover:bg-[#F5F5F5] hover:shadow-md active:scale-95 disabled:opacity-25 disabled:cursor-not-allowed disabled:hover:bg-white disabled:active:scale-100 flex items-center justify-center transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer shadow-sm"
+          className="group shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full text-[#171717] bg-white hover:bg-[#F5F5F5] hover:shadow-md active:scale-95 disabled:opacity-25 disabled:cursor-not-allowed disabled:hover:bg-white disabled:active:scale-100 flex items-center justify-center transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer shadow-sm"
         >
           <svg
             className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-0.5"

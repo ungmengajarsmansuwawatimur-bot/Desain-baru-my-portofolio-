@@ -4,6 +4,7 @@ import heroPortrait from './images/hero_portrait_taufik_1790151345227.jpg';
 import retailMinisoTeamHd from './images/retail_miniso_team_hd.jpg';
 import retailBooksStack from './images/retail_books_stack_1790151386373.jpg';
 import retailServiceCounter from './images/retail_service_counter_1790151398411.jpg';
+import creativeDeskBanner from './images/creative_desk_banner_1790675573701.jpg';
 
 import thumbCustomerService from './images/thumb_customer_service_1790151429669.jpg';
 import thumbRetailOperations from './images/thumb_retail_operations_1790151443958.jpg';
@@ -14,6 +15,7 @@ import thumbCommunication from './images/thumb_communication_1790151504132.jpg';
 
 export const portfolioImages = {
   heroPortrait,
+  creativeDeskBanner,
   retailStoreInterior,
   cashierHero: alfamartCashierHero,
   retailToteBag: retailMinisoTeamHd,

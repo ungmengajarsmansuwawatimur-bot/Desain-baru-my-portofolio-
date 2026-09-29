@@ -74,8 +74,8 @@ export const ProjectDetailPadds: React.FC<ProjectDetailPaddsProps> = ({ onBack }
           </div>
         </div>
 
-        {/* Hero Visual Mockup Focal Point */}
-        <div className="rounded-3xl p-6 sm:p-10 md:p-12 border-2 border-[#171717] dark:border-[#333333] shadow-[8px_8px_0px_#171717] dark:shadow-[8px_8px_0px_#333333] bg-gradient-to-b from-[#F5F5F5] to-white dark:from-[#1E1E1E] dark:to-[#121212] flex flex-col items-center justify-center relative overflow-hidden">
+        {/* Hero Visual Mockup Focal Point (Clean & Open, No Bento Box) */}
+        <div className="w-full py-4 sm:py-8 flex flex-col items-center justify-center relative select-none">
           <div className="w-full max-w-4xl mx-auto">
             <img
               src="/assets/mockups/mockup_02_padds_smansat.svg"
@@ -89,18 +89,18 @@ export const ProjectDetailPadds: React.FC<ProjectDetailPaddsProps> = ({ onBack }
         {/* Main Header Information */}
         <div className="space-y-4 max-w-4xl">
           <div className="flex items-center gap-3">
-            <span className="text-4xl sm:text-5xl font-black text-[#F9B51B]">02</span>
-            <span className="text-xs font-bold tracking-wider text-[#666666] dark:text-[#A3A3A3] uppercase">
+            <span className="text-4xl sm:text-5xl font-extrabold text-[#F9B51B] tracking-[-0.03em]">02</span>
+            <span className="text-xs font-medium tracking-wider text-[#666666] dark:text-[#A3A3A3] uppercase">
               PADDS SMANSAT · 6 Modul Video Asli
             </span>
           </div>
-          <div className="text-xs font-black tracking-widest text-[#31543A] dark:text-[#F9B51B] uppercase">
+          <div className="text-xs font-bold tracking-[0.08em] text-[#31543A] dark:text-[#F9B51B] uppercase">
             PENGEMBANGAN SISTEM ARSIP
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#171717] dark:text-white tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#171717] dark:text-white tracking-[-0.025em] leading-[1.08]">
             Pusat Arsip dan Dokumen Digital Sekolah
           </h1>
-          <p className="text-sm sm:text-base text-[#666666] dark:text-[#A3A3A3] leading-relaxed pt-1">
+          <p className="text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] pt-1 font-normal">
             Platform pengelolaan arsip digital SMAN 1 Suwawa Timur yang memusatkan pencatatan surat dan dokumen, pencarian, pengelolaan metadata, lokasi fisik, retensi, QR/public link, pelaporan, dan jejak aktivitas. Rekaman video langsung memperlihatkan demo interaksi nyata di setiap modul sistem.
           </p>
         </div>
@@ -109,7 +109,7 @@ export const ProjectDetailPadds: React.FC<ProjectDetailPaddsProps> = ({ onBack }
         <div className="space-y-6 pt-6 border-t border-[#171717]/15 dark:border-white/10">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
-              <span className="text-xs font-black tracking-widest text-[#171717] dark:text-white uppercase block">
+              <span className="text-xs font-bold tracking-[0.08em] text-[#171717] dark:text-white uppercase block">
                 Pemutar Dokumentasi Video Modul Sistem
               </span>
               <p className="text-xs text-[#666666] dark:text-[#A3A3A3] mt-0.5">
@@ -158,7 +158,7 @@ export const ProjectDetailPadds: React.FC<ProjectDetailPaddsProps> = ({ onBack }
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
-                <span className="font-mono text-[11px] px-1 text-[#171717] dark:text-white font-bold">
+                <span className="text-[11px] px-1 text-[#171717] dark:text-white font-bold">
                   {activeIndex + 1} / {total}
                 </span>
                 <button
@@ -188,23 +188,23 @@ export const ProjectDetailPadds: React.FC<ProjectDetailPaddsProps> = ({ onBack }
             </div>
           </div>
 
-          {/* Module Selector Thumbnails Strip */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 pt-2">
+          {/* Module Selector Horizontal Tabs Strip */}
+          <div className="flex items-center gap-2.5 overflow-x-auto pb-2 pt-1 no-scrollbar">
             {padds6VideoModules.map((mod, idx) => (
               <button
                 key={mod.number}
                 type="button"
                 onClick={() => setActiveIndex(idx)}
-                className={`p-3 rounded-2xl border-2 text-left transition-all cursor-pointer ${
+                className={`px-4 py-2.5 rounded-full border-2 text-left transition-all cursor-pointer shrink-0 flex items-center gap-2 ${
                   activeIndex === idx
                     ? 'bg-[#31543A] text-white border-[#171717] shadow-[3px_3px_0px_#171717]'
                     : 'bg-[#F5F5F5] dark:bg-[#1E1E1E] text-[#171717] dark:text-white border-[#171717]/15 dark:border-[#333333] hover:border-[#171717]'
                 }`}
               >
-                <span className={`text-[10px] font-black block ${activeIndex === idx ? 'text-[#F9B51B]' : 'text-[#31543A] dark:text-[#F9B51B]'}`}>
-                  Modul {mod.number}
+                <span className={`text-[11px] font-black ${activeIndex === idx ? 'text-[#F9B51B]' : 'text-[#31543A] dark:text-[#F9B51B]'}`}>
+                  {mod.number}
                 </span>
-                <span className="text-xs font-bold line-clamp-1 block mt-0.5">
+                <span className="text-xs font-bold whitespace-nowrap">
                   {mod.name}
                 </span>
               </button>
@@ -212,7 +212,7 @@ export const ProjectDetailPadds: React.FC<ProjectDetailPaddsProps> = ({ onBack }
           </div>
         </div>
 
-        {/* 4 KOMPONEN KOTAK FOKUS & KONTRIBUSI */}
+        {/* FOKUS & KONTRIBUSI PENGEMBANGAN (LINEAR FEATURE LIST) */}
         <div className="space-y-4 pt-6 border-t border-[#171717]/15 dark:border-white/10">
           <div className="flex items-center gap-2">
             <span className="w-3 h-3 rounded-full bg-[#F9B51B]" />
@@ -221,20 +221,20 @@ export const ProjectDetailPadds: React.FC<ProjectDetailPaddsProps> = ({ onBack }
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 text-xs">
+          <div className="divide-y divide-[#171717]/10 dark:divide-white/10 rounded-3xl border-2 border-[#171717] dark:border-[#333333] overflow-hidden bg-[#F5F5F5] dark:bg-[#1E1E1E] shadow-[4px_4px_0px_#171717]">
             {FOCUS_CONTRIBUTIONS.map((item, idx) => (
               <div
                 key={idx}
-                className="p-6 bg-[#F5F5F5] dark:bg-[#1E1E1E] rounded-3xl border-2 border-[#171717] dark:border-[#333333] space-y-2 shadow-[4px_4px_0px_#171717] flex flex-col justify-between"
+                className="p-5 sm:p-6 flex flex-col sm:flex-row items-start gap-4 hover:bg-white dark:hover:bg-[#252528] transition-colors"
               >
-                <div className="space-y-1.5">
-                  <div className="flex items-center gap-1.5 font-black text-xs text-[#F9B51B]">
-                    <span>0{idx + 1}.</span>
-                    <h4 className="text-[#171717] dark:text-white font-black text-xs">
-                      {item.title}
-                    </h4>
-                  </div>
-                  <p className="text-[#666666] dark:text-[#A3A3A3] leading-relaxed text-xs pt-1">
+                <span className="text-sm font-black text-[#F9B51B] shrink-0 pt-0.5">
+                  0{idx + 1}.
+                </span>
+                <div className="space-y-1">
+                  <h4 className="text-sm sm:text-base font-black text-[#171717] dark:text-white">
+                    {item.title}
+                  </h4>
+                  <p className="text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3] leading-relaxed">
                     {item.desc}
                   </p>
                 </div>

@@ -80,8 +80,8 @@ export const ProjectDetailUsahaKeluarga: React.FC<ProjectDetailUsahaKeluargaProp
           </div>
         </div>
 
-        {/* Hero Visual Mockup Focal Point */}
-        <div className="rounded-3xl p-6 sm:p-10 md:p-12 border-2 border-[#171717] dark:border-[#333333] shadow-[8px_8px_0px_#171717] dark:shadow-[8px_8px_0px_#333333] bg-gradient-to-b from-[#F5F5F5] to-white dark:from-[#1E1E1E] dark:to-[#121212] flex flex-col items-center justify-center relative overflow-hidden">
+        {/* Hero Visual Mockup Focal Point (Clean & Open, No Bento Box) */}
+        <div className="w-full py-4 sm:py-8 flex flex-col items-center justify-center relative select-none">
           <div className="w-full max-w-4xl mx-auto">
             <img
               src="/assets/mockups/mockup_03_usaha_keluarga.svg"
@@ -111,7 +111,7 @@ export const ProjectDetailUsahaKeluarga: React.FC<ProjectDetailUsahaKeluargaProp
           </p>
         </div>
 
-        {/* 4 KOMPONEN KOTAK PERAN & AKTIVITAS HARIAN TOKO */}
+        {/* PERAN & AKTIVITAS HARIAN TOKO (LINEAR WORKFLOW LIST) */}
         <div className="space-y-4 pt-6 border-t border-[#171717]/15 dark:border-white/10">
           <div className="flex items-center gap-2">
             <span className="w-3 h-3 rounded-full bg-[#F9B51B]" />
@@ -120,20 +120,25 @@ export const ProjectDetailUsahaKeluarga: React.FC<ProjectDetailUsahaKeluargaProp
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 text-xs">
+          <div className="divide-y divide-[#171717]/10 dark:divide-white/10 rounded-3xl border-2 border-[#171717] dark:border-[#333333] overflow-hidden bg-[#F5F5F5] dark:bg-[#1E1E1E] shadow-[4px_4px_0px_#171717]">
             {keyRoles.map((role, idx) => (
               <div
                 key={idx}
-                className="p-6 bg-[#F5F5F5] dark:bg-[#1E1E1E] rounded-3xl border-2 border-[#171717] dark:border-[#333333] space-y-2 shadow-[4px_4px_0px_#171717] flex flex-col justify-between"
+                className="p-5 sm:p-6 flex flex-col sm:flex-row items-start gap-4 hover:bg-white dark:hover:bg-[#252528] transition-colors"
               >
-                <div className="space-y-1.5">
-                  <div className="flex items-center gap-2 text-[#31543A] dark:text-[#F9B51B]">
-                    <span className="text-xs font-black text-[#F9B51B]">0{idx + 1}.</span>
-                    <h4 className="font-black text-[#171717] dark:text-white text-xs">
-                      {role.title}
-                    </h4>
+                <div className="flex items-center gap-3 shrink-0">
+                  <span className="text-sm font-black text-[#F9B51B]">
+                    0{idx + 1}.
+                  </span>
+                  <div className="p-2 rounded-xl bg-white dark:bg-[#121212] border border-[#171717]/20 dark:border-white/10">
+                    {role.icon}
                   </div>
-                  <p className="text-[#666666] dark:text-[#A3A3A3] leading-relaxed text-xs pt-1">
+                </div>
+                <div className="space-y-1">
+                  <h4 className="text-sm sm:text-base font-black text-[#171717] dark:text-white">
+                    {role.title}
+                  </h4>
+                  <p className="text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3] leading-relaxed">
                     {role.desc}
                   </p>
                 </div>
@@ -143,9 +148,9 @@ export const ProjectDetailUsahaKeluarga: React.FC<ProjectDetailUsahaKeluargaProp
         </div>
 
         {/* EDITORIAL VISUAL TOKO & RELEVANSI DUNIA RETAIL */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch pt-6 border-t border-[#171717]/15 dark:border-white/10">
+        <div className="flex flex-col lg:flex-row gap-8 items-stretch pt-6 border-t border-[#171717]/15 dark:border-white/10">
           {/* Visual Store Box */}
-          <div className="lg:col-span-5 rounded-3xl overflow-hidden border-2 border-[#171717] dark:border-[#333333] bg-[#F5F5F5] dark:bg-[#1E1E1E] p-5 flex flex-col justify-between space-y-4 shadow-[4px_4px_0px_#171717]">
+          <div className="w-full lg:w-5/12 rounded-3xl overflow-hidden border-2 border-[#171717] dark:border-[#333333] bg-[#F5F5F5] dark:bg-[#1E1E1E] p-5 flex flex-col justify-between space-y-4 shadow-[4px_4px_0px_#171717]">
             <EditableImage
               storageKey="family_business_visual"
               defaultSrc={portfolioImages.retailStoreInterior}
@@ -166,7 +171,7 @@ export const ProjectDetailUsahaKeluarga: React.FC<ProjectDetailUsahaKeluargaProp
           </div>
 
           {/* Relevansi & Hasil Pembelajaran Toko */}
-          <div className="lg:col-span-7 bg-[#F5F5F5] dark:bg-[#1E1E1E] rounded-3xl border-2 border-[#171717] dark:border-[#333333] p-6 sm:p-8 flex flex-col justify-between space-y-5 shadow-[4px_4px_0px_#171717]">
+          <div className="w-full lg:w-7/12 bg-[#F5F5F5] dark:bg-[#1E1E1E] rounded-3xl border-2 border-[#171717] dark:border-[#333333] p-6 sm:p-8 flex flex-col justify-between space-y-5 shadow-[4px_4px_0px_#171717]">
             <div className="space-y-3">
               <div className="flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-[#31543A]" />
