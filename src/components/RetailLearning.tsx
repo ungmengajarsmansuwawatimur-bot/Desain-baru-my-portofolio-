@@ -34,18 +34,18 @@ const RetailLearningComponent: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Top Header */}
         <div className="max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold tracking-[0.08em] uppercase text-[#F9B51B]">
+          <div className="font-display inline-flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-[0.08em] uppercase text-[#F9B51B]">
             <span aria-hidden="true">✦</span>
             <span>LEARNING</span>
             <span aria-hidden="true">✦</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#171717] dark:text-white tracking-[-0.025em] leading-[1.08]">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-[#171717] dark:text-white tracking-[-0.02em] leading-[1.12]">
             Pembelajaran Retail<br />
             <span className="text-[#F9B51B]">&amp; Customer Service</span>
           </h2>
 
-          <p className="text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] max-w-2xl font-normal">
+          <p className="font-body text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] max-w-2xl font-normal">
             Modul dan keterampilan operasional ritel yang saya pelajari secara mandiri untuk kesiapan kerja di lingkungan retail modern.
           </p>
 
@@ -60,7 +60,7 @@ const RetailLearningComponent: React.FC = () => {
                   role="tab"
                   aria-selected={isActive}
                   onClick={() => setActiveCategory(cat)}
-                  className={`text-xs sm:text-sm font-semibold tracking-wider uppercase transition-colors cursor-pointer py-1 ${
+                  className={`font-display text-xs sm:text-sm font-semibold tracking-wider uppercase transition-colors cursor-pointer py-1 ${
                     isActive
                       ? 'text-[#31543A] dark:text-[#F9B51B]'
                       : 'text-[#888888] dark:text-[#A3A3A3] hover:text-[#171717] dark:hover:text-white'
@@ -77,7 +77,7 @@ const RetailLearningComponent: React.FC = () => {
         <div className="pt-2 space-y-6">
           <div className="flex items-center gap-3">
             <span className="w-2.5 h-2.5 rounded-full bg-[#F9B51B]" />
-            <h3 className="text-xl sm:text-2xl font-bold text-[#171717] dark:text-white tracking-[-0.015em]">
+            <h3 className="font-display text-xl sm:text-2xl font-semibold text-[#171717] dark:text-white tracking-[-0.015em]">
               Daftar Modul Pembelajaran
             </h3>
           </div>
@@ -107,28 +107,28 @@ const RetailLearningComponent: React.FC = () => {
 
                   {/* Kicker & Platform */}
                   <div className="flex items-center justify-between text-[11px] pt-1">
-                    <span className="font-bold tracking-[0.08em] text-[#31543A] dark:text-[#F9B51B] uppercase">
+                    <span className="font-info font-normal tracking-[0.08em] text-[#31543A] dark:text-[#F9B51B] uppercase">
                       {item.code} &bull; {item.category}
                     </span>
-                    <span className="text-[#888888] dark:text-[#A3A3A3] font-medium">
+                    <span className="font-info text-[#888888] dark:text-[#A3A3A3] font-normal">
                       {item.platform}
                     </span>
                   </div>
 
                   {/* Title */}
-                  <h4 className="text-base sm:text-lg font-bold text-[#171717] dark:text-white leading-snug group-hover:text-[#31543A] dark:group-hover:text-[#F9B51B] transition-colors">
+                  <h4 className="font-display text-base sm:text-lg font-semibold text-[#171717] dark:text-white leading-snug group-hover:text-[#31543A] dark:group-hover:text-[#F9B51B] transition-colors">
                     {item.title}
                   </h4>
 
                   {/* Concise Overview */}
-                  <p className="text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3] leading-[1.6] line-clamp-2 font-normal">
+                  <p className="font-body text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3] leading-[1.6] line-clamp-2 font-normal">
                     {item.overview}
                   </p>
                 </div>
 
                 {/* Minimalist Action CTA */}
                 <div className="pt-1">
-                  <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#31543A] dark:text-[#F9B51B] group-hover:translate-x-1 transition-transform">
+                  <span className="font-display inline-flex items-center gap-1.5 text-xs font-semibold text-[#31543A] dark:text-[#F9B51B] group-hover:translate-x-1 transition-transform">
                     <span>Lihat Rincian Modul</span>
                     <span aria-hidden="true">&rarr;</span>
                   </span>

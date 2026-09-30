@@ -1,10 +1,13 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@600&family=Manrope:wght@400;500&family=Montserrat:ital,wght@0,400;0,500;1,400&display=swap');
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-display: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-info: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --color-warm-canvas: #FFFFFF;
   --color-steve-yellow: #F9B51B;
   --color-steve-darkgreen: #31543A;
@@ -23,7 +26,9 @@
 }
 
 :root {
-  --font-primary: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-info: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   /* Responsive typography scale tokens using fluid clamp */
   --type-size-display: clamp(2.5rem, 5.5vw + 1rem, 5rem);
@@ -37,8 +42,8 @@
   --type-size-meta: clamp(0.75rem, 0.2vw + 0.7rem, 0.8125rem);
 
   /* Line-height design tokens */
-  --type-lh-display: 1.02;
-  --type-lh-h1: 1.06;
+  --type-lh-display: 1.05;
+  --type-lh-h1: 1.08;
   --type-lh-h2: 1.12;
   --type-lh-h3: 1.2;
   --type-lh-h4: 1.32;
@@ -47,14 +52,13 @@
   --type-lh-meta: 1.45;
 
   /* Letter-spacing design tokens */
-  --type-track-display: -0.035em;
-  --type-track-heading: -0.025em;
-  --type-track-subheading: -0.015em;
+  --type-track-display: -0.025em;
+  --type-track-heading: -0.02em;
+  --type-track-subheading: -0.01em;
   --type-track-normal: 0em;
   --type-track-label: 0.08em;
   --type-track-nav: 0.02em;
 
-  font-family: var(--font-primary);
   color-scheme: light;
   --bg-canvas: #FFFFFF;
   --bg-surface: #FFFFFF;
@@ -68,8 +72,90 @@
   --accent-darkgreen-hover: #26432E;
 }
 
-*, *::before, *::after {
-  font-family: var(--font-primary);
+/* 3-Typeface System Utility Classes & Tokens */
+.font-display {
+  font-family: var(--font-display) !important;
+  font-weight: 600;
+}
+
+.font-body {
+  font-family: var(--font-body) !important;
+  font-weight: 400;
+}
+
+.font-info {
+  font-family: var(--font-info) !important;
+  font-weight: 400;
+}
+
+/* Global Typography Design Token Classes */
+.type-display {
+  font-family: var(--font-display) !important;
+  font-weight: 600 !important;
+  letter-spacing: var(--type-track-display);
+  line-height: var(--type-lh-display);
+}
+
+.type-section-heading {
+  font-family: var(--font-display) !important;
+  font-weight: 600 !important;
+  letter-spacing: var(--type-track-heading);
+  line-height: var(--type-lh-h2);
+}
+
+.type-project-title {
+  font-family: var(--font-display) !important;
+  font-weight: 600 !important;
+  letter-spacing: var(--type-track-subheading);
+  line-height: var(--type-lh-h3);
+}
+
+.type-body {
+  font-family: var(--font-body) !important;
+  font-weight: 400 !important;
+  letter-spacing: var(--type-track-normal);
+  line-height: var(--type-lh-body);
+}
+
+.type-meta {
+  font-family: var(--font-info) !important;
+  font-weight: 400 !important;
+  letter-spacing: var(--type-track-normal);
+  line-height: var(--type-lh-meta);
+}
+
+.type-label {
+  font-family: var(--font-display) !important;
+  font-weight: 600 !important;
+  letter-spacing: var(--type-track-label);
+  text-transform: uppercase;
+}
+
+.type-nav {
+  font-family: var(--font-display) !important;
+  font-weight: 600 !important;
+  letter-spacing: var(--type-track-nav);
+}
+
+.type-button {
+  font-family: var(--font-display) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+p {
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+button {
+  font-family: var(--font-display);
+  font-weight: 600;
 }
 
 :root.dark, html.dark {
@@ -93,6 +179,8 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+  font-family: var(--font-body);
+  font-weight: 400;
   background-color: var(--bg-canvas);
   color: var(--text-primary);
   overflow-x: hidden;

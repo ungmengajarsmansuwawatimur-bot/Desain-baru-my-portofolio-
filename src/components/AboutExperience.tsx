@@ -9,6 +9,44 @@ interface AboutExperienceProps {
   onOpenStoreModal?: () => void;
 }
 
+const AnimatedCounter: React.FC<{
+  target: number;
+  suffix?: string;
+  duration?: number;
+}> = ({ target, suffix = '', duration = 2200 }) => {
+  const [count, setCount] = React.useState(0);
+
+  React.useEffect(() => {
+    let startTimestamp: number | null = null;
+    let animationFrameId: number;
+
+    const step = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const elapsed = timestamp - startTimestamp;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic for a silky smooth finish
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.round(easeOut * target));
+
+      if (progress < 1) {
+        animationFrameId = requestAnimationFrame(step);
+      } else {
+        setCount(target);
+      }
+    };
+
+    animationFrameId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [target, duration]);
+
+  return (
+    <span className="tabular-nums">
+      {count}
+      {suffix}
+    </span>
+  );
+};
+
 export const AboutExperience: React.FC<AboutExperienceProps> = () => {
   const backgroundItems = [
     {
@@ -97,19 +135,19 @@ export const AboutExperience: React.FC<AboutExperienceProps> = () => {
         <div className="space-y-12">
           {/* Section Kicker & Title */}
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold tracking-[0.08em] uppercase text-[#F9B51B]">
+            <div className="font-display inline-flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-[0.08em] uppercase text-[#F9B51B]">
               <span aria-hidden="true">✦</span>
               <span>ABOUT</span>
               <span aria-hidden="true">✦</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-[-0.025em] text-[#171717] dark:text-white leading-[1.08]">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-[-0.02em] text-[#171717] dark:text-white leading-[1.12]">
               About Taufik Hidayat Malii
             </h2>
           </div>
 
           {/* Narrative Bio & 3 Key Metric Columns */}
           <div className="max-w-4xl space-y-8">
-            <div className="space-y-4 text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] font-normal">
+            <div className="font-body space-y-4 text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] font-normal">
               <p>
                 Saya memiliki ketertarikan tinggi pada industri pelayanan retail dan operasional toko modern. Melalui pengalaman lebih dari 8 tahun membantu usaha keluarga, saya terlatih melayani berbagai karakter pembeli, mengelola transaksi kasir, menjaga stok barang, serta memastikan area penjualan selalu tertata rapi.
               </p>
@@ -118,32 +156,32 @@ export const AboutExperience: React.FC<AboutExperienceProps> = () => {
               </p>
             </div>
 
-            {/* 3 Steve Mengelkoch Signature Stat Columns */}
-            <div className="grid grid-cols-3 gap-4 sm:gap-6 py-6 border-y border-[#171717]/15 dark:border-white/10">
-              <div>
-                <span className="text-xs font-medium text-[#666666] dark:text-[#A3A3A3] block uppercase tracking-wide">
+            {/* 3 Steve Mengelkoch Signature Stat Columns - Centered & Animated */}
+            <div className="grid grid-cols-3 divide-x divide-[#171717]/10 dark:divide-white/10 py-6 sm:py-8 border-y border-[#171717]/15 dark:border-white/10 text-center">
+              <div className="flex flex-col items-center justify-center text-center px-2 sm:px-4">
+                <span className="font-info text-xs sm:text-sm font-normal text-[#666666] dark:text-[#A3A3A3] block uppercase tracking-wide text-center">
                   Pelanggan &amp; Transaksi
                 </span>
-                <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#171717] dark:text-white tracking-[-0.03em] mt-1 block">
-                  250+
+                <span className="font-info text-3xl sm:text-4xl md:text-5xl font-normal text-[#171717] dark:text-white tracking-tight mt-1.5 block text-center tabular-nums">
+                  <AnimatedCounter target={250} suffix="+" duration={2400} />
                 </span>
               </div>
 
-              <div>
-                <span className="text-xs font-medium text-[#666666] dark:text-[#A3A3A3] block uppercase tracking-wide">
+              <div className="flex flex-col items-center justify-center text-center px-2 sm:px-4">
+                <span className="font-info text-xs sm:text-sm font-normal text-[#666666] dark:text-[#A3A3A3] block uppercase tracking-wide text-center">
                   Modul PADDS SMANSAT
                 </span>
-                <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#171717] dark:text-white tracking-[-0.03em] mt-1 block">
-                  24
+                <span className="font-info text-3xl sm:text-4xl md:text-5xl font-normal text-[#171717] dark:text-white tracking-tight mt-1.5 block text-center tabular-nums">
+                  <AnimatedCounter target={24} duration={2000} />
                 </span>
               </div>
 
-              <div>
-                <span className="text-xs font-medium text-[#666666] dark:text-[#A3A3A3] block uppercase tracking-wide">
+              <div className="flex flex-col items-center justify-center text-center px-2 sm:px-4">
+                <span className="font-info text-xs sm:text-sm font-normal text-[#666666] dark:text-[#A3A3A3] block uppercase tracking-wide text-center">
                   Kesiapan Kerja
                 </span>
-                <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#171717] dark:text-white tracking-[-0.03em] mt-1 block">
-                  100%
+                <span className="font-info text-3xl sm:text-4xl md:text-5xl font-normal text-[#171717] dark:text-white tracking-tight mt-1.5 block text-center tabular-nums">
+                  <AnimatedCounter target={100} suffix="%" duration={2200} />
                 </span>
               </div>
             </div>
@@ -156,12 +194,12 @@ export const AboutExperience: React.FC<AboutExperienceProps> = () => {
         <div id="background" className="space-y-8 pt-10 border-t border-[#171717]/15 dark:border-white/10">
           {/* Section Kicker & Title */}
           <div className="text-center space-y-2 max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold tracking-[0.08em] uppercase text-[#F9B51B]">
+            <div className="font-display inline-flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-[0.08em] uppercase text-[#F9B51B]">
               <span aria-hidden="true">✦</span>
               <span>BACKGROUND</span>
               <span aria-hidden="true">✦</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-[-0.025em] text-[#171717] dark:text-white leading-[1.08]">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.02em] text-[#171717] dark:text-white leading-[1.12]">
               Experience &amp; Education
             </h2>
           </div>
@@ -180,13 +218,13 @@ export const AboutExperience: React.FC<AboutExperienceProps> = () => {
                       {item.icon}
                     </div>
                     <div className="space-y-1">
-                      <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#31543A] dark:text-[#F9B51B] block">
+                      <span className="font-info text-[10px] sm:text-xs font-normal uppercase tracking-wider text-[#31543A] dark:text-[#F9B51B] block">
                         {item.category}
                       </span>
-                      <h3 className="text-xl sm:text-2xl font-bold text-[#171717] dark:text-white tracking-[-0.015em] leading-snug">
+                      <h3 className="font-display text-xl sm:text-2xl font-semibold text-[#171717] dark:text-white tracking-[-0.015em] leading-snug">
                         {item.title}
                       </h3>
-                      <p className="text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3] font-medium">
+                      <p className="font-info text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3] font-normal">
                         {item.subtitle}
                       </p>
                     </div>
@@ -194,17 +232,17 @@ export const AboutExperience: React.FC<AboutExperienceProps> = () => {
 
                   {/* Middle Column (col 5-12): Rich Description & Tags */}
                   <div className="lg:col-span-8 space-y-3">
-                    <p className="text-sm sm:text-base text-[#555555] dark:text-[#A3A3A3] leading-[1.65] font-normal">
+                    <p className="font-body text-sm sm:text-base text-[#555555] dark:text-[#A3A3A3] leading-[1.65] font-normal">
                       {item.description}
                     </p>
                     <div className="flex flex-wrap items-center gap-2 pt-0.5">
-                      <span className="text-xs font-bold text-[#31543A] dark:text-[#F9B51B]">
+                      <span className="font-info text-xs font-normal text-[#31543A] dark:text-[#F9B51B]">
                         {item.period}
                       </span>
                       {item.tags.map((t, idx) => (
                         <span
                           key={idx}
-                          className="text-xs text-[#777777] dark:text-[#888888] font-medium"
+                          className="font-info text-xs text-[#777777] dark:text-[#888888] font-normal"
                         >
                           &bull; {t}
                         </span>
@@ -227,14 +265,14 @@ export const AboutExperience: React.FC<AboutExperienceProps> = () => {
               className="border-t border-[#171717]/15 dark:border-white/10 pt-4 flex flex-col justify-between space-y-3"
             >
               <div>
-                <div className="text-3xl sm:text-4xl font-extrabold text-[#F9B51B] leading-none mb-2 tracking-tight">
+                <div className="font-display text-3xl sm:text-4xl font-semibold text-[#F9B51B] leading-none mb-2 tracking-tight">
                   {val.number}
                 </div>
-                <h4 className="text-base sm:text-lg font-bold text-[#171717] dark:text-white">
+                <h4 className="font-display text-base sm:text-lg font-semibold text-[#171717] dark:text-white">
                   {val.title}
                 </h4>
               </div>
-              <p className="text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3] leading-[1.6] font-normal">
+              <p className="font-body text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3] leading-[1.6] font-normal">
                 {val.description}
               </p>
             </div>

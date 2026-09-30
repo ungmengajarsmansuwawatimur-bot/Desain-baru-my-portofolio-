@@ -89,14 +89,14 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
         className="pt-20 md:pt-28 pb-0 bg-[#31543A] text-white transition-colors duration-200 overflow-hidden"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 pb-16 md:pb-20">
-          {/* Section Kicker & Title */}
-          <div className="space-y-4 max-w-3xl">
-            <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold tracking-[0.08em] uppercase text-[#F9B51B]">
+          {/* Section Kicker & Title - Centered */}
+          <div className="space-y-4 max-w-3xl mx-auto text-center flex flex-col items-center">
+            <div className="font-display inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold tracking-[0.08em] uppercase text-[#F9B51B]">
               <span aria-hidden="true">✦</span>
               <span>SKILLS</span>
               <span aria-hidden="true">✦</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-[-0.025em] text-white leading-[1.08]">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-[-0.02em] text-white leading-[1.12] text-center">
               Skills &amp; Technical Experience
             </h2>
           </div>
@@ -111,10 +111,10 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
                 <div className="space-y-4">
                   {/* Title & Description */}
                   <div className="space-y-2">
-                    <h3 className="text-lg sm:text-xl font-bold tracking-tight text-white leading-snug">
+                    <h3 className="font-display text-lg sm:text-xl font-semibold tracking-tight text-white leading-snug">
                       {card.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-white/80 leading-[1.55] font-normal">
+                    <p className="font-body text-xs sm:text-sm text-white/80 leading-[1.55] font-normal">
                       {card.desc}
                     </p>
                   </div>
@@ -123,7 +123,7 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
                 {/* Bullets with Checkmarks */}
                 <div className="space-y-2">
                   {card.bullets.map((bullet, idx) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs font-medium text-white/90">
+                    <div key={idx} className="font-body flex items-start gap-2 text-xs font-normal text-white/90">
                       <span className="text-[#F9B51B] font-bold shrink-0 mt-0.5">✓</span>
                       <span>{bullet}</span>
                     </div>
@@ -136,12 +136,12 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
           {/* Tools yang Saya Gunakan inside Skills Section */}
           <div className="pt-10 space-y-10">
             <div className="text-center space-y-3 max-w-2xl mx-auto">
-              <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold tracking-[0.08em] uppercase text-[#F9B51B]">
+              <div className="font-display inline-flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-[0.08em] uppercase text-[#F9B51B]">
                 <span aria-hidden="true">✦</span>
                 <span>DIGITAL TOOLS &amp; PLATFORMS</span>
                 <span aria-hidden="true">✦</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+              <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold text-white tracking-tight">
                 Aplikasi &amp; Perangkat Lunak Kerja
               </h3>
             </div>
@@ -165,12 +165,12 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           {/* Section Kicker & Title */}
           <div className="text-center space-y-3 max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold tracking-[0.08em] uppercase text-[#F9B51B]">
+            <div className="font-display inline-flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-[0.08em] uppercase text-[#F9B51B]">
               <span aria-hidden="true">✦</span>
               <span>TESTIMONIALS</span>
               <span aria-hidden="true">✦</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-[-0.025em] text-[#171717] dark:text-white leading-[1.08]">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.02em] text-[#171717] dark:text-white leading-[1.12]">
               What Clients &amp; Colleagues Say
             </h2>
           </div>
@@ -187,26 +187,26 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
                   <div className="flex items-center gap-1 text-[#F9B51B] text-base select-none">
                     {'★'.repeat(testi.stars)}
                   </div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#31543A] dark:text-[#F9B51B]">
+                  <span className="font-info text-[11px] font-normal uppercase tracking-wider text-[#31543A] dark:text-[#F9B51B]">
                     {testi.category}
                   </span>
                 </div>
 
-                {/* Quote (Pure Plus Jakarta Sans) */}
-                <p className="text-base sm:text-lg text-[#171717] dark:text-white leading-[1.65] italic font-normal">
+                {/* Quote */}
+                <p className="font-body text-base sm:text-lg text-[#171717] dark:text-white leading-[1.65] italic font-normal">
                   &ldquo;{testi.quote}&rdquo;
                 </p>
 
                 {/* Author Meta */}
                 <div className="pt-3 border-t border-[#171717]/10 dark:border-white/10 flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-[#F9B51B] text-[#171717] flex items-center justify-center font-extrabold text-xs shrink-0">
+                  <div className="font-display w-9 h-9 rounded-full bg-[#F9B51B] text-[#171717] flex items-center justify-center font-semibold text-xs shrink-0">
                     {testi.name.slice(0, 2).toUpperCase()}
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-[#171717] dark:text-white leading-snug">
+                    <h4 className="font-display text-sm font-semibold text-[#171717] dark:text-white leading-snug">
                       {testi.name}
                     </h4>
-                    <p className="text-xs text-[#666666] dark:text-[#A3A3A3] font-medium">
+                    <p className="font-info text-xs text-[#666666] dark:text-[#A3A3A3] font-normal">
                       {testi.role}
                     </p>
                   </div>
@@ -227,12 +227,12 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           {/* Section Kicker */}
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold tracking-[0.08em] uppercase text-[#F9B51B]">
+            <div className="font-display inline-flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-[0.08em] uppercase text-[#F9B51B]">
               <span aria-hidden="true">✦</span>
               <span>CURRICULUM VITAE</span>
               <span aria-hidden="true">✦</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-[-0.025em] text-[#171717] dark:text-white leading-[1.08]">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.02em] text-[#171717] dark:text-white leading-[1.12]">
               Official Resume &amp; Documentation
             </h2>
           </div>
@@ -244,7 +244,7 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
               <div className="relative w-full max-w-[480px] h-[320px] sm:h-[350px]">
                 {/* Back Page */}
                 <div className="absolute right-3 top-0 w-[85%] h-full bg-[#F5F5F5] dark:bg-[#1E1E1E] border border-[#171717]/10 dark:border-white/10 rounded-2xl p-6 text-[11px] text-[#666666] space-y-3 pointer-events-none">
-                  <div className="h-6 bg-[#31543A] rounded-xl text-white px-3 flex items-center justify-between font-bold text-[10px]">
+                  <div className="font-display h-6 bg-[#31543A] rounded-xl text-white px-3 flex items-center justify-between font-semibold text-[10px]">
                     <span>TAUFIK HIDAYAT MALII</span>
                     <span className="text-[#F9B51B]">PRAMUNIAGA</span>
                   </div>
@@ -263,22 +263,22 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
                 {/* Front Page */}
                 <div className="absolute left-0 bottom-0 w-[85%] h-[90%] bg-white dark:bg-[#1E1E1E] border border-[#171717]/15 dark:border-white/15 rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-lg select-none">
                   <div>
-                    <div className="text-xs font-bold tracking-[0.08em] text-[#F9B51B] uppercase">
+                    <div className="font-info text-xs font-normal tracking-[0.08em] text-[#F9B51B] uppercase">
                       CURRICULUM VITAE
                     </div>
-                    <div className="text-xl sm:text-2xl font-extrabold text-[#171717] dark:text-white mt-1 tracking-tight">
+                    <div className="font-display text-xl sm:text-2xl font-semibold text-[#171717] dark:text-white mt-1 tracking-tight">
                       Taufik Hidayat Malii
                     </div>
                     <div className="w-12 h-1 bg-[#31543A] mt-2 rounded-full" />
                   </div>
 
-                  <div className="space-y-2 text-xs text-[#666666] dark:text-[#A3A3A3] font-normal">
+                  <div className="font-info space-y-2 text-xs text-[#666666] dark:text-[#A3A3A3] font-normal">
                     <p>• Pendidikan: SMA Negeri 1 Kabila</p>
                     <p>• Pengalaman: Operasional Usaha Keluarga (8 Thn)</p>
                     <p>• Portofolio: Jasa Digital &amp; Sistem PADDS</p>
                   </div>
 
-                  <div className="flex items-center justify-between text-xs font-bold text-[#171717] dark:text-white border-t border-[#171717]/15 dark:border-[#333333] pt-3">
+                  <div className="font-info flex items-center justify-between text-xs font-normal text-[#171717] dark:text-white border-t border-[#171717]/15 dark:border-[#333333] pt-3">
                     <span>Gorontalo, Indonesia</span>
                     <span>Update 2025</span>
                   </div>
@@ -289,10 +289,10 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
             {/* Col 8-12: Description & Action */}
             <div className="lg:col-span-5 space-y-6">
               <div className="space-y-3">
-                <h3 className="text-2xl sm:text-3xl font-bold text-[#171717] dark:text-white tracking-[-0.015em]">
+                <h3 className="font-display text-2xl sm:text-3xl font-semibold text-[#171717] dark:text-white tracking-[-0.015em]">
                   Curriculum Vitae Siap Tinjau
                 </h3>
-                <p className="text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] font-normal">
+                <p className="font-body text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] font-normal">
                   Dokumen lengkap berisi riwayat pendidikan, pengalaman operasional nyata, matriks kompetensi retail, serta kontak resmi. Tersedia untuk kebutuhan evaluasi rekrutmen dan kolaborasi kerja.
                 </p>
               </div>
@@ -302,7 +302,7 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
                 <button
                   type="button"
                   onClick={onOpenCvModal}
-                  className="group inline-flex items-center gap-3 pl-6 pr-2 py-2 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase bg-[#31543A] text-white hover:bg-[#26432E] border-2 border-[#171717] transition-all duration-150 shadow-md active:scale-95 cursor-pointer"
+                  className="font-display group inline-flex items-center gap-3 pl-6 pr-2 py-2 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase bg-[#31543A] text-white hover:bg-[#26432E] border-2 border-[#171717] transition-all duration-150 shadow-md active:scale-95 cursor-pointer"
                 >
                   <span>BUKA &amp; UNDUH CV LENGKAP</span>
                   <span className="w-9 h-9 rounded-full bg-[#F9B51B] text-[#171717] flex items-center justify-center font-bold text-sm shrink-0 transition-transform group-hover:translate-x-1">
@@ -326,12 +326,12 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
           {/* Top Banner Headline */}
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
             <div className="space-y-3 max-w-2xl">
-              <div className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.08em] uppercase text-[#F9B51B]">
+              <div className="font-display inline-flex items-center gap-2 text-xs font-semibold tracking-[0.08em] uppercase text-[#F9B51B]">
                 <span aria-hidden="true">✦</span>
                 <span>LET'S WORK TOGETHER</span>
                 <span aria-hidden="true">✦</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-[-0.025em] text-white leading-[1.08]">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-[-0.02em] text-white leading-[1.12]">
                 Tertarik Bekerja Sama atau Rekrutmen?
               </h2>
             </div>
@@ -342,7 +342,7 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
                 href="https://api.whatsapp.com/send?phone=6285656381485"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 pl-6 pr-2 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase bg-[#F9B51B] text-[#171717] hover:bg-[#E5A417] transition-all duration-150 shadow-md active:scale-95 cursor-pointer"
+                className="font-display group inline-flex items-center gap-3 pl-6 pr-2 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase bg-[#F9B51B] text-[#171717] hover:bg-[#E5A417] transition-all duration-150 shadow-md active:scale-95 cursor-pointer"
               >
                 <span>HUBUNGI VIA WHATSAPP</span>
                 <span className="w-9 h-9 rounded-full bg-[#171717] text-white flex items-center justify-center font-bold text-sm shrink-0 transition-transform group-hover:translate-x-1">
@@ -363,7 +363,7 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
                 className="space-y-2 group cursor-pointer block"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold tracking-[0.08em] text-[#F9B51B] uppercase">
+                  <span className="font-display text-xs font-semibold tracking-[0.08em] text-[#F9B51B] uppercase">
                     {contact.label}
                   </span>
                   <span className="text-white/60 group-hover:text-[#F9B51B] text-sm font-bold transition-colors">
@@ -372,10 +372,10 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
                 </div>
 
                 <div>
-                  <h4 className="text-base sm:text-lg font-bold text-white group-hover:text-[#F9B51B] transition-colors break-words">
+                  <h4 className="font-display text-base sm:text-lg font-semibold text-white group-hover:text-[#F9B51B] transition-colors break-words">
                     {contact.value}
                   </h4>
-                  <p className="text-xs text-white/60 mt-1 font-medium">
+                  <p className="font-info text-xs text-white/60 mt-1 font-normal">
                     {contact.placeholderText}
                   </p>
                 </div>

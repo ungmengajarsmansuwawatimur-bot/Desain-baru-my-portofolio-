@@ -101,7 +101,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="group flex items-center gap-2 select-none"
             aria-label="Taufik Hidayat Malii - Kembali ke Beranda"
           >
-            <span className="text-xl sm:text-2xl font-extrabold tracking-[-0.025em] text-[#171717] dark:text-white uppercase transition-colors">
+            <span className="font-display text-xl sm:text-2xl font-semibold tracking-[-0.025em] text-[#171717] dark:text-white uppercase transition-colors">
               TAUFIK <span className="text-[#F9B51B]">MALII</span>
             </span>
           </a>
@@ -120,7 +120,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                       onNavigateHome(link.id);
                     }
                   }}
-                  className={`relative px-4 py-2 text-xs font-semibold tracking-[0.02em] rounded-full transition-all duration-150 ${
+                  className={`font-display relative px-4 py-2 text-xs font-semibold tracking-[0.02em] rounded-full transition-all duration-150 ${
                     isActive
                       ? 'bg-[#171717] text-white dark:bg-white dark:text-[#171717] shadow-sm'
                       : 'text-[#666666] dark:text-[#A3A3A3] hover:text-[#171717] dark:hover:text-white hover:bg-white dark:hover:bg-[#2A2A2A]'
@@ -137,7 +137,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               type="button"
               onClick={onOpenCvModal}
-              className="group inline-flex items-center gap-2 pl-4 pr-1.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase bg-[#31543A] text-white hover:bg-[#26432E] border-2 border-[#171717] transition-all duration-150 cursor-pointer shadow-sm active:scale-95"
+              className="font-display group inline-flex items-center gap-2 pl-4 pr-1.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-[#31543A] text-white hover:bg-[#26432E] border-2 border-[#171717] transition-all duration-150 cursor-pointer shadow-sm active:scale-95"
             >
               <span>HIRE ME</span>
               <span className="w-7 h-7 rounded-full bg-[#F9B51B] text-[#171717] flex items-center justify-center font-bold text-sm shrink-0 transition-transform group-hover:translate-x-0.5">
@@ -153,7 +153,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               type="button"
               onClick={onOpenCvModal}
-              className="inline-flex items-center gap-1.5 pl-3 pr-1 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-[#31543A] text-white border border-[#171717]"
+              className="font-display inline-flex items-center gap-1.5 pl-3 pr-1 py-1 rounded-full text-[11px] font-semibold tracking-wider uppercase bg-[#31543A] text-white border border-[#171717]"
             >
               <span>HIRE ME</span>
               <span className="w-5 h-5 rounded-full bg-[#F9B51B] text-[#171717] flex items-center justify-center text-xs">
@@ -201,7 +201,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     onNavigateHome(link.id);
                   }
                 }}
-                className={`flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-semibold tracking-wide transition-all ${
+                className={`font-display flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-semibold tracking-wide transition-all ${
                   isActive
                     ? 'bg-[#F9B51B] text-[#171717] border-2 border-[#171717]'
                     : 'text-[#171717] dark:text-[#F9FAFB] hover:bg-[#F5F5F5] dark:hover:bg-[#1E1E1E]'

@@ -59,7 +59,7 @@ export const ProjectDetailPadds: React.FC<ProjectDetailPaddsProps> = ({ onBack }
           <button
             type="button"
             onClick={onBack}
-            className="group inline-flex items-center gap-2.5 text-xs sm:text-sm font-black text-[#171717] dark:text-white hover:text-[#31543A] dark:hover:text-[#F9B51B] transition-colors cursor-pointer"
+            className="font-display group inline-flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-[#171717] dark:text-white hover:text-[#31543A] dark:hover:text-[#F9B51B] transition-colors cursor-pointer"
           >
             <span className="w-8 h-8 rounded-full border-2 border-[#171717] dark:border-white flex items-center justify-center font-bold text-sm transition-transform group-hover:-translate-x-1">
               &larr;
@@ -67,7 +67,7 @@ export const ProjectDetailPadds: React.FC<ProjectDetailPaddsProps> = ({ onBack }
             <span>Kembali ke Beranda</span>
           </button>
 
-          <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#31543A] dark:text-[#F9B51B]">
+          <div className="font-info inline-flex items-center gap-2 text-xs font-normal uppercase tracking-wider text-[#31543A] dark:text-[#F9B51B]">
             <span>PROYEK 02</span>
             <span>&bull;</span>
             <span>DETAIL LENGKAP</span>
@@ -77,18 +77,18 @@ export const ProjectDetailPadds: React.FC<ProjectDetailPaddsProps> = ({ onBack }
         {/* Main Header Information */}
         <div className="space-y-4 max-w-4xl">
           <div className="flex items-center gap-3">
-            <span className="text-4xl sm:text-5xl font-extrabold text-[#F9B51B] tracking-[-0.03em]">02</span>
-            <span className="text-xs font-medium tracking-wider text-[#666666] dark:text-[#A3A3A3] uppercase">
+            <span className="font-display text-4xl sm:text-5xl font-semibold text-[#F9B51B] tracking-[-0.03em]">02</span>
+            <span className="font-info text-xs font-normal tracking-wider text-[#666666] dark:text-[#A3A3A3] uppercase">
               PADDS SMANSAT · 6 Modul Video Asli
             </span>
           </div>
-          <div className="text-xs font-bold tracking-[0.08em] text-[#31543A] dark:text-[#F9B51B] uppercase">
+          <div className="font-info text-xs font-normal tracking-[0.08em] text-[#31543A] dark:text-[#F9B51B] uppercase">
             PENGEMBANGAN SISTEM ARSIP
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#171717] dark:text-white tracking-[-0.025em] leading-[1.08]">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-[#171717] dark:text-white tracking-[-0.025em] leading-[1.08]">
             Pusat Arsip dan Dokumen Digital Sekolah
           </h1>
-          <p className="text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] pt-1 font-normal">
+          <p className="font-body text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] pt-1 font-normal">
             Platform pengelolaan arsip digital SMAN 1 Suwawa Timur yang memusatkan pencatatan surat dan dokumen, pencarian, pengelolaan metadata, lokasi fisik, retensi, QR/public link, pelaporan, dan jejak aktivitas. Rekaman video langsung memperlihatkan demo interaksi nyata di setiap modul sistem.
           </p>
         </div>
@@ -97,15 +97,15 @@ export const ProjectDetailPadds: React.FC<ProjectDetailPaddsProps> = ({ onBack }
         <div className="space-y-6 pt-6 border-t border-[#171717]/15 dark:border-white/10">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
-              <span className="text-xs font-bold tracking-[0.08em] text-[#171717] dark:text-white uppercase block">
+              <span className="font-display text-xs font-semibold tracking-[0.08em] text-[#171717] dark:text-white uppercase block">
                 Pemutar Dokumentasi Video Modul Sistem
               </span>
-              <p className="text-xs text-[#666666] dark:text-[#A3A3A3] mt-0.5">
+              <p className="font-body text-xs text-[#666666] dark:text-[#A3A3A3] mt-0.5 font-normal">
                 Demonstrasi video interaksi layar untuk 6 modul operasional PADDS SMANSAT.
               </p>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-xs font-bold text-[#31543A] dark:text-[#F9B51B]">
+              <span className="font-info text-xs font-normal text-[#31543A] dark:text-[#F9B51B]">
                 Modul {activeIndex + 1} dari {total}
               </span>
             </div>
@@ -127,10 +127,10 @@ export const ProjectDetailPadds: React.FC<ProjectDetailPaddsProps> = ({ onBack }
           {/* Bar Informasi & Navigasi Modul */}
           <div className="flex items-center justify-between text-xs text-[#666666] dark:text-[#A3A3A3] px-1 flex-wrap gap-3">
             <div className="flex items-center gap-2">
-              <span className="font-black text-[#171717] dark:text-white text-sm">
+              <span className="font-display font-semibold text-[#171717] dark:text-white text-sm">
                 Modul {current.number}: {current.name}
               </span>
-              <span className="text-[#666666] dark:text-[#A3A3A3] hidden sm:inline">— {current.tag}</span>
+              <span className="font-info text-[#666666] dark:text-[#A3A3A3] hidden sm:inline font-normal">— {current.tag}</span>
             </div>
 
             <div className="flex items-center gap-3">
@@ -146,7 +146,7 @@ export const ProjectDetailPadds: React.FC<ProjectDetailPaddsProps> = ({ onBack }
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
-                <span className="text-[11px] px-1 text-[#171717] dark:text-white font-bold">
+                <span className="font-info text-[11px] px-1 text-[#171717] dark:text-white font-normal tabular-nums">
                   {activeIndex + 1} / {total}
                 </span>
                 <button
@@ -166,7 +166,7 @@ export const ProjectDetailPadds: React.FC<ProjectDetailPaddsProps> = ({ onBack }
                 href={current.youtubeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-black text-[#31543A] dark:text-[#F9B51B] hover:underline"
+                className="font-display inline-flex items-center gap-1.5 text-xs font-semibold text-[#31543A] dark:text-[#F9B51B] hover:underline"
               >
                 <svg className="w-4 h-4 fill-current text-[#F9B51B]" viewBox="0 0 24 24">
                   <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
@@ -189,10 +189,10 @@ export const ProjectDetailPadds: React.FC<ProjectDetailPaddsProps> = ({ onBack }
                     : 'bg-[#F5F5F5] dark:bg-[#1E1E1E] text-[#171717] dark:text-white border-[#171717]/15 dark:border-[#333333] hover:border-[#171717]'
                 }`}
               >
-                <span className={`text-[11px] font-black ${activeIndex === idx ? 'text-[#F9B51B]' : 'text-[#31543A] dark:text-[#F9B51B]'}`}>
+                <span className={`font-display text-[11px] font-semibold ${activeIndex === idx ? 'text-[#F9B51B]' : 'text-[#31543A] dark:text-[#F9B51B]'}`}>
                   {mod.number}
                 </span>
-                <span className="text-xs font-bold whitespace-nowrap">
+                <span className="font-display text-xs font-semibold whitespace-nowrap">
                   {mod.name}
                 </span>
               </button>
@@ -204,7 +204,7 @@ export const ProjectDetailPadds: React.FC<ProjectDetailPaddsProps> = ({ onBack }
         <div className="space-y-4 pt-6 border-t border-[#171717]/15 dark:border-white/10">
           <div className="flex items-center gap-2">
             <span className="w-3 h-3 rounded-full bg-[#F9B51B]" />
-            <h3 className="text-xs sm:text-sm font-black text-[#171717] dark:text-white uppercase tracking-wider">
+            <h3 className="font-display text-xs sm:text-sm font-semibold text-[#171717] dark:text-white uppercase tracking-wider">
               Fokus &amp; Kontribusi Pengembangan
             </h3>
           </div>
@@ -215,14 +215,14 @@ export const ProjectDetailPadds: React.FC<ProjectDetailPaddsProps> = ({ onBack }
                 key={idx}
                 className="p-5 sm:p-6 flex flex-col sm:flex-row items-start gap-4 hover:bg-white dark:hover:bg-[#252528] transition-colors"
               >
-                <span className="text-sm font-black text-[#F9B51B] shrink-0 pt-0.5">
+                <span className="font-display text-sm font-semibold text-[#F9B51B] shrink-0 pt-0.5">
                   0{idx + 1}.
                 </span>
                 <div className="space-y-1">
-                  <h4 className="text-sm sm:text-base font-black text-[#171717] dark:text-white">
+                  <h4 className="font-display text-sm sm:text-base font-semibold text-[#171717] dark:text-white">
                     {item.title}
                   </h4>
-                  <p className="text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3] leading-relaxed">
+                  <p className="font-body text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3] leading-relaxed font-normal">
                     {item.desc}
                   </p>
                 </div>
@@ -236,7 +236,7 @@ export const ProjectDetailPadds: React.FC<ProjectDetailPaddsProps> = ({ onBack }
           <button
             type="button"
             onClick={onBack}
-            className="group inline-flex items-center gap-3 px-8 py-3 rounded-full text-sm font-black bg-[#31543A] text-white hover:bg-[#26432E] border-2 border-[#171717] transition-all shadow-md active:scale-95 cursor-pointer"
+            className="font-display group inline-flex items-center gap-3 px-8 py-3 rounded-full text-sm font-semibold bg-[#31543A] text-white hover:bg-[#26432E] border-2 border-[#171717] transition-all shadow-md active:scale-95 cursor-pointer uppercase tracking-wider"
           >
             <span>&larr; KEMBALI KE BERANDA</span>
           </button>

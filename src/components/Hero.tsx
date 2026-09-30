@@ -36,7 +36,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
   };
 
   return (
-    <section id="home" className="pt-24 sm:pt-28 md:pt-32 bg-white dark:bg-[#121212] transition-colors duration-200 overflow-hidden">
+    <section id="home" className="pt-24 sm:pt-28 md:pt-32 bg-white dark:bg-[#121212] transition-colors duration-200 overflow-x-clip overflow-y-visible relative z-20">
       {/* Decorative top pill tab */}
       <div className="flex justify-center mb-3 sm:mb-4">
         <div className="w-12 sm:w-16 h-3 sm:h-3.5 rounded-full bg-[#F9B51B] border-2 border-[#171717] shadow-[2px_2px_0px_#171717]" />
@@ -62,7 +62,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
           <div className="lg:col-span-5 flex flex-col justify-center space-y-6 sm:space-y-7 z-10 pb-8 sm:pb-12 lg:pb-16 pt-4">
             {/* Small Official Label */}
             <div>
-              <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-black tracking-[0.08em] uppercase text-[#F9B51B]">
+              <div className="font-display inline-flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-[0.08em] uppercase text-[#F9B51B]">
                 <span aria-hidden="true">✦</span>
                 <span>MY PORTFOLIO • PROFIL RESMI</span>
                 <span aria-hidden="true">✦</span>
@@ -71,7 +71,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
 
             {/* Main Headline: Focal Point 1 */}
             <div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[3.75rem] xl:text-[4.5rem] font-black tracking-[-0.035em] text-[#171717] dark:text-white leading-[1.02] uppercase break-words">
+              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[3.75rem] xl:text-[4.5rem] font-semibold tracking-[-0.025em] text-[#171717] dark:text-white leading-[1.05] uppercase break-words">
                 {candidateProfile.fullName}
               </h1>
             </div>
@@ -82,7 +82,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
                 href="#work"
                 className="group inline-flex items-center gap-1.5 sm:gap-2 p-1.5 sm:p-2 rounded-full bg-[#F5A61D] dark:bg-[#F9B51B] transition-all duration-150 hover:brightness-105 active:scale-95 shadow-md hover:shadow-lg cursor-pointer"
               >
-                <span className="px-5 sm:px-7 py-2.5 sm:py-3 rounded-full bg-[#2B4734] text-white text-xs sm:text-sm font-extrabold tracking-widest uppercase flex items-center justify-center">
+                <span className="font-display px-5 sm:px-7 py-2.5 sm:py-3 rounded-full bg-[#2B4734] text-white text-xs sm:text-sm font-semibold tracking-wider uppercase flex items-center justify-center">
                   VIEW MY WORK
                 </span>
                 <span className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white text-[#171717] flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:translate-x-1 shadow-sm">
@@ -105,10 +105,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
               <button
                 type="button"
                 onClick={onOpenCvModal}
-                className="group inline-flex items-center gap-3 pl-6 pr-2.5 py-2.5 rounded-full text-xs sm:text-sm font-black tracking-wider uppercase bg-white dark:bg-[#1E1E1E] text-[#171717] dark:text-white hover:bg-[#F9B51B]/10 border-2 border-[#171717] dark:border-white transition-all duration-150 shadow-[4px_4px_0px_#171717] dark:shadow-[4px_4px_0px_rgba(255,255,255,0.2)] hover:shadow-[2px_2px_0px_#171717] hover:translate-x-[2px] hover:translate-y-[2px] active:scale-95 cursor-pointer"
+                className="font-display group inline-flex items-center gap-3 pl-6 pr-2.5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase bg-white dark:bg-[#1E1E1E] text-[#171717] dark:text-white hover:bg-[#171717] hover:text-white dark:hover:bg-white dark:hover:text-[#171717] border-2 border-[#171717] dark:border-white transition-all duration-200 active:scale-95 cursor-pointer"
               >
                 <span>UNDUH CV RESMI</span>
-                <span className="w-9 h-9 rounded-full bg-[#171717] dark:bg-white text-white dark:text-[#171717] flex items-center justify-center font-black text-sm shrink-0 transition-transform group-hover:translate-x-1">
+                <span className="w-9 h-9 rounded-full bg-[#171717] dark:bg-white text-white dark:text-[#171717] group-hover:bg-[#F9B51B] group-hover:text-[#171717] dark:group-hover:bg-[#F9B51B] dark:group-hover:text-[#171717] flex items-center justify-center font-bold text-sm shrink-0 transition-transform group-hover:translate-x-1">
                   ↓
                 </span>
               </button>
@@ -116,7 +116,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
 
             {/* Teks Penyeimbang Sisi Kiri Tepat di Bawah Tombol Aksi */}
             <div className="pt-2 sm:pt-3 max-w-lg">
-              <p className="text-sm sm:text-base text-[#555555] dark:text-[#CCCCCC] leading-relaxed font-normal">
+              <p className="font-body text-sm sm:text-base text-[#555555] dark:text-[#CCCCCC] leading-relaxed font-normal">
                 {candidateProfile.summary}
               </p>
             </div>
@@ -124,8 +124,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
 
           {/* AREA KANAN — FOTO PORTRAIT (Col 6-12, ~55% width on desktop) Digeser ke Kanan Menempel di Atas Garis Running Text */}
           <div className="lg:col-span-7 flex justify-center lg:justify-end items-end relative select-none pt-6 lg:pt-0 self-end">
-            {/* Visual Container: Digeser ke Kanan Secara Tegak Lurus (Shifted Horizontally to the Right, Upright) */}
-            <div className="relative w-full max-w-[420px] sm:max-w-[480px] lg:max-w-[540px] xl:max-w-[580px] h-[480px] sm:h-[560px] md:h-[620px] lg:h-[660px] flex items-end justify-center lg:translate-x-10 xl:translate-x-16 transition-transform duration-300">
+            {/* Visual Container: Digeser sedikit ke bawah agar menyatu tepat di atas garis batas marquee */}
+            <div className="relative w-full max-w-[420px] sm:max-w-[480px] lg:max-w-[540px] xl:max-w-[580px] h-[480px] sm:h-[560px] md:h-[620px] lg:h-[660px] flex items-end justify-center lg:translate-x-10 xl:translate-x-16 translate-y-[11px] sm:translate-y-[15px] transition-transform duration-300">
               
               {/* Decorative Accent 1: Comic Lightning Bolt (Top Right) */}
               <div className="absolute top-2 right-4 sm:right-6 z-20 animate-bounce" style={{ animationDuration: '3s' }} aria-hidden="true">
@@ -141,7 +141,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
 
               {/* Signature Warm Yellow Rounded Rectangle / Arch Backdrop resting directly on the ticker line (Solid Clean Yellow) */}
               <div
-                className="absolute inset-x-4 sm:inset-x-8 bottom-0 top-16 sm:top-20 lg:top-24 rounded-t-[40px] sm:rounded-t-[48px] lg:rounded-t-[56px] rounded-b-none bg-[#F9B51B] border-t-4 border-x-4 border-b-0 border-[#171717] shadow-[6px_0px_0px_#171717]"
+                className="absolute inset-x-4 sm:inset-x-8 bottom-0 top-16 sm:top-20 lg:top-24 rounded-t-[40px] sm:rounded-t-[48px] lg:rounded-t-[56px] rounded-b-none bg-[#F9B51B] border-4 border-[#171717] shadow-[6px_0px_0px_#171717]"
                 aria-hidden="true"
               />
 
@@ -179,22 +179,22 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
               </div>
 
               {/* Floating Pill Badge 1: Pelayanan Konsumen (Top Right) */}
-              <div className="absolute top-28 sm:top-32 -right-2 sm:right-0 z-20 bg-[#31543A] text-white text-xs sm:text-sm font-black px-4 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717]">
+              <div className="font-display absolute top-28 sm:top-32 -right-2 sm:right-0 z-20 bg-[#31543A] text-white text-xs sm:text-sm font-semibold tracking-wide px-4 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717]">
                 Pelayanan Konsumen
               </div>
 
               {/* Floating Pill Badge 2: Kasir & POS (Bottom Left) */}
-              <div className="absolute bottom-16 sm:bottom-20 -left-2 sm:-left-4 z-20 bg-[#F9B51B] text-[#171717] text-xs sm:text-sm font-black px-4 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717]">
+              <div className="font-display absolute bottom-16 sm:bottom-20 -left-2 sm:-left-4 z-20 bg-[#F9B51B] text-[#171717] text-xs sm:text-sm font-semibold tracking-wide px-4 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717]">
                 Kasir &amp; POS
               </div>
 
               {/* Floating Pill Badge 3: Penataan Display (Bottom Right) */}
-              <div className="absolute bottom-8 sm:bottom-10 -right-1 sm:right-2 z-20 bg-[#F9B51B] text-[#171717] text-xs sm:text-sm font-black px-4 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717]">
+              <div className="font-display absolute bottom-8 sm:bottom-10 -right-1 sm:right-2 z-20 bg-[#F9B51B] text-[#171717] text-xs sm:text-sm font-semibold tracking-wide px-4 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717]">
                 Display &amp; Planogram
               </div>
 
               {/* Floating Pill Badge 4: Manajemen Stok (Middle Left) */}
-              <div className="absolute top-44 sm:top-48 -left-3 sm:-left-6 z-20 bg-[#31543A] text-white text-xs sm:text-sm font-black px-3.5 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717]">
+              <div className="font-display absolute top-44 sm:top-48 -left-3 sm:-left-6 z-20 bg-[#31543A] text-white text-xs sm:text-sm font-semibold px-3.5 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717]">
                 Manajemen Stok
               </div>
             </div>
@@ -203,8 +203,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
         </div>
       </div>
 
-      {/* Signature Horizontal Yellow Marquee Ticker Strip */}
-      <MarqueeTicker />
+      {/* Signature Horizontal Yellow Marquee Ticker Strip with Green Diagonal Frame */}
+      <MarqueeTicker hasDiagonalFrame />
     </section>
   );
 };

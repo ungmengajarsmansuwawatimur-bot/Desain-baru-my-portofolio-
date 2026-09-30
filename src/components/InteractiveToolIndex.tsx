@@ -55,14 +55,14 @@ export const InteractiveToolIndex: React.FC<InteractiveToolIndexProps> = ({ tool
 
                 {/* Category Pill Tag for context on click */}
                 {isSelected && cleanRole && (
-                  <span className="absolute -top-2.5 bg-[#31543A] text-white text-[10px] font-bold px-2 py-0.5 rounded-full border border-white shadow-xs whitespace-nowrap">
+                  <span className="font-info absolute -top-2.5 bg-[#31543A] text-white text-[10px] font-normal px-2 py-0.5 rounded-full border border-white shadow-xs whitespace-nowrap">
                     {cleanRole}
                   </span>
                 )}
               </div>
 
               {/* White Label Underneath Card */}
-              <span className="text-white text-xs sm:text-sm font-semibold text-center mt-2.5 tracking-tight block leading-snug group-hover:text-[#F9B51B] transition-colors">
+              <span className="font-display text-white text-xs sm:text-sm font-semibold text-center mt-2.5 tracking-tight block leading-snug group-hover:text-[#F9B51B] transition-colors">
                 {tool.name}
               </span>
             </div>
@@ -74,15 +74,15 @@ export const InteractiveToolIndex: React.FC<InteractiveToolIndexProps> = ({ tool
       {activeTool && (
         <div className="max-w-xl mx-auto p-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 text-center animate-fadeIn text-white space-y-1">
           <div className="flex items-center justify-center gap-2">
-            <span className="font-extrabold text-sm sm:text-base text-[#F9B51B]">
+            <span className="font-display font-semibold text-sm sm:text-base text-[#F9B51B]">
               {activeTool.name}
             </span>
             <span className="text-xs text-white/60">•</span>
-            <span className="text-xs font-bold uppercase tracking-wider text-white/90">
+            <span className="font-info text-xs font-normal uppercase tracking-wider text-white/90">
               Kategori: {activeTool.category}
             </span>
           </div>
-          <p className="text-xs text-white/80 leading-relaxed">
+          <p className="font-body text-xs text-white/80 leading-relaxed font-normal">
             Digunakan untuk{' '}
             {activeTool.role.replace(/[()]/g, '') || 'efisiensi tugas harian dan produktivitas'}.
           </p>

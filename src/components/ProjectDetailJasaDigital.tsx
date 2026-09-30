@@ -35,7 +35,7 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
           <button
             type="button"
             onClick={onBack}
-            className="group inline-flex items-center gap-2.5 text-xs sm:text-sm font-black text-[#171717] dark:text-white hover:text-[#31543A] dark:hover:text-[#F9B51B] transition-colors cursor-pointer"
+            className="font-display group inline-flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-[#171717] dark:text-white hover:text-[#31543A] dark:hover:text-[#F9B51B] transition-colors cursor-pointer"
           >
             <span className="w-8 h-8 rounded-full border-2 border-[#171717] dark:border-white flex items-center justify-center font-bold text-sm transition-transform group-hover:-translate-x-1">
               &larr;
@@ -43,7 +43,7 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
             <span>Kembali ke Beranda</span>
           </button>
 
-          <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#31543A] dark:text-[#F9B51B]">
+          <div className="font-info inline-flex items-center gap-2 text-xs font-normal uppercase tracking-wider text-[#31543A] dark:text-[#F9B51B]">
             <span>PROYEK 01</span>
             <span>&bull;</span>
             <span>DETAIL LENGKAP</span>
@@ -53,25 +53,25 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
         {/* Main Header Information */}
         <div className="space-y-4 max-w-4xl">
           <div className="flex items-center gap-3">
-            <span className="text-4xl sm:text-5xl font-extrabold text-[#F9B51B] tracking-[-0.03em]">01</span>
-            <span className="text-xs font-medium tracking-wider text-[#666666] dark:text-[#A3A3A3] uppercase">
+            <span className="font-display text-4xl sm:text-5xl font-semibold text-[#F9B51B] tracking-[-0.03em]">01</span>
+            <span className="font-info text-xs font-normal tracking-wider text-[#666666] dark:text-[#A3A3A3] uppercase">
               Desember 2024 — Sekarang
             </span>
           </div>
-          <div className="text-xs font-bold tracking-[0.08em] text-[#31543A] dark:text-[#F9B51B] uppercase">
+          <div className="font-info text-xs font-normal tracking-[0.08em] text-[#31543A] dark:text-[#F9B51B] uppercase">
             PELAYANAN &amp; PENGELOLAAN
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#171717] dark:text-white tracking-[-0.025em] leading-[1.08]">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-[#171717] dark:text-white tracking-[-0.025em] leading-[1.08]">
             Jasa Digital &amp; Publikasi Mahasiswa
           </h1>
-          <p className="text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] pt-1 font-normal">
+          <p className="font-body text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] pt-1 font-normal">
             Memberikan layanan secara langsung kepada pelanggan dengan memahami kebutuhan, menjelaskan informasi, melakukan koordinasi selama proses, menangani revisi, dan menindaklanjuti hingga pekerjaan selesai. Pengalaman Jasa Digital dimulai pada Desember 2024 ketika seorang teman mahasiswa menghubungi saya karena membutuhkan bantuan untuk publikasi artikel tugas mata kuliahnya. Informasi mengenai jasa kemudian menyebar melalui promosi organik dan rekomendasi pelanggan (word of mouth) ke jaringan mahasiswa lainnya.
           </p>
         </div>
 
         {/* PERAN SAYA & AKTIVITAS LAYANAN */}
         <div className="space-y-4 pt-6 border-t border-[#171717]/15 dark:border-white/10">
-          <span className="text-xs font-bold tracking-[0.08em] text-[#171717] dark:text-white uppercase block">
+          <span className="font-display text-xs font-semibold tracking-[0.08em] text-[#171717] dark:text-white uppercase block">
             Peran Saya &amp; Aktivitas Layanan
           </span>
           <div className="flex flex-wrap gap-2.5">
@@ -89,10 +89,10 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
                 key={idx}
                 className="inline-flex items-center gap-2 px-4 py-2 bg-[#F5F5F5] dark:bg-[#1E1E1E] rounded-full border border-[#171717]/20 dark:border-[#333333] shadow-xs"
               >
-                <span className="text-[11px] font-black text-[#F9B51B]">
+                <span className="font-display text-[11px] font-semibold text-[#F9B51B]">
                   0{idx + 1}.
                 </span>
-                <span className="text-xs font-bold text-[#171717] dark:text-white">
+                <span className="font-info text-xs font-normal text-[#171717] dark:text-white">
                   {role}
                 </span>
               </div>
@@ -104,14 +104,14 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
         <div className="space-y-6 pt-6 border-t border-[#171717]/15 dark:border-white/10">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
-              <span className="text-xs font-black tracking-widest text-[#171717] dark:text-white uppercase block">
+              <span className="font-display text-xs font-semibold tracking-wider text-[#171717] dark:text-white uppercase block">
                 Galeri Bukti Tangkapan Layar Smartphone
               </span>
-              <p className="text-xs text-[#666666] dark:text-[#A3A3A3] mt-0.5">
+              <p className="font-body text-xs text-[#666666] dark:text-[#A3A3A3] mt-0.5 font-normal">
                 Dokumentasi alur komunikasi WhatsApp nyata dari pemesanan hingga artikel berhasil dipublikasikan.
               </p>
             </div>
-            <span className="text-xs font-bold text-[#31543A] dark:text-[#F9B51B]">
+            <span className="font-info text-xs font-normal text-[#31543A] dark:text-[#F9B51B]">
               Total 5 Studi Alur Nyata
             </span>
           </div>
@@ -132,7 +132,7 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
         <div className="space-y-6 pt-6 border-t border-[#171717]/15 dark:border-white/10">
           <div className="flex items-center gap-2">
             <span className="w-3 h-3 rounded-full bg-[#F9B51B]" />
-            <h3 className="text-xs sm:text-sm font-black text-[#171717] dark:text-white uppercase tracking-wider">
+            <h3 className="font-display text-xs sm:text-sm font-semibold text-[#171717] dark:text-white uppercase tracking-wider">
               Evaluasi &amp; Analisis Kinerja Layanan
             </h3>
           </div>
@@ -180,24 +180,24 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
                 className="p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-white dark:hover:bg-[#252528] transition-colors"
               >
                 <div className="flex items-start gap-4">
-                  <span className="text-sm font-black text-[#F9B51B] shrink-0 pt-0.5">
+                  <span className="font-display text-sm font-semibold text-[#F9B51B] shrink-0 pt-0.5">
                     {card.no}.
                   </span>
                   <div className="space-y-1">
                     <div className="flex items-center gap-2.5 flex-wrap">
-                      <h4 className="text-sm sm:text-base font-black text-[#171717] dark:text-white">
+                      <h4 className="font-display text-sm sm:text-base font-semibold text-[#171717] dark:text-white">
                         {card.title}
                       </h4>
-                      <span className="text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full bg-[#31543A] text-white">
+                      <span className="font-info text-[10px] font-normal uppercase px-2.5 py-0.5 rounded-full bg-[#31543A] text-white">
                         {card.score}
                       </span>
                     </div>
-                    <p className="text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3] leading-relaxed">
+                    <p className="font-body text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3] leading-relaxed font-normal">
                       {card.desc}
                     </p>
                   </div>
                 </div>
-                <span className="text-xs font-bold text-[#31543A] dark:text-[#F9B51B] shrink-0 self-start sm:self-center">
+                <span className="font-info text-xs font-normal text-[#31543A] dark:text-[#F9B51B] shrink-0 self-start sm:self-center">
                   &bull; {card.tag}
                 </span>
               </div>
@@ -209,11 +209,11 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
             <div className="w-full md:w-1/2 bg-[#F5F5F5] dark:bg-[#1E1E1E] rounded-3xl border-2 border-[#171717] dark:border-[#333333] p-6 sm:p-7 space-y-4 shadow-[4px_4px_0px_#171717]">
               <div className="flex items-center gap-2.5">
                 <span className="w-3 h-3 rounded-full bg-[#31543A]" />
-                <h4 className="text-sm font-black text-[#171717] dark:text-white uppercase tracking-wider">
+                <h4 className="font-display text-sm font-semibold text-[#171717] dark:text-white uppercase tracking-wider">
                   Metode &amp; Etika Layanan
                 </h4>
               </div>
-              <ul className="space-y-2.5 text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3]">
+              <ul className="font-body space-y-2.5 text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3] font-normal">
                 {realWorkBadges.outcomesAndImpact.map((item: string, idx: number) => {
                   const colonIndex = item.indexOf(':');
                   if (colonIndex !== -1) {
@@ -221,10 +221,10 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
                     const rest = item.slice(colonIndex + 1);
                     return (
                       <li key={idx} className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
-                        <span className="font-bold text-[#171717] dark:text-white sm:w-36 shrink-0 leading-snug">
+                        <span className="font-display font-semibold text-[#171717] dark:text-white sm:w-36 shrink-0 leading-snug">
                           {label}
                         </span>
-                        <span className="leading-relaxed text-[#666666] dark:text-[#A3A3A3]">
+                        <span className="font-body leading-relaxed text-[#666666] dark:text-[#A3A3A3] font-normal">
                           {rest}
                         </span>
                       </li>
@@ -232,7 +232,7 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
                   }
                   return (
                     <li key={idx} className="flex items-start gap-2.5">
-                      <span className="text-[#31543A] font-black mt-0.5 shrink-0">✓</span>
+                      <span className="text-[#31543A] font-semibold mt-0.5 shrink-0">✓</span>
                       <span className="leading-relaxed">{item}</span>
                     </li>
                   );
@@ -243,14 +243,14 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
             <div className="w-full md:w-1/2 bg-[#F5F5F5] dark:bg-[#1E1E1E] rounded-3xl border-2 border-[#171717] dark:border-[#333333] p-6 sm:p-7 space-y-4 shadow-[4px_4px_0px_#171717]">
               <div className="flex items-center gap-2.5">
                 <span className="w-3 h-3 rounded-full bg-[#31543A]" />
-                <h4 className="text-sm font-black text-[#171717] dark:text-white uppercase tracking-wider">
+                <h4 className="font-display text-sm font-semibold text-[#171717] dark:text-white uppercase tracking-wider">
                   Yang Saya Pelajari
                 </h4>
               </div>
-              <ul className="space-y-2.5 text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3]">
+              <ul className="font-body space-y-2.5 text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3] font-normal">
                 {realWorkBadges.whatILearned.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2.5">
-                    <span className="text-[#31543A] font-black mt-0.5">✓</span>
+                    <span className="text-[#31543A] font-semibold mt-0.5">✓</span>
                     <span className="leading-relaxed">{item}</span>
                   </li>
                 ))}
@@ -264,7 +264,7 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
           <button
             type="button"
             onClick={onBack}
-            className="group inline-flex items-center gap-3 px-8 py-3 rounded-full text-sm font-black bg-[#31543A] text-white hover:bg-[#26432E] border-2 border-[#171717] transition-all shadow-md active:scale-95 cursor-pointer"
+            className="font-display group inline-flex items-center gap-3 px-8 py-3 rounded-full text-sm font-semibold bg-[#31543A] text-white hover:bg-[#26432E] border-2 border-[#171717] transition-all shadow-md active:scale-95 cursor-pointer uppercase tracking-wider"
           >
             <span>&larr; KEMBALI KE BERANDA</span>
           </button>
@@ -360,12 +360,12 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
             </div>
 
             <div className="p-4 bg-[#F8F9FA] dark:bg-[#18181B] rounded-xl text-xs sm:text-sm text-[#6B7280] dark:text-[#9CA3AF] leading-relaxed space-y-2 border border-[#E5E7EB] dark:border-[#27272A]">
-              <span className="font-bold text-[#111827] dark:text-[#F9FAFB] block">
+              <span className="font-display font-semibold text-[#111827] dark:text-[#F9FAFB] block">
                 Ringkasan Alur Komunikasi:
               </span>
-              <p>{selectedEvidence.shortDescription}</p>
-              <div className="text-[11px] text-[#6B7280] dark:text-[#9CA3AF] pt-1">
-                <span className="font-semibold text-[#111827] dark:text-[#F9FAFB]">Kebijakan Privasi: </span>
+              <p className="font-body font-normal">{selectedEvidence.shortDescription}</p>
+              <div className="font-info text-[11px] text-[#6B7280] dark:text-[#9CA3AF] pt-1 font-normal">
+                <span className="font-display font-semibold text-[#111827] dark:text-[#F9FAFB]">Kebijakan Privasi: </span>
                 {selectedEvidence.privacyNote}
               </div>
             </div>

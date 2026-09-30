@@ -56,24 +56,24 @@ export const RealWork: React.FC<RealWorkProps> = ({ onSelectProject }) => {
       {/* Top Header Typography */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-14">
         <div className="max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold tracking-[0.08em] uppercase text-[#F9B51B]">
+          <div className="font-display inline-flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-[0.08em] uppercase text-[#F9B51B]">
             <span aria-hidden="true">✦</span>
             <span>MY WORK</span>
             <span aria-hidden="true">✦</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#171717] dark:text-white tracking-[-0.025em] leading-[1.08]">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-[#171717] dark:text-white tracking-[-0.02em] leading-[1.12]">
             Selected Projects &amp;<br />
             <span className="text-[#F9B51B]">Real Evidence</span>
           </h2>
 
-          <p className="text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] max-w-2xl font-normal">
+          <p className="font-body text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] max-w-2xl font-normal">
             Representasi visual dari 3 bidang portofolio utama: Layanan Jasa Digital, Pusat Arsip Sekolah (PADDS), dan Pengelolaan Usaha Keluarga. Klik pada setiap proyek untuk membuka dokumentasi dan studi kasus lengkap.
           </p>
 
-          {/* Note in Plus Jakarta Sans */}
+          {/* Note */}
           <div className="pt-2">
-            <span className="italic font-medium text-base sm:text-lg text-[#171717] dark:text-white block">
+            <span className="font-body italic font-normal text-base sm:text-lg text-[#171717] dark:text-white block">
               Dari Kebutuhan Menjadi Hasil Nyata
             </span>
           </div>
@@ -104,20 +104,20 @@ export const RealWork: React.FC<RealWorkProps> = ({ onSelectProject }) => {
             >
               {/* Header Row: Number & Category */}
               <div className="flex items-center gap-3 sm:gap-4">
-                <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#F9B51B] tracking-[-0.03em]">
+                <span className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-[#F9B51B] tracking-[-0.02em]">
                   {entry.number}
                 </span>
-                <span className="text-xs font-bold tracking-[0.08em] text-[#31543A] dark:text-[#F9B51B] uppercase">
+                <span className="font-info text-xs font-normal tracking-[0.08em] text-[#31543A] dark:text-[#F9B51B] uppercase">
                   {entry.category}
                 </span>
               </div>
 
               {/* Title & Teaser Content */}
               <div className="max-w-4xl space-y-3">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#171717] dark:text-white tracking-[-0.02em] leading-[1.12]">
+                <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[#171717] dark:text-white tracking-[-0.02em] leading-[1.15]">
                   {entry.title}
                 </h3>
-                <p className="text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] font-normal">
+                <p className="font-body text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] font-normal">
                   {entry.teaser}
                 </p>
               </div>
@@ -149,7 +149,7 @@ export const RealWork: React.FC<RealWorkProps> = ({ onSelectProject }) => {
                 <button
                   type="button"
                   onClick={() => handleCardClick(entry.id)}
-                  className="group inline-flex items-center gap-2 text-xs sm:text-sm font-bold tracking-wider uppercase text-[#31543A] dark:text-[#F9B51B] hover:opacity-80 transition-all cursor-pointer select-none"
+                  className="font-display group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#31543A] dark:text-[#F9B51B] hover:opacity-80 transition-all cursor-pointer select-none"
                 >
                   <span>{entry.ctaText}</span>
                   <span className="text-sm sm:text-base font-bold transition-transform group-hover:translate-x-1 duration-150" aria-hidden="true">
