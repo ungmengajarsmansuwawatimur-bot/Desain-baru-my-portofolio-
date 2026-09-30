@@ -80,18 +80,6 @@ export const ProjectDetailUsahaKeluarga: React.FC<ProjectDetailUsahaKeluargaProp
           </div>
         </div>
 
-        {/* Hero Visual Mockup Focal Point (Clean & Open, No Bento Box) */}
-        <div className="w-full py-4 sm:py-8 flex flex-col items-center justify-center relative select-none">
-          <div className="w-full max-w-4xl mx-auto">
-            <img
-              src="/assets/mockups/mockup_03_usaha_keluarga.svg"
-              alt="Mockup Pengelolaan Usaha Keluarga & Ritel Fisik"
-              className="w-full h-auto object-contain drop-shadow-xl"
-              loading="eager"
-            />
-          </div>
-        </div>
-
         {/* Main Header Information */}
         <div className="space-y-4 max-w-4xl">
           <div className="flex items-center gap-3">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import {
   candidateProfile,
   skillGroupsData,
@@ -7,6 +7,7 @@ import {
   testimonialsData,
 } from '../data/portfolioData';
 import { InteractiveToolIndex } from './InteractiveToolIndex';
+import { MarqueeTicker } from './MarqueeTicker';
 
 interface SkillsContactProps {
   onOpenCvModal?: () => void;
@@ -69,6 +70,14 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
     },
   ];
 
+  // Generate running text items automatically matching section content
+  const skillsTickerItems = useMemo(() => {
+    const titles = skillCards.map((card) => card.title.toUpperCase());
+    const bullets = skillCards.flatMap((card) => card.bullets.map((b) => b.toUpperCase()));
+    const tools = toolsData.map((tool) => tool.name.toUpperCase());
+    return [...titles, ...bullets, ...tools];
+  }, []);
+
   return (
     <div className="space-y-0">
       {/* ========================================================================= */}
@@ -77,9 +86,9 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
       {/* ========================================================================= */}
       <section
         id="skills"
-        className="py-20 md:py-28 bg-[#31543A] text-white transition-colors duration-200"
+        className="pt-20 md:pt-28 pb-0 bg-[#31543A] text-white transition-colors duration-200 overflow-hidden"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 pb-16 md:pb-20">
           {/* Section Kicker & Title */}
           <div className="space-y-4 max-w-3xl">
             <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold tracking-[0.08em] uppercase text-[#F9B51B]">
@@ -90,9 +99,6 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-[-0.025em] text-white leading-[1.08]">
               Skills &amp; Technical Experience
             </h2>
-            <p className="text-base sm:text-lg text-white/80 leading-[1.65] font-normal">
-              Kombinasi keterampilan pelayanan langsung, operasional ritel toko fisik, ketelitian kasir, serta kemampuan digital pendukung sistem kerja modern.
-            </p>
           </div>
 
           {/* 4 Skill Columns (Clean Open Editorial Layout, Zero Lines) */}
@@ -103,16 +109,6 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
                 className="flex flex-col justify-between space-y-5 text-white"
               >
                 <div className="space-y-4">
-                  {/* Top Bar: Code Badge + Big Percentage */}
-                  <div className="flex items-baseline justify-between">
-                    <span className="text-xs font-bold tracking-[0.08em] uppercase text-[#F9B51B]">
-                      {card.code}
-                    </span>
-                    <span className="text-3xl sm:text-4xl font-extrabold text-white tracking-[-0.03em]">
-                      {card.percentage}
-                    </span>
-                  </div>
-
                   {/* Title & Description */}
                   <div className="space-y-2">
                     <h3 className="text-lg sm:text-xl font-bold tracking-tight text-white leading-snug">
@@ -138,25 +134,25 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
           </div>
 
           {/* Tools yang Saya Gunakan inside Skills Section */}
-          <div className="pt-8 space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div>
-                <span className="text-xs font-bold tracking-[0.08em] text-white uppercase block">
-                  DIGITAL TOOLS &amp; PLATFORMS
-                </span>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white mt-1 tracking-tight">
-                  Tools yang Saya Kuasai
-                </h3>
+          <div className="pt-10 space-y-10">
+            <div className="text-center space-y-3 max-w-2xl mx-auto">
+              <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold tracking-[0.08em] uppercase text-[#F9B51B]">
+                <span aria-hidden="true">✦</span>
+                <span>DIGITAL TOOLS &amp; PLATFORMS</span>
+                <span aria-hidden="true">✦</span>
               </div>
-              <p className="text-xs sm:text-sm text-white/80 max-w-md leading-relaxed font-normal">
-                Aplikasi dan perangkat lunak yang biasa saya gunakan untuk pembukuan, pengolahan data, pengarsipan, dan komunikasi pelanggan.
-              </p>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+                Aplikasi &amp; Perangkat Lunak Kerja
+              </h3>
             </div>
 
-            {/* Interactive Tool Carousel (Clean open layout without box wrapper) */}
+            {/* Grid of application cards matching reference screenshot */}
             <InteractiveToolIndex tools={toolsData} />
           </div>
         </div>
+
+        {/* Marquee Ticker at the bottom of section#skills with content matching this section */}
+        <MarqueeTicker items={skillsTickerItems} speed="slow" durationSeconds={85} />
       </section>
 
       {/* ========================================================================= */}
@@ -177,9 +173,6 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-[-0.025em] text-[#171717] dark:text-white leading-[1.08]">
               What Clients &amp; Colleagues Say
             </h2>
-            <p className="text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] font-normal">
-              Tanggapan nyata dari mahasiswa, pelanggan ritel, dan pihak sekolah mengenai komunikasi, kehandalan, serta kualitas pelayanan yang saya berikan.
-            </p>
           </div>
 
           {/* 4 Testimonials (Clean Open Editorial Reviews, No Bento Box) */}
@@ -341,9 +334,6 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-[-0.025em] text-white leading-[1.08]">
                 Tertarik Bekerja Sama atau Rekrutmen?
               </h2>
-              <p className="text-base sm:text-lg text-white/80 leading-[1.65] font-normal">
-                Siap berkontribusi secara profesional untuk peran Pramuniaga, Kasir, Operasional Ritel, maupun Administrasi Digital. Hubungi langsung untuk peluang kerja atau diskusi lebih lanjut.
-              </p>
             </div>
 
             {/* Button for direct WhatsApp */}

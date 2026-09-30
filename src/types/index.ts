@@ -84,6 +84,7 @@ export interface ToolItem {
   role: string;
   category: string;
   iconName: string;
+  percentage?: string;
 }
 
 export interface ContactChannel {

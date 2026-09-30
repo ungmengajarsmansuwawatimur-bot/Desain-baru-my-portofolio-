@@ -107,88 +107,44 @@ export const AboutExperience: React.FC<AboutExperienceProps> = () => {
             </h2>
           </div>
 
-          {/* Grid: Left Bio & 3 Key Stats + Right Second Portrait Graphic */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-            {/* Col 1-7: Narrative Bio + 3 Key Metric Columns + Split Pill Button */}
-            <div className="lg:col-span-7 space-y-8">
-              <div className="space-y-4 text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] font-normal">
-                <p>
-                  Saya memiliki ketertarikan tinggi pada industri pelayanan retail dan operasional toko modern. Melalui pengalaman lebih dari 8 tahun membantu usaha keluarga, saya terlatih melayani berbagai karakter pembeli, mengelola transaksi kasir, menjaga stok barang, serta memastikan area penjualan selalu tertata rapi.
-                </p>
-                <p>
-                  Selain pengalaman di toko fisik, saya juga menguasai keterampilan digital dan pengarsipan data yang dibuktikan melalui perancangan sistem prototipe PADDS SMANSAT serta pelayanan puluhan mahasiswa secara mandiri. Bagi saya, pelayanan prima bukan sekadar menjual barang, melainkan menciptakan kepercayaan dan kepuasan bagi pelanggan.
-                </p>
-              </div>
-
-              {/* 3 Steve Mengelkoch Signature Stat Columns */}
-              <div className="grid grid-cols-3 gap-4 sm:gap-6 py-6 border-y border-[#171717]/15 dark:border-white/10">
-                <div>
-                  <span className="text-xs font-medium text-[#666666] dark:text-[#A3A3A3] block uppercase tracking-wide">
-                    Pelanggan &amp; Transaksi
-                  </span>
-                  <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#171717] dark:text-white tracking-[-0.03em] mt-1 block">
-                    250+
-                  </span>
-                </div>
-
-                <div>
-                  <span className="text-xs font-medium text-[#666666] dark:text-[#A3A3A3] block uppercase tracking-wide">
-                    Modul PADDS SMANSAT
-                  </span>
-                  <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#171717] dark:text-white tracking-[-0.03em] mt-1 block">
-                    24
-                  </span>
-                </div>
-
-                <div>
-                  <span className="text-xs font-medium text-[#666666] dark:text-[#A3A3A3] block uppercase tracking-wide">
-                    Kesiapan Kerja
-                  </span>
-                  <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#171717] dark:text-white tracking-[-0.03em] mt-1 block">
-                    100%
-                  </span>
-                </div>
-              </div>
-
-              {/* Read More Split Pill Button */}
-              <div>
-                <a
-                  href="#background"
-                  className="group inline-flex items-center gap-3 pl-6 pr-2 py-2 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase bg-[#31543A] text-white hover:bg-[#26432E] border-2 border-[#171717] transition-all duration-150 shadow-md active:scale-95 cursor-pointer"
-                >
-                  <span>BACA RIWAYAT LENGKAP</span>
-                  <span className="w-8 h-8 rounded-full bg-[#F9B51B] text-[#171717] flex items-center justify-center font-bold text-sm shrink-0 transition-transform group-hover:translate-x-1">
-                    &rarr;
-                  </span>
-                </a>
-              </div>
+          {/* Narrative Bio & 3 Key Metric Columns */}
+          <div className="max-w-4xl space-y-8">
+            <div className="space-y-4 text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] font-normal">
+              <p>
+                Saya memiliki ketertarikan tinggi pada industri pelayanan retail dan operasional toko modern. Melalui pengalaman lebih dari 8 tahun membantu usaha keluarga, saya terlatih melayani berbagai karakter pembeli, mengelola transaksi kasir, menjaga stok barang, serta memastikan area penjualan selalu tertata rapi.
+              </p>
+              <p>
+                Selain pengalaman di toko fisik, saya juga menguasai keterampilan digital dan pengarsipan data yang dibuktikan melalui perancangan sistem prototipe PADDS SMANSAT serta pelayanan puluhan mahasiswa secara mandiri. Bagi saya, pelayanan prima bukan sekadar menjual barang, melainkan menciptakan kepercayaan dan kepuasan bagi pelanggan.
+              </p>
             </div>
 
-            {/* Col 8-12: Steve Mengelkoch Second Cutout Portrait with Yellow Circle & 4 Skill Badges */}
-            <div className="lg:col-span-5 flex justify-center items-center relative select-none">
-              <div className="relative w-full max-w-[340px] sm:max-w-[380px] aspect-[4/5] flex items-end justify-center">
-                {/* Yellow circle backdrop with thick black outline */}
-                <div
-                  className="absolute inset-x-4 bottom-0 top-10 rounded-[50%_50%_46%_46%] bg-[#F9B51B] border-4 border-[#171717] shadow-[6px_6px_0px_#171717] overflow-hidden"
-                  aria-hidden="true"
-                />
+            {/* 3 Steve Mengelkoch Signature Stat Columns */}
+            <div className="grid grid-cols-3 gap-4 sm:gap-6 py-6 border-y border-[#171717]/15 dark:border-white/10">
+              <div>
+                <span className="text-xs font-medium text-[#666666] dark:text-[#A3A3A3] block uppercase tracking-wide">
+                  Pelanggan &amp; Transaksi
+                </span>
+                <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#171717] dark:text-white tracking-[-0.03em] mt-1 block">
+                  250+
+                </span>
+              </div>
 
-                {/* 4 Floating Badges (Exactly like Screenshot 3) */}
-                <div className="absolute top-20 -left-2 z-20 bg-[#31543A] text-white text-xs sm:text-sm font-black px-4 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717]">
-                  Pelayanan Retail
-                </div>
+              <div>
+                <span className="text-xs font-medium text-[#666666] dark:text-[#A3A3A3] block uppercase tracking-wide">
+                  Modul PADDS SMANSAT
+                </span>
+                <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#171717] dark:text-white tracking-[-0.03em] mt-1 block">
+                  24
+                </span>
+              </div>
 
-                <div className="absolute top-28 -right-2 z-20 bg-[#F9B51B] text-[#171717] text-xs sm:text-sm font-black px-4 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717]">
-                  Kasir POS
-                </div>
-
-                <div className="absolute bottom-28 -left-3 z-20 bg-[#F9B51B] text-[#171717] text-xs sm:text-sm font-black px-4 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717]">
-                  Display Produk
-                </div>
-
-                <div className="absolute bottom-12 -right-2 z-20 bg-[#31543A] text-white text-xs sm:text-sm font-black px-4 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717]">
-                  Administrasi Arsip
-                </div>
+              <div>
+                <span className="text-xs font-medium text-[#666666] dark:text-[#A3A3A3] block uppercase tracking-wide">
+                  Kesiapan Kerja
+                </span>
+                <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#171717] dark:text-white tracking-[-0.03em] mt-1 block">
+                  100%
+                </span>
               </div>
             </div>
           </div>
