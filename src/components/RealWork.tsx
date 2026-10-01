@@ -67,7 +67,7 @@ export const RealWork: React.FC<RealWorkProps> = ({ onSelectProject }) => {
             <span className="text-[#F9B51B]">Real Evidence</span>
           </h2>
 
-          <p className="font-body text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] max-w-2xl font-normal">
+          <p className="font-body text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] max-w-2xl font-normal text-justify">
             Representasi visual dari 3 bidang portofolio utama: Layanan Jasa Digital, Pusat Arsip Sekolah (PADDS), dan Pengelolaan Usaha Keluarga. Klik pada setiap proyek untuk membuka dokumentasi dan studi kasus lengkap.
           </p>
 
@@ -117,7 +117,7 @@ export const RealWork: React.FC<RealWorkProps> = ({ onSelectProject }) => {
                 <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[#171717] dark:text-white tracking-[-0.02em] leading-[1.15]">
                   {entry.title}
                 </h3>
-                <p className="font-body text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] font-normal">
+                <p className="font-body text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] font-normal text-justify">
                   {entry.teaser}
                 </p>
               </div>

@@ -301,17 +301,49 @@ export const OfficialAppIcon: React.FC<OfficialAppIconProps> = ({ name, classNam
     // 10. OFFICIAL CAPCUT
     case 'capcut':
       return (
-        <svg className={className} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* Authentic CapCut Circular Dark Badge (from provided image) */}
-          <circle cx="24" cy="24" r="22" fill="#14151A" />
-          {/* Authentic CapCut Interlocking Ribbon Mark */}
-          <g transform="translate(9.6, 9.8) scale(1.19)" fill="#FFFFFF">
+        <svg className={className} viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(0.9, 1)" fill="#111111">
             <path
               fillRule="evenodd"
               clipRule="evenodd"
               d="M24.189 6.442V2.671l-4.535 2.383V4.91c.002-1.505-1.078-2.411-2.638-2.411H2.64C.993 2.5 0 3.407 0 4.91V8.72L6.354 12 0 15.316v3.8C0 20.595 1 21.5 2.64 21.5h14.373c1.56 0 2.639-.907 2.639-2.382v-.197l4.536 2.409v-3.828L13.64 12 24.19 6.443zM9.982 13.873l7.797 4.083H2.157l7.825-4.083zm7.741-7.828l-7.742 4.057-7.825-4.057h15.567z"
             />
           </g>
+        </svg>
+      );
+
+    // 11. OFFICIAL HIGGSFIELD
+    case 'higgsfield':
+      return (
+        <svg className={className} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="44" height="44" rx="10" fill="#E8F928" />
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M24 11C18.477 11 14 15.029 14 20C14 22.42 15.08 24.59 16.86 26.15C14.51 27.76 13 30.45 13 33.5C13 38.75 17.925 43 24 43C30.075 43 35 38.75 35 33.5C35 30.45 33.49 27.76 31.14 26.15C32.92 24.59 34 22.42 34 20C34 15.029 29.523 11 24 11ZM24 16C26.761 16 29 17.79 29 20C29 22.21 26.761 24 24 24C21.239 24 19 22.21 19 20C19 17.79 21.239 16 24 16ZM24 29C27.314 29 30 31.01 30 33.5C30 35.99 27.314 38 24 38C20.686 38 18 35.99 18 33.5C18 31.01 20.686 29 24 29Z"
+            fill="#111111"
+          />
+        </svg>
+      );
+
+    // 12. OFFICIAL GOOGLE AI STUDIO
+    case 'aistudio':
+    case 'google ai studio':
+    case 'ai studio':
+      return (
+        <svg className={className} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="44" height="44" rx="10" fill="#0D111A" />
+          <defs>
+            <linearGradient id="aiStudioGlowOfficial" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="#60A5FA" />
+              <stop offset="45%" stopColor="#3B82F6" />
+              <stop offset="100%" stopColor="#818CF8" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M24 7C24 16.389 16.389 24 7 24C16.389 24 24 31.611 24 41C24 31.611 31.611 24 41 24C31.611 24 24 16.389 24 7Z"
+            fill="url(#aiStudioGlowOfficial)"
+          />
         </svg>
       );
 

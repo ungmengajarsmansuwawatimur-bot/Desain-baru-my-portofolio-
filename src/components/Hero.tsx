@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { candidateProfile } from '../data/portfolioData';
 import { MarqueeTicker } from './MarqueeTicker';
 import { EditableImage } from './EditableImage';
@@ -10,6 +11,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
   const fileInputRef = React.useRef<HTMLInputElement>(null);
+  const [isWorkActive, setIsWorkActive] = React.useState(false);
   const [photoSrc, setPhotoSrc] = React.useState<string>(() => {
     try {
       return localStorage.getItem('custom_hero_portrait') || portfolioImages.heroPortrait;
@@ -17,6 +19,32 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
       return portfolioImages.heroPortrait;
     }
   });
+
+  // Reset state when user scrolls back to top so animation can be played again
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY < 120 && isWorkActive) {
+        setIsWorkActive(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isWorkActive]);
+
+  const handleWorkClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsWorkActive(true);
+
+    // Tunggu hingga animasi pegas selesai (~420ms), lalu arahkan otomatis ke section #work
+    setTimeout(() => {
+      const targetElement = document.getElementById('work');
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.location.hash = '#work';
+      }
+    }, 420);
+  };
 
   const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -37,9 +65,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
 
   return (
     <section id="home" className="pt-24 sm:pt-28 md:pt-32 bg-white dark:bg-[#121212] transition-colors duration-200 overflow-x-clip overflow-y-visible relative z-20">
-      {/* Decorative top pill tab */}
-      <div className="flex justify-center mb-3 sm:mb-4">
-        <div className="w-12 sm:w-16 h-3 sm:h-3.5 rounded-full bg-[#F9B51B] border-2 border-[#171717] shadow-[2px_2px_0px_#171717]" />
+      {/* Decorative top pill tab: Tepat berada di tengah garis atas foto persegi panjang */}
+      <div className="relative z-30 flex justify-center -mb-2 sm:-mb-2.5 md:-mb-3 pointer-events-none">
+        <div className="w-20 sm:w-28 md:w-36 h-4 sm:h-5 md:h-6 rounded-full bg-[#F9B51B] border-2 sm:border-[2.5px] border-[#171717] shadow-[2px_2px_0px_#171717]" />
       </div>
 
       {/* Full-Bleed Rectangular Banner Photo: Membentang Penuh ke Sisi Kiri & Kanan di Section Paling Atas */}
@@ -78,15 +106,31 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
 
             {/* Two Action Buttons: VIEW MY WORK & UNDUH CV RESMI */}
             <div className="flex flex-wrap items-center gap-3.5 pt-2">
-              <a
+              <motion.a
                 href="#work"
-                className="group inline-flex items-center gap-1.5 sm:gap-2 p-1.5 sm:p-2 rounded-full bg-[#F5A61D] dark:bg-[#F9B51B] transition-all duration-150 hover:brightness-105 active:scale-95 shadow-md hover:shadow-lg cursor-pointer"
+                onClick={handleWorkClick}
+                layout
+                transition={{ type: 'spring', stiffness: 320, damping: 26 }}
+                className={`group inline-flex items-center gap-1.5 sm:gap-2 p-1.5 sm:p-2 rounded-full cursor-pointer select-none transition-colors duration-300 shadow-md hover:shadow-lg active:scale-95 ${
+                  isWorkActive
+                    ? 'flex-row-reverse bg-[#2B4734] dark:bg-[#31543A]'
+                    : 'flex-row bg-[#F5A61D] dark:bg-[#F9B51B]'
+                }`}
+                title="Klik untuk menganimasikan perpindahan panah dan perubahan warna"
+                aria-label="View My Work Button"
               >
-                <span className="font-display px-5 sm:px-7 py-2.5 sm:py-3 rounded-full bg-[#2B4734] text-white text-xs sm:text-sm font-semibold tracking-wider uppercase flex items-center justify-center">
-                  VIEW MY WORK
-                </span>
-                <span className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white text-[#171717] flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:translate-x-1 shadow-sm">
-                  <svg
+                {/* Span 1: Lingkaran berisi panah (awal di kiri, ketika diklik bergerak ke kanan, warna kuning hitam) */}
+                <motion.span
+                  layout
+                  transition={{ type: 'spring', stiffness: 320, damping: 26 }}
+                  className={`w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center shrink-0 shadow-sm transition-colors duration-300 ${
+                    isWorkActive
+                      ? 'bg-[#F9B51B] text-[#171717]'
+                      : 'bg-white text-[#171717]'
+                  }`}
+                >
+                  <motion.svg
+                    layout
                     className="w-4 h-4 sm:w-5 sm:h-5 text-[#171717]"
                     viewBox="0 0 24 24"
                     fill="none"
@@ -98,9 +142,22 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
                   >
                     <line x1="4" y1="12" x2="19" y2="12" />
                     <polyline points="13 6 19 12 13 18" />
-                  </svg>
-                </span>
-              </a>
+                  </motion.svg>
+                </motion.span>
+
+                {/* Span 2: Komponen pembungkus teks VIEW MY WORK (awal di kanan hijau teks putih, ketika diklik putih teks hitam) */}
+                <motion.span
+                  layout
+                  transition={{ type: 'spring', stiffness: 320, damping: 26 }}
+                  className={`font-display px-5 sm:px-7 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase flex items-center justify-center transition-colors duration-300 ${
+                    isWorkActive
+                      ? 'bg-white text-[#171717]'
+                      : 'bg-[#2B4734] text-white'
+                  }`}
+                >
+                  VIEW MY WORK
+                </motion.span>
+              </motion.a>
 
               <button
                 type="button"
@@ -127,15 +184,37 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
             {/* Visual Container: Digeser sedikit ke bawah agar menyatu tepat di atas garis batas marquee */}
             <div className="relative w-full max-w-[420px] sm:max-w-[480px] lg:max-w-[540px] xl:max-w-[580px] h-[480px] sm:h-[560px] md:h-[620px] lg:h-[660px] flex items-end justify-center lg:translate-x-10 xl:translate-x-16 translate-y-[11px] sm:translate-y-[15px] transition-transform duration-300">
               
-              {/* Decorative Accent 1: Comic Lightning Bolt (Top Right) */}
-              <div className="absolute top-2 right-4 sm:right-6 z-20 animate-bounce" style={{ animationDuration: '3s' }} aria-hidden="true">
-                <svg className="w-10 h-10 sm:w-12 sm:h-12 text-[#F9B51B] drop-shadow-[2px_2px_0px_#171717]" viewBox="0 0 24 24" fill="currentColor" stroke="#171717" strokeWidth="1.5">
-                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              {/* Decorative Accent 1: Stylized Pop-Art Lightning Thunderbolt (Top Right) */}
+              <div className="absolute -top-2 sm:-top-4 right-2 sm:right-4 z-20 animate-bounce" style={{ animationDuration: '3s' }} aria-hidden="true">
+                <svg
+                  className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 drop-shadow-[4px_4px_0px_#171717] transition-transform duration-300 hover:scale-110 hover:rotate-6 cursor-pointer"
+                  viewBox="0 0 48 48"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  {/* Thunderbolt Silhouette with Bold Comic Outline */}
+                  <path
+                    d="M27.5 3L8 25.5H23L17.5 45L40 20H25.5L31 3H27.5Z"
+                    fill="#F9B51B"
+                    stroke="#171717"
+                    strokeWidth="3.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  {/* Glossy Bevel Highlight Facet */}
+                  <path
+                    d="M26 6.5L13 23H23.5L20 37L35.5 22H24.5L28.5 6.5H26Z"
+                    fill="#FFF385"
+                    opacity="0.9"
+                  />
+                  {/* Energy Sparkle Accents */}
+                  <circle cx="39" cy="8" r="2.5" fill="#F9B51B" stroke="#171717" strokeWidth="1.5" />
+                  <circle cx="43" cy="14" r="1.5" fill="#171717" />
                 </svg>
               </div>
 
               {/* Decorative Accent 2: 4-Point Star (Top Left) */}
-              <div className="absolute top-8 left-2 sm:left-4 z-20 text-[#171717] dark:text-[#F9B51B] text-2xl sm:text-3xl font-black drop-shadow-[2px_2px_0px_#F9B51B]" aria-hidden="true">
+              <div className="absolute top-4 sm:top-6 left-0 sm:left-2 z-20 text-[#171717] dark:text-[#F9B51B] text-4xl sm:text-5xl lg:text-6xl font-black drop-shadow-[3px_3px_0px_#F9B51B] dark:drop-shadow-[3px_3px_0px_#171717]" aria-hidden="true">
                 ✦
               </div>
 
@@ -178,24 +257,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
                 </button>
               </div>
 
-              {/* Floating Pill Badge 1: Pelayanan Konsumen (Top Right) */}
-              <div className="font-display absolute top-28 sm:top-32 -right-2 sm:right-0 z-20 bg-[#31543A] text-white text-xs sm:text-sm font-semibold tracking-wide px-4 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717]">
-                Pelayanan Konsumen
-              </div>
-
-              {/* Floating Pill Badge 2: Kasir & POS (Bottom Left) */}
+              {/* Floating Pill Badge: Kasir & POS (Bottom Left) */}
               <div className="font-display absolute bottom-16 sm:bottom-20 -left-2 sm:-left-4 z-20 bg-[#F9B51B] text-[#171717] text-xs sm:text-sm font-semibold tracking-wide px-4 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717]">
                 Kasir &amp; POS
               </div>
 
-              {/* Floating Pill Badge 3: Penataan Display (Bottom Right) */}
+              {/* Floating Pill Badge: Penataan Display (Bottom Right) */}
               <div className="font-display absolute bottom-8 sm:bottom-10 -right-1 sm:right-2 z-20 bg-[#F9B51B] text-[#171717] text-xs sm:text-sm font-semibold tracking-wide px-4 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717]">
                 Display &amp; Planogram
-              </div>
-
-              {/* Floating Pill Badge 4: Manajemen Stok (Middle Left) */}
-              <div className="font-display absolute top-44 sm:top-48 -left-3 sm:-left-6 z-20 bg-[#31543A] text-white text-xs sm:text-sm font-semibold px-3.5 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717]">
-                Manajemen Stok
               </div>
             </div>
           </div>

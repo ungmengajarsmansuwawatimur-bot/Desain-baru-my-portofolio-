@@ -7,12 +7,12 @@ import retailBooksStack from './images/retail_books_stack_1790151386373.jpg';
 import retailServiceCounter from './images/retail_service_counter_1790151398411.jpg';
 import creativeDeskBanner from './images/creative_desk_banner_1790675573701.jpg';
 
-import thumbCustomerService from './images/thumb_customer_service_1790151429669.jpg';
-import thumbRetailOperations from './images/thumb_retail_operations_1790151443958.jpg';
-import thumbVisualMerch from './images/thumb_visual_merch_1790151460252.jpg';
-import thumbPlanogram from './images/thumb_planogram_1790151472798.jpg';
-import thumbStockManagement from './images/thumb_stock_management_1790151487695.jpg';
-import thumbCommunication from './images/thumb_communication_1790151504132.jpg';
+import thumbCustomerService from './images/cashier_customer_service_1790801206568.jpg';
+import thumbRetailOperations from './images/retail_store_operations_1790801220457.jpg';
+import thumbVisualMerch from './images/store_layout_display_1790801232239.jpg';
+import thumbPlanogram from './images/retail_planogram_shelving_1790801246980.jpg';
+import thumbStockManagement from './images/warehouse_stock_management_1790801257726.jpg';
+import thumbCommunication from './images/retail_miniso_team_hd.jpg';
 
 export const portfolioImages = {
   heroPortrait,

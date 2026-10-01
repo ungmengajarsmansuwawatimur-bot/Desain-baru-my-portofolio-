@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { motion } from 'framer-motion';
 import { ThemeToggle } from './ThemeToggle';
 
 interface NavbarProps {
@@ -26,6 +27,21 @@ export const Navbar: React.FC<NavbarProps> = ({
 }) => {
   const [internalActiveSection, setInternalActiveSection] = useState<string>('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isHireActive, setIsHireActive] = useState(false);
+
+  const handleHireClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsHireActive(true);
+
+    // Tunggu hingga animasi pegas lingkaran panah dan warna selesai (~420ms)
+    setTimeout(() => {
+      onOpenCvModal?.();
+      // Reset status animasi secara halus sehingga siap dianimasikan lagi
+      setTimeout(() => {
+        setIsHireActive(false);
+      }, 500);
+    }, 420);
+  };
 
   const activeSection = externalActiveSection || internalActiveSection;
 
@@ -134,32 +150,116 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Desktop Right Controls: Split Pill CTA (HIRE ME) + Theme Toggle */}
           <div className="hidden sm:flex items-center gap-3">
-            <button
+            <motion.button
               type="button"
-              onClick={onOpenCvModal}
-              className="font-display group inline-flex items-center gap-2 pl-4 pr-1.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-[#31543A] text-white hover:bg-[#26432E] border-2 border-[#171717] transition-all duration-150 cursor-pointer shadow-sm active:scale-95"
+              onClick={handleHireClick}
+              layout
+              transition={{ type: 'spring', stiffness: 320, damping: 26 }}
+              className={`font-display group inline-flex items-center gap-1.5 p-1 rounded-full cursor-pointer select-none transition-colors duration-300 shadow-sm border border-[#171717]/20 active:scale-95 ${
+                isHireActive
+                  ? 'flex-row-reverse bg-[#F9B51B]'
+                  : 'flex-row bg-[#31543A]'
+              }`}
+              title="Hire Me"
+              aria-label="Hire Me Button"
             >
-              <span>HIRE ME</span>
-              <span className="w-7 h-7 rounded-full bg-[#F9B51B] text-[#171717] flex items-center justify-center font-bold text-sm shrink-0 transition-transform group-hover:translate-x-0.5">
-                &rarr;
-              </span>
-            </button>
+              {/* Lingkaran Panah: Kebalikan View My Work (Awal Kuning Hitam di kiri, saat diklik Putih di kanan) */}
+              <motion.span
+                layout
+                transition={{ type: 'spring', stiffness: 320, damping: 26 }}
+                className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 shadow-xs transition-colors duration-300 ${
+                  isHireActive
+                    ? 'bg-white text-[#171717]'
+                    : 'bg-[#F9B51B] text-[#171717]'
+                }`}
+              >
+                <motion.svg
+                  layout
+                  className="w-3.5 h-3.5 text-[#171717]"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <line x1="4" y1="12" x2="19" y2="12" />
+                  <polyline points="13 6 19 12 13 18" />
+                </motion.svg>
+              </motion.span>
+
+              {/* Teks HIRE ME: Kebalikan View My Work (Awal Putih teks Hitam di kanan, saat diklik Hijau teks Putih di kiri) */}
+              <motion.span
+                layout
+                transition={{ type: 'spring', stiffness: 320, damping: 26 }}
+                className={`px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase flex items-center justify-center transition-colors duration-300 ${
+                  isHireActive
+                    ? 'bg-[#31543A] text-white'
+                    : 'bg-white text-[#171717]'
+                }`}
+              >
+                HIRE ME
+              </motion.span>
+            </motion.button>
 
             <ThemeToggle />
           </div>
 
           {/* Mobile quick controls: Split Pill + Theme Toggle + Yellow Hamburger */}
           <div className="flex sm:hidden items-center gap-2">
-            <button
+            <motion.button
               type="button"
-              onClick={onOpenCvModal}
-              className="font-display inline-flex items-center gap-1.5 pl-3 pr-1 py-1 rounded-full text-[11px] font-semibold tracking-wider uppercase bg-[#31543A] text-white border border-[#171717]"
+              onClick={handleHireClick}
+              layout
+              transition={{ type: 'spring', stiffness: 320, damping: 26 }}
+              className={`font-display inline-flex items-center gap-1 p-0.5 rounded-full cursor-pointer select-none transition-colors duration-300 border border-[#171717]/20 active:scale-95 ${
+                isHireActive
+                  ? 'flex-row-reverse bg-[#F9B51B]'
+                  : 'flex-row bg-[#31543A]'
+              }`}
+              title="Hire Me"
+              aria-label="Hire Me Button"
             >
-              <span>HIRE ME</span>
-              <span className="w-5 h-5 rounded-full bg-[#F9B51B] text-[#171717] flex items-center justify-center text-xs">
-                &rarr;
-              </span>
-            </button>
+              {/* Lingkaran Panah */}
+              <motion.span
+                layout
+                transition={{ type: 'spring', stiffness: 320, damping: 26 }}
+                className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 transition-colors duration-300 ${
+                  isHireActive
+                    ? 'bg-white text-[#171717]'
+                    : 'bg-[#F9B51B] text-[#171717]'
+                }`}
+              >
+                <motion.svg
+                  layout
+                  className="w-2.5 h-2.5 text-[#171717]"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <line x1="4" y1="12" x2="19" y2="12" />
+                  <polyline points="13 6 19 12 13 18" />
+                </motion.svg>
+              </motion.span>
+
+              {/* Teks HIRE ME */}
+              <motion.span
+                layout
+                transition={{ type: 'spring', stiffness: 320, damping: 26 }}
+                className={`px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase flex items-center justify-center transition-colors duration-300 ${
+                  isHireActive
+                    ? 'bg-[#31543A] text-white'
+                    : 'bg-white text-[#171717]'
+                }`}
+              >
+                HIRE ME
+              </motion.span>
+            </motion.button>
 
             <ThemeToggle />
 

@@ -14,58 +14,45 @@ interface SkillsContactProps {
 }
 
 export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) => {
-  // Skill card data matching Steve Mengelkoch Screenshot 4
+  // Skill card data matching reference screenshot
   const skillCards = [
     {
-      code: 'CS',
-      percentage: '95%',
-      badgeColor: 'bg-[#F9B51B] text-[#171717]',
       title: 'Customer Service & Pelayanan Toko',
       desc: 'Komunikasi ramah, memahami kebutuhan pembeli, mendengarkan aktif, dan penyelesaian masalah pelanggan secara cepat.',
-      bullets: [
-        'Pelayanan ramah & tanggap',
-        'Penanganan keluhan pelanggan',
-        'Komunikasi interpersonal efektif',
-        'Membangun loyalitas pembeli',
+      tags: [
+        'Pelayanan ramah',
+        'Penanganan keluhan',
+        'Komunikasi interpersonal',
+        'Loyalitas pembeli',
       ],
     },
     {
-      code: 'RET',
-      percentage: '92%',
-      badgeColor: 'bg-[#31543A] text-white',
       title: 'Operasional Retail & Penataan Barang',
       desc: 'Penataan display produk estetik, penerapan metode FIFO, rotasi barang, dan pemeliharaan kerapian rak toko harian.',
-      bullets: [
+      tags: [
         'Display produk metode FIFO',
         'Pengecekan tanggal kedaluwarsa',
-        'Penyesuaian label harga rak',
-        'Menjaga kebersihan area penjualan',
+        'Penyesuaian label harga',
+        'Kebersihan area',
       ],
     },
     {
-      code: 'POS',
-      percentage: '90%',
-      badgeColor: 'bg-[#F9B51B] text-[#171717]',
       title: 'Sistem Kasir & Transaksi Tunai',
       desc: 'Ketelitian tinggi dalam input transaksi, penghitungan uang tunai dan kembalian, serta rekapitulasi kas harian.',
-      bullets: [
-        'Ketelitian input transaksi kasir',
-        'Penghitungan uang tunai akurat',
-        'Pencatatan pembukuan harian',
-        'Konfirmasi pembayaran non-tunai/QR',
+      tags: [
+        'Input transaksi kasir',
+        'Penghitungan uang tunai',
+        'Pencatatan pembukuan',
+        'Konfirmasi pembayaran',
       ],
     },
     {
-      code: 'DIG',
-      percentage: '88%',
-      badgeColor: 'bg-[#31543A] text-white',
       title: 'Administrasi Digital & Arsip Data',
-      desc: 'Pengoperasian Microsoft Excel, Google Sheets, pengarsipan sistem digital PADDS, dan pembuatan materi grafis Canva.',
-      bullets: [
-        'Microsoft Office & Google Workspace',
-        'Pengarsipan digital sistem PADDS',
+      desc: 'Pengoperasian Microsoft Excel, Google Sheets, pengarsipan dokumen digital, dan pembuatan materi grafis Canva.',
+      tags: [
+        'Microsoft Office & Workspace',
         'Data entry & inventarisasi',
-        'Desain promosi Canva & media sosial',
+        'Desain promosi Canva',
       ],
     },
   ];
@@ -73,70 +60,72 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
   // Generate running text items automatically matching section content
   const skillsTickerItems = useMemo(() => {
     const titles = skillCards.map((card) => card.title.toUpperCase());
-    const bullets = skillCards.flatMap((card) => card.bullets.map((b) => b.toUpperCase()));
+    const tags = skillCards.flatMap((card) => card.tags.map((t) => t.toUpperCase()));
     const tools = toolsData.map((tool) => tool.name.toUpperCase());
-    return [...titles, ...bullets, ...tools];
+    return [...titles, ...tags, ...tools];
   }, []);
 
   return (
     <div className="space-y-0">
       {/* ========================================================================= */}
-      {/* 1. SKILLS & TECHNICAL EXPERIENCE (Steve Mengelkoch Screenshot 4)           */}
-      {/* Background: Solid Dark Green (#31543A) with White Cards                   */}
+      {/* 1. SKILLS & TECHNICAL EXPERIENCE                                          */}
+      {/* Steve Dark Green Canvas (#31543A) matching CV button                      */}
       {/* ========================================================================= */}
       <section
         id="skills"
         className="pt-20 md:pt-28 pb-0 bg-[#31543A] text-white transition-colors duration-200 overflow-hidden"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 pb-16 md:pb-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16 pb-16 md:pb-20">
           {/* Section Kicker & Title - Centered */}
-          <div className="space-y-4 max-w-3xl mx-auto text-center flex flex-col items-center">
-            <div className="font-display inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold tracking-[0.08em] uppercase text-[#F9B51B]">
+          <div className="space-y-3 max-w-3xl mx-auto text-center flex flex-col items-center">
+            <div className="font-display inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold tracking-[0.12em] uppercase text-[#F9B51B]">
               <span aria-hidden="true">✦</span>
               <span>SKILLS</span>
               <span aria-hidden="true">✦</span>
             </div>
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-[-0.02em] text-white leading-[1.12] text-center">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.02em] text-white leading-tight text-center">
               Skills &amp; Technical Experience
             </h2>
           </div>
 
-          {/* 4 Skill Columns (Clean Open Editorial Layout, Zero Lines) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 items-start">
+          {/* 4 Skill Cards: Clean Open Layout without Bento Box Wrapper */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
             {skillCards.map((card) => (
               <div
-                key={card.code}
-                className="flex flex-col justify-between space-y-5 text-white"
+                key={card.title}
+                className="flex flex-col justify-between space-y-4"
               >
-                <div className="space-y-4">
-                  {/* Title & Description */}
-                  <div className="space-y-2">
-                    <h3 className="font-display text-lg sm:text-xl font-semibold tracking-tight text-white leading-snug">
-                      {card.title}
-                    </h3>
-                    <p className="font-body text-xs sm:text-sm text-white/80 leading-[1.55] font-normal">
-                      {card.desc}
-                    </p>
-                  </div>
+                <div className="space-y-2.5">
+                  <h3 className="font-display text-lg sm:text-xl md:text-2xl font-bold tracking-tight text-white leading-snug">
+                    {card.title}
+                  </h3>
+                  <p className="font-body text-xs sm:text-sm md:text-base text-white/80 leading-relaxed font-normal text-justify">
+                    {card.desc}
+                  </p>
                 </div>
 
-                {/* Bullets with Checkmarks */}
-                <div className="space-y-2">
-                  {card.bullets.map((bullet, idx) => (
-                    <div key={idx} className="font-body flex items-start gap-2 text-xs font-normal text-white/90">
-                      <span className="text-[#F9B51B] font-bold shrink-0 mt-0.5">✓</span>
-                      <span>{bullet}</span>
-                    </div>
+                {/* Point-point rapi dalam grid 2 kolom dengan checkmark terstruktur */}
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5 pt-3 border-t border-white/10">
+                  {card.tags.map((tag, idx) => (
+                    <li
+                      key={idx}
+                      className="font-body flex items-start gap-2.5 text-xs sm:text-sm font-normal text-white/90"
+                    >
+                      <span className="w-4 h-4 rounded-full bg-[#F9B51B]/20 text-[#F9B51B] flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5">
+                        ✓
+                      </span>
+                      <span className="leading-tight">{tag}</span>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             ))}
           </div>
 
           {/* Tools yang Saya Gunakan inside Skills Section */}
-          <div className="pt-10 space-y-10">
-            <div className="text-center space-y-3 max-w-2xl mx-auto">
-              <div className="font-display inline-flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-[0.08em] uppercase text-[#F9B51B]">
+          <div className="pt-4 sm:pt-8 space-y-6 sm:space-y-8">
+            <div className="text-center space-y-2.5 max-w-2xl mx-auto">
+              <div className="font-display inline-flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-[0.12em] uppercase text-[#F9B51B]">
                 <span aria-hidden="true">✦</span>
                 <span>DIGITAL TOOLS &amp; PLATFORMS</span>
                 <span aria-hidden="true">✦</span>
@@ -146,12 +135,12 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
               </h3>
             </div>
 
-            {/* Grid of application cards matching reference screenshot */}
-            <InteractiveToolIndex tools={toolsData} />
+            {/* Grid of 12 application cards in 4 columns matching reference screenshot */}
+            <InteractiveToolIndex />
           </div>
         </div>
 
-        {/* Marquee Ticker at the bottom of section#skills with content matching this section */}
+        {/* Marquee Ticker at the bottom of section#skills */}
         <MarqueeTicker items={skillsTickerItems} speed="slow" durationSeconds={85} />
       </section>
 
@@ -193,7 +182,7 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
                 </div>
 
                 {/* Quote */}
-                <p className="font-body text-base sm:text-lg text-[#171717] dark:text-white leading-[1.65] italic font-normal">
+                <p className="font-body text-base sm:text-lg text-[#171717] dark:text-white leading-[1.65] italic font-normal text-justify">
                   &ldquo;{testi.quote}&rdquo;
                 </p>
 
@@ -292,7 +281,7 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
                 <h3 className="font-display text-2xl sm:text-3xl font-semibold text-[#171717] dark:text-white tracking-[-0.015em]">
                   Curriculum Vitae Siap Tinjau
                 </h3>
-                <p className="font-body text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] font-normal">
+                <p className="font-body text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] font-normal text-justify">
                   Dokumen lengkap berisi riwayat pendidikan, pengalaman operasional nyata, matriks kompetensi retail, serta kontak resmi. Tersedia untuk kebutuhan evaluasi rekrutmen dan kolaborasi kerja.
                 </p>
               </div>

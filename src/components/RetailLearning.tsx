@@ -94,7 +94,7 @@ const RetailLearningComponent: React.FC = () => {
                   {/* Thumbnail Image (Clean, Minimalist, Interactive Hover) */}
                   <div className="rounded-xl overflow-hidden shadow-xs transition-transform duration-200 group-hover:scale-[1.015]">
                     <EditableImage
-                      storageKey={`learning_material_${item.id}`}
+                      storageKey={`learning_material_v2_${item.id}`}
                       defaultSrc={item.image}
                       alt={item.title}
                       aspectRatioClass="aspect-16/9"
@@ -127,11 +127,24 @@ const RetailLearningComponent: React.FC = () => {
                 </div>
 
                 {/* Minimalist Action CTA */}
-                <div className="pt-1">
+                <div className="pt-1 flex items-center justify-between gap-2">
                   <span className="font-display inline-flex items-center gap-1.5 text-xs font-semibold text-[#31543A] dark:text-[#F9B51B] group-hover:translate-x-1 transition-transform">
                     <span>Lihat Rincian Modul</span>
                     <span aria-hidden="true">&rarr;</span>
                   </span>
+                  {item.sourceUrl && (
+                    <a
+                      href={item.sourceUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="font-display inline-flex items-center gap-1 text-xs font-semibold text-[#666666] dark:text-[#A3A3A3] hover:text-[#31543A] dark:hover:text-[#F9B51B] transition-colors"
+                      title="Pelajari materi di tautan sumber asli"
+                    >
+                      <span>Pelajari Materi</span>
+                      <span aria-hidden="true">&#x2197;</span>
+                    </a>
+                  )}
                 </div>
               </article>
             ))}
@@ -177,7 +190,7 @@ const RetailLearningComponent: React.FC = () => {
                 rel="noreferrer"
                 className="group inline-flex items-center gap-3 pl-6 pr-2 py-2 rounded-full text-xs font-black bg-[#31543A] text-white hover:bg-[#26432E] border-2 border-[#171717] transition-all duration-150 shadow-[3px_3px_0px_#171717] active:scale-95"
               >
-                <span>Buka Referensi Materi</span>
+                <span>Pelajari Materi (Sumber Asli)</span>
                 <span className="w-6 h-6 rounded-full bg-[#F9B51B] text-[#171717] flex items-center justify-center font-bold text-xs shrink-0">
                   &rarr;
                 </span>
