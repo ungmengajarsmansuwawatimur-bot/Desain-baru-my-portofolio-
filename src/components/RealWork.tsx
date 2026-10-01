@@ -1,10 +1,63 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import { portfolioImages } from '../assets/images';
 import { EditableImage } from './EditableImage';
 
 export interface RealWorkProps {
   onSelectProject?: (projectId: 'jasa-digital' | 'padds-smansat' | 'usaha-keluarga') => void;
 }
+
+interface ScrollZoomMockupProps {
+  mockupSrc: string;
+  title: string;
+  onClick: () => void;
+}
+
+const ScrollZoomMockup: React.FC<ScrollZoomMockupProps> = ({ mockupSrc, title, onClick }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start end', 'end start'],
+  });
+
+  // Zoom in on enter, stable at peak focal center, zoom out on exit (bi-directional scroll)
+  const scale = useTransform(
+    scrollYProgress,
+    [0, 0.32, 0.68, 1],
+    [0.82, 1, 1, 0.82]
+  );
+
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.22, 0.78, 1],
+    [0.25, 1, 1, 0.25]
+  );
+
+  return (
+    <div
+      ref={containerRef}
+      onClick={onClick}
+      className="w-full flex items-center justify-center py-6 sm:py-10 cursor-pointer group select-none overflow-visible"
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onClick();
+        }
+      }}
+      aria-label={`Buka detail ${title}`}
+    >
+      <motion.img
+        style={{ scale, opacity }}
+        src={mockupSrc}
+        alt={`Mockup visual ${title}`}
+        className="w-full max-w-4xl h-auto max-h-[460px] object-contain drop-shadow-2xl transition-shadow duration-300 group-hover:drop-shadow-3xl will-change-transform"
+        loading="lazy"
+      />
+    </div>
+  );
+};
 
 export const RealWork: React.FC<RealWorkProps> = ({ onSelectProject }) => {
   const projectEntries = [
@@ -122,27 +175,12 @@ export const RealWork: React.FC<RealWorkProps> = ({ onSelectProject }) => {
                 </p>
               </div>
 
-              {/* Visual Mockup Showcase (Clean, Open, Generously Sized) */}
-              <div
+              {/* Visual Mockup Showcase dengan animasi Zoom-in saat masuk & Zoom-out saat keluar viewport */}
+              <ScrollZoomMockup
+                mockupSrc={entry.mockupSrc}
+                title={entry.title}
                 onClick={() => handleCardClick(entry.id)}
-                className="w-full flex items-center justify-center py-6 sm:py-10 cursor-pointer group select-none transition-transform duration-300 hover:scale-[1.01]"
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    handleCardClick(entry.id);
-                  }
-                }}
-                aria-label={`Buka detail ${entry.title}`}
-              >
-                <img
-                  src={entry.mockupSrc}
-                  alt={`Mockup visual ${entry.title}`}
-                  className="w-full max-w-4xl h-auto max-h-[460px] object-contain drop-shadow-2xl transition-all duration-300 group-hover:drop-shadow-3xl"
-                  loading="lazy"
-                />
-              </div>
+              />
 
               {/* Minimalist Action Button (Space-Saving, No Bento Pill) */}
               <div className="flex items-center">

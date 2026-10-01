@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { candidateProfile } from '../data/portfolioData';
 import { MarqueeTicker } from './MarqueeTicker';
 import { EditableImage } from './EditableImage';
@@ -173,9 +173,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
 
             {/* Teks Penyeimbang Sisi Kiri Tepat di Bawah Tombol Aksi */}
             <div className="pt-2 sm:pt-3 max-w-lg">
-              <p className="font-body text-sm sm:text-base text-[#555555] dark:text-[#CCCCCC] leading-relaxed font-normal">
+              <motion.p
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.2, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                className="font-body text-sm sm:text-base text-[#555555] dark:text-[#CCCCCC] leading-relaxed font-normal"
+              >
                 {candidateProfile.summary}
-              </p>
+              </motion.p>
             </div>
           </div>
 
@@ -185,9 +190,27 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
             <div className="relative w-full max-w-[420px] sm:max-w-[480px] lg:max-w-[540px] xl:max-w-[580px] h-[480px] sm:h-[560px] md:h-[620px] lg:h-[660px] flex items-end justify-center lg:translate-x-10 xl:translate-x-16 translate-y-[11px] sm:translate-y-[15px] transition-transform duration-300">
               
               {/* Decorative Accent 1: Stylized Pop-Art Lightning Thunderbolt (Top Right) */}
-              <div className="absolute -top-2 sm:-top-4 right-2 sm:right-4 z-20 animate-bounce" style={{ animationDuration: '3s' }} aria-hidden="true">
-                <svg
-                  className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 drop-shadow-[4px_4px_0px_#171717] transition-transform duration-300 hover:scale-110 hover:rotate-6 cursor-pointer"
+              <motion.div
+                initial={{ opacity: 0, scale: 0, rotate: -20 }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  rotate: [0, 3, -2, 0],
+                  y: [0, -8, 0],
+                }}
+                transition={{
+                  opacity: { duration: 0.9, delay: 0.65 },
+                  scale: { type: 'spring', stiffness: 140, damping: 20, delay: 0.65 },
+                  rotate: { duration: 6.5, repeat: Infinity, ease: 'easeInOut', delay: 1.2 },
+                  y: { duration: 5.2, repeat: Infinity, ease: 'easeInOut', delay: 1.2 },
+                }}
+                className="absolute -top-2 sm:-top-4 right-2 sm:right-4 z-20"
+                aria-hidden="true"
+              >
+                <motion.svg
+                  whileHover={{ scale: 1.12, rotate: 6 }}
+                  transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+                  className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 drop-shadow-[4px_4px_0px_#171717] cursor-pointer"
                   viewBox="0 0 48 48"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -210,26 +233,49 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
                   {/* Energy Sparkle Accents */}
                   <circle cx="39" cy="8" r="2.5" fill="#F9B51B" stroke="#171717" strokeWidth="1.5" />
                   <circle cx="43" cy="14" r="1.5" fill="#171717" />
-                </svg>
-              </div>
+                </motion.svg>
+              </motion.div>
 
               {/* Decorative Accent 2: 4-Point Star (Top Left) */}
-              <div className="absolute top-4 sm:top-6 left-0 sm:left-2 z-20 text-[#171717] dark:text-[#F9B51B] text-4xl sm:text-5xl lg:text-6xl font-black drop-shadow-[3px_3px_0px_#F9B51B] dark:drop-shadow-[3px_3px_0px_#171717]" aria-hidden="true">
+              <motion.div
+                initial={{ opacity: 0, scale: 0, rotate: -35 }}
+                animate={{
+                  opacity: 1,
+                  scale: [1, 1.14, 1],
+                  rotate: [0, 6, -5, 0],
+                  y: [0, -5, 0],
+                }}
+                transition={{
+                  opacity: { duration: 0.8, delay: 0.8 },
+                  scale: { duration: 5.6, repeat: Infinity, ease: 'easeInOut', delay: 1.4 },
+                  rotate: { duration: 7.0, repeat: Infinity, ease: 'easeInOut', delay: 1.4 },
+                  y: { duration: 5.0, repeat: Infinity, ease: 'easeInOut', delay: 1.4 },
+                }}
+                className="absolute top-4 sm:top-6 left-0 sm:left-2 z-20 text-[#171717] dark:text-[#F9B51B] text-4xl sm:text-5xl lg:text-6xl font-black drop-shadow-[3px_3px_0px_#F9B51B] dark:drop-shadow-[3px_3px_0px_#171717]"
+                aria-hidden="true"
+              >
                 ✦
-              </div>
+              </motion.div>
 
               {/* Signature Warm Yellow Rounded Rectangle / Arch Backdrop resting directly on the ticker line (Solid Clean Yellow) */}
-              <div
+              <motion.div
+                initial={{ opacity: 0, scaleY: 0.65, y: 25 }}
+                animate={{ opacity: 1, scaleY: 1, y: 0 }}
+                transition={{ duration: 1.3, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+                style={{ transformOrigin: 'bottom' }}
                 className="absolute inset-x-4 sm:inset-x-8 bottom-0 top-16 sm:top-20 lg:top-24 rounded-t-[40px] sm:rounded-t-[48px] lg:rounded-t-[56px] rounded-b-none bg-[#F9B51B] border-4 border-[#171717] shadow-[6px_0px_0px_#171717]"
                 aria-hidden="true"
               />
 
               {/* Authentic Portrait Photo: Centered, Scaled Up, Dynamically Popping Out Above the Container */}
               <div className="relative z-10 w-full h-full flex items-end justify-center pointer-events-none pb-0 overflow-visible">
-                <img
+                <motion.img
+                  initial={{ opacity: 0, y: 45, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 1.4, delay: 0.32, ease: [0.16, 1, 0.3, 1] }}
                   src={photoSrc}
                   alt={candidateProfile.fullName}
-                  className="h-[105%] sm:h-[110%] lg:h-[114%] w-auto max-w-none object-contain object-bottom drop-shadow-[0_16px_28px_rgba(0,0,0,0.3)] select-none transition-transform duration-300 pointer-events-auto"
+                  className="h-[105%] sm:h-[110%] lg:h-[114%] w-auto max-w-none object-contain object-bottom drop-shadow-[0_16px_28px_rgba(0,0,0,0.3)] select-none transition-transform duration-300 pointer-events-auto hover:scale-[1.02]"
                   referrerPolicy="no-referrer"
                   loading="eager"
                   decoding="async"
@@ -258,14 +304,44 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
               </div>
 
               {/* Floating Pill Badge: Kasir & POS (Bottom Left) */}
-              <div className="font-display absolute bottom-16 sm:bottom-20 -left-2 sm:-left-4 z-20 bg-[#F9B51B] text-[#171717] text-xs sm:text-sm font-semibold tracking-wide px-4 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717]">
+              <motion.div
+                initial={{ opacity: 0, x: -30, scale: 0.85 }}
+                animate={{
+                  opacity: 1,
+                  x: 0,
+                  scale: 1,
+                  y: [0, -5, 0],
+                }}
+                transition={{
+                  opacity: { duration: 0.8, delay: 0.85 },
+                  x: { type: 'spring', stiffness: 150, damping: 22, delay: 0.85 },
+                  scale: { type: 'spring', stiffness: 150, damping: 22, delay: 0.85 },
+                  y: { duration: 5.0, repeat: Infinity, ease: 'easeInOut', delay: 1.5 },
+                }}
+                className="font-display absolute bottom-16 sm:bottom-20 -left-2 sm:-left-4 z-20 bg-[#F9B51B] text-[#171717] text-xs sm:text-sm font-semibold tracking-wide px-4 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717]"
+              >
                 Kasir &amp; POS
-              </div>
+              </motion.div>
 
               {/* Floating Pill Badge: Penataan Display (Bottom Right) */}
-              <div className="font-display absolute bottom-8 sm:bottom-10 -right-1 sm:right-2 z-20 bg-[#F9B51B] text-[#171717] text-xs sm:text-sm font-semibold tracking-wide px-4 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717]">
+              <motion.div
+                initial={{ opacity: 0, x: 30, scale: 0.85 }}
+                animate={{
+                  opacity: 1,
+                  x: 0,
+                  scale: 1,
+                  y: [0, -6, 0],
+                }}
+                transition={{
+                  opacity: { duration: 0.8, delay: 1.0 },
+                  x: { type: 'spring', stiffness: 150, damping: 22, delay: 1.0 },
+                  scale: { type: 'spring', stiffness: 150, damping: 22, delay: 1.0 },
+                  y: { duration: 5.6, repeat: Infinity, ease: 'easeInOut', delay: 1.7 },
+                }}
+                className="font-display absolute bottom-8 sm:bottom-10 -right-1 sm:right-2 z-20 bg-[#F9B51B] text-[#171717] text-xs sm:text-sm font-semibold tracking-wide px-4 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717]"
+              >
                 Display &amp; Planogram
-              </div>
+              </motion.div>
             </div>
           </div>
 

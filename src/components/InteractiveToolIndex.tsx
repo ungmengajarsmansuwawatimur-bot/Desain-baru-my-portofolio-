@@ -28,30 +28,21 @@ interface InteractiveToolIndexProps {
 
 export const InteractiveToolIndex: React.FC<InteractiveToolIndexProps> = () => {
   return (
-    <div className="w-full">
-      {/* Landscape 3x4 Formation (3 rows x 4 columns = 12 tools) - Bento box wrapper removed */}
-      <div className="grid grid-cols-2 md:grid-cols-4 landscape:grid-cols-4 gap-y-6 sm:gap-y-8 gap-x-4 sm:gap-x-6 md:gap-x-8 items-center">
+    <div className="w-full max-w-4xl mx-auto">
+      {/* Formasi 2x6 Landskap (2 baris x 6 kolom = 12 aplikasi) */}
+      <div className="grid grid-cols-6 gap-2.5 sm:gap-4 md:gap-6 justify-items-center items-center py-2">
         {digitalToolsList.map((tool) => (
           <div
             key={tool.name}
-            className="flex items-center gap-3.5 sm:gap-4 group transition-transform duration-150 hover:translate-x-1"
+            className="group flex flex-col items-center justify-center"
+            title={`${tool.name} — ${tool.subtitle}`}
           >
             {/* White rounded squircle icon container */}
-            <div className="w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-white rounded-xl sm:rounded-2xl flex items-center justify-center p-2 sm:p-2.5 shrink-0 shadow-sm group-hover:scale-105 transition-transform duration-150">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-white rounded-xl sm:rounded-2xl md:rounded-3xl flex items-center justify-center p-2.5 sm:p-3.5 md:p-4 shadow-sm group-hover:scale-110 group-hover:shadow-lg transition-all duration-200 cursor-pointer">
               <OfficialAppIcon
                 name={tool.iconName}
-                className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 object-contain"
+                className="w-7 h-7 sm:w-9 sm:h-9 md:w-11 md:h-11 object-contain"
               />
-            </div>
-
-            {/* Label and Subtitle */}
-            <div className="min-w-0">
-              <h4 className="font-display text-white font-semibold text-xs sm:text-sm md:text-base leading-snug truncate group-hover:text-[#F9B51B] transition-colors">
-                {tool.name}
-              </h4>
-              <p className="font-body text-white/70 text-[11px] sm:text-xs md:text-sm mt-0.5 leading-snug truncate sm:whitespace-normal">
-                {tool.subtitle}
-              </p>
             </div>
           </div>
         ))}

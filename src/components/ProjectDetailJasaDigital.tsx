@@ -64,7 +64,7 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
           <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-[#171717] dark:text-white tracking-[-0.025em] leading-[1.08]">
             Jasa Digital &amp; Publikasi Mahasiswa
           </h1>
-          <p className="font-body text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] pt-1 font-normal">
+          <p className="font-body text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] pt-1 font-normal text-justify">
             Memberikan layanan secara langsung kepada pelanggan dengan memahami kebutuhan, menjelaskan informasi, melakukan koordinasi selama proses, menangani revisi, dan menindaklanjuti hingga pekerjaan selesai. Pengalaman Jasa Digital dimulai pada Desember 2024 ketika seorang teman mahasiswa menghubungi saya karena membutuhkan bantuan untuk publikasi artikel tugas mata kuliahnya. Informasi mengenai jasa kemudian menyebar melalui promosi organik dan rekomendasi pelanggan (word of mouth) ke jaringan mahasiswa lainnya.
           </p>
         </div>
@@ -224,7 +224,7 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
                         <span className="font-display font-semibold text-[#171717] dark:text-white sm:w-36 shrink-0 leading-snug">
                           {label}
                         </span>
-                        <span className="font-body leading-relaxed text-[#666666] dark:text-[#A3A3A3] font-normal">
+                        <span className="font-body leading-relaxed text-[#666666] dark:text-[#A3A3A3] font-normal text-justify">
                           {rest}
                         </span>
                       </li>
@@ -233,7 +233,7 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
                   return (
                     <li key={idx} className="flex items-start gap-2.5">
                       <span className="text-[#31543A] font-semibold mt-0.5 shrink-0">✓</span>
-                      <span className="leading-relaxed">{item}</span>
+                      <span className="leading-relaxed text-justify">{item}</span>
                     </li>
                   );
                 })}
@@ -250,8 +250,8 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
               <ul className="font-body space-y-2.5 text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3] font-normal">
                 {realWorkBadges.whatILearned.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2.5">
-                    <span className="text-[#31543A] font-semibold mt-0.5">✓</span>
-                    <span className="leading-relaxed">{item}</span>
+                    <span className="text-[#31543A] font-semibold mt-0.5 shrink-0">✓</span>
+                    <span className="leading-relaxed text-justify">{item}</span>
                   </li>
                 ))}
               </ul>

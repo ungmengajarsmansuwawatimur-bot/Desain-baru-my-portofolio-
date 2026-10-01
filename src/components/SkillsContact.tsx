@@ -103,21 +103,6 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
                     {card.desc}
                   </p>
                 </div>
-
-                {/* Point-point rapi dalam grid 2 kolom dengan checkmark terstruktur */}
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5 pt-3 border-t border-white/10">
-                  {card.tags.map((tag, idx) => (
-                    <li
-                      key={idx}
-                      className="font-body flex items-start gap-2.5 text-xs sm:text-sm font-normal text-white/90"
-                    >
-                      <span className="w-4 h-4 rounded-full bg-[#F9B51B]/20 text-[#F9B51B] flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5">
-                        ✓
-                      </span>
-                      <span className="leading-tight">{tag}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             ))}
           </div>
@@ -164,31 +149,51 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
             </h2>
           </div>
 
-          {/* 4 Testimonials (Clean Open Editorial Reviews, No Bento Box) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-14 items-start">
+          {/* 4 Testimonials dalam bentuk bubble komentar 2x2 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 items-stretch">
             {testimonialsData.map((testi) => (
               <div
                 key={testi.id}
-                className="border-t border-[#171717]/15 dark:border-white/10 pt-6 space-y-4"
+                className="flex flex-col justify-between h-full group"
               >
-                {/* Top Bar: Stars + Category */}
-                <div className="flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-1 text-[#F9B51B] text-base select-none">
-                    {'★'.repeat(testi.stars)}
+                {/* Speech / Comment Bubble Card */}
+                <div className="relative bg-white dark:bg-[#1E1E22] rounded-3xl p-6 sm:p-7 border border-[#171717]/12 dark:border-white/10 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] dark:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.3)] hover:shadow-md transition-all duration-300 flex-1 flex flex-col justify-between">
+                  {/* Bubble Pointer / Ekor Balon Komentar */}
+                  <div
+                    aria-hidden="true"
+                    className="absolute -bottom-2.5 left-9 w-5 h-5 bg-white dark:bg-[#1E1E22] border-r border-b border-[#171717]/12 dark:border-white/10 rotate-45 transform"
+                  />
+
+                  <div className="space-y-4">
+                    {/* Header inside Bubble: Rating + Category Pill */}
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex items-center gap-1 text-[#F9B51B] text-base select-none">
+                        {'★'.repeat(testi.stars)}
+                      </div>
+                      <span className="font-info text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-[#F5F5F5] dark:bg-[#2A2A2E] text-[#31543A] dark:text-[#F9B51B] border border-[#171717]/5 dark:border-white/5">
+                        {testi.category}
+                      </span>
+                    </div>
+
+                    {/* Quote / Isi Komentar */}
+                    <p className="font-body text-sm sm:text-base text-[#262626] dark:text-[#E5E5E5] leading-[1.65] italic font-normal text-justify">
+                      &ldquo;{testi.quote}&rdquo;
+                    </p>
                   </div>
-                  <span className="font-info text-[11px] font-normal uppercase tracking-wider text-[#31543A] dark:text-[#F9B51B]">
-                    {testi.category}
-                  </span>
+
+                  {/* Verified Note inside Bubble */}
+                  <div className="mt-4 pt-3 border-t border-[#171717]/6 dark:border-white/6 flex items-center justify-between text-[11px] text-[#666666] dark:text-[#A3A3A3]">
+                    <span className="inline-flex items-center gap-1.5 font-info font-medium text-[#059669] dark:text-[#34D399]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
+                      Ulasan Terverifikasi
+                    </span>
+                    <span className="font-info text-[11px] opacity-75">Respon Cepat</span>
+                  </div>
                 </div>
 
-                {/* Quote */}
-                <p className="font-body text-base sm:text-lg text-[#171717] dark:text-white leading-[1.65] italic font-normal text-justify">
-                  &ldquo;{testi.quote}&rdquo;
-                </p>
-
-                {/* Author Meta */}
-                <div className="pt-3 border-t border-[#171717]/10 dark:border-white/10 flex items-center gap-3">
-                  <div className="font-display w-9 h-9 rounded-full bg-[#F9B51B] text-[#171717] flex items-center justify-center font-semibold text-xs shrink-0">
+                {/* Author Meta connected to bubble tail */}
+                <div className="mt-5 pl-5 flex items-center gap-3.5">
+                  <div className="font-display w-10 h-10 rounded-full bg-[#F9B51B] text-[#171717] flex items-center justify-center font-bold text-xs shrink-0 shadow-sm ring-2 ring-white dark:ring-[#18181B]">
                     {testi.name.slice(0, 2).toUpperCase()}
                   </div>
                   <div>

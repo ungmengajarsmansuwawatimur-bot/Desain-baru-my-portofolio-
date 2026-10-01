@@ -88,7 +88,7 @@ export const ProjectDetailPadds: React.FC<ProjectDetailPaddsProps> = ({ onBack }
           <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-[#171717] dark:text-white tracking-[-0.025em] leading-[1.08]">
             Pusat Arsip dan Dokumen Digital Sekolah
           </h1>
-          <p className="font-body text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] pt-1 font-normal">
+          <p className="font-body text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] pt-1 font-normal text-justify">
             Platform pengelolaan arsip digital SMAN 1 Suwawa Timur yang memusatkan pencatatan surat dan dokumen, pencarian, pengelolaan metadata, lokasi fisik, retensi, QR/public link, pelaporan, dan jejak aktivitas. Rekaman video langsung memperlihatkan demo interaksi nyata di setiap modul sistem.
           </p>
         </div>

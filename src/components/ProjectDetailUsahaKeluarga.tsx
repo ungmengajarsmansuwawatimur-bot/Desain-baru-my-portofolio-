@@ -94,7 +94,7 @@ export const ProjectDetailUsahaKeluarga: React.FC<ProjectDetailUsahaKeluargaProp
           <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-[#171717] dark:text-white tracking-tight leading-[1.08]">
             Pengelolaan Usaha Keluarga &amp; Ritel Fisik
           </h1>
-          <p className="font-body text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] pt-1 font-normal">
+          <p className="font-body text-base sm:text-lg text-[#666666] dark:text-[#A3A3A3] leading-[1.65] pt-1 font-normal text-justify">
             Membantu operasional usaha keluarga sejak 2016 secara konsisten. Pengalaman ini membentuk fondasi etos kerja nyata dalam melayani pembeli, penataan display toko, pengecekan stok fisik, hingga ketelitian transaksi kasir tunai.
           </p>
         </div>
