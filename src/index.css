@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@600&family=Manrope:wght@400;500&family=Montserrat:ital,wght@0,400;0,500;1,400&display=swap');
 
 @custom-variant dark (&:where(.dark, .dark *));
 

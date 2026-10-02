@@ -54,6 +54,7 @@ const ScrollZoomMockup: React.FC<ScrollZoomMockupProps> = ({ mockupSrc, title, o
         alt={`Mockup visual ${title}`}
         className="w-full max-w-4xl h-auto max-h-[460px] object-contain drop-shadow-2xl transition-shadow duration-300 group-hover:drop-shadow-3xl will-change-transform"
         loading="lazy"
+        decoding="async"
       />
     </div>
   );

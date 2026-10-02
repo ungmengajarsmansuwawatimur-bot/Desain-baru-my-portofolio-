@@ -205,7 +205,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
                   rotate: { duration: 6.5, repeat: Infinity, ease: 'easeInOut', delay: 1.2 },
                   y: { duration: 5.2, repeat: Infinity, ease: 'easeInOut', delay: 1.2 },
                 }}
-                className="absolute -top-2 sm:-top-4 right-2 sm:right-4 z-20"
+                className="absolute -top-2 sm:-top-4 right-2 sm:right-4 z-20 will-change-transform transform-gpu"
                 aria-hidden="true"
               >
                 <motion.svg
@@ -253,7 +253,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
                   rotate: { duration: 7.0, repeat: Infinity, ease: 'easeInOut', delay: 1.4 },
                   y: { duration: 5.0, repeat: Infinity, ease: 'easeInOut', delay: 1.4 },
                 }}
-                className="absolute top-4 sm:top-6 left-0 sm:left-2 z-20 text-[#171717] dark:text-[#F9B51B] text-4xl sm:text-5xl lg:text-6xl font-black drop-shadow-[3px_3px_0px_#F9B51B] dark:drop-shadow-[3px_3px_0px_#171717]"
+                className="absolute top-4 sm:top-6 left-0 sm:left-2 z-20 text-[#171717] dark:text-[#F9B51B] text-4xl sm:text-5xl lg:text-6xl font-black drop-shadow-[3px_3px_0px_#F9B51B] dark:drop-shadow-[3px_3px_0px_#171717] will-change-transform transform-gpu"
                 aria-hidden="true"
               >
                 ✦
@@ -283,6 +283,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
                   referrerPolicy="no-referrer"
                   loading="eager"
                   decoding="async"
+                  fetchPriority="high"
                 />
 
                 {/* Instant Change / Upload Button for custom photo */}
@@ -322,7 +323,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
                   scale: { type: 'spring', stiffness: 150, damping: 22, delay: 0.85 },
                   y: { duration: 5.0, repeat: Infinity, ease: 'easeInOut', delay: 1.5 },
                 }}
-                className="font-display absolute bottom-16 sm:bottom-20 -left-2 sm:-left-4 z-20 bg-[#F9B51B] text-[#171717] text-xs sm:text-sm font-semibold tracking-wide px-4 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717]"
+                className="font-display absolute bottom-16 sm:bottom-20 -left-2 sm:-left-4 z-20 bg-[#F9B51B] text-[#171717] text-xs sm:text-sm font-semibold tracking-wide px-4 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717] will-change-transform transform-gpu"
               >
                 Kasir &amp; POS
               </motion.div>
@@ -342,7 +343,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
                   scale: { type: 'spring', stiffness: 150, damping: 22, delay: 1.0 },
                   y: { duration: 5.6, repeat: Infinity, ease: 'easeInOut', delay: 1.7 },
                 }}
-                className="font-display absolute bottom-8 sm:bottom-10 -right-1 sm:right-2 z-20 bg-[#F9B51B] text-[#171717] text-xs sm:text-sm font-semibold tracking-wide px-4 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717]"
+                className="font-display absolute bottom-8 sm:bottom-10 -right-1 sm:right-2 z-20 bg-[#F9B51B] text-[#171717] text-xs sm:text-sm font-semibold tracking-wide px-4 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717] will-change-transform transform-gpu"
               >
                 Display &amp; Planogram
               </motion.div>

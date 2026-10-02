@@ -1,16 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { AboutExperience } from './components/AboutExperience';
 import { RealWork } from './components/RealWork';
 import { RetailLearning } from './components/RetailLearning';
 import { SkillsContact } from './components/SkillsContact';
-import { CvModal } from './components/CvModal';
-import { PhotoGuideModal } from './components/PhotoGuideModal';
 import { ThemeTransitionOverlay } from './components/ThemeTransitionOverlay';
-import { ProjectDetailJasaDigital } from './components/ProjectDetailJasaDigital';
-import { ProjectDetailPadds } from './components/ProjectDetailPadds';
-import { ProjectDetailUsahaKeluarga } from './components/ProjectDetailUsahaKeluarga';
+
+// Code-split heavy below-the-fold detail pages and modals to slash initial bundle size
+const CvModal = lazy(() => import('./components/CvModal').then(m => ({ default: m.CvModal })));
+const PhotoGuideModal = lazy(() => import('./components/PhotoGuideModal').then(m => ({ default: m.PhotoGuideModal })));
+const ProjectDetailJasaDigital = lazy(() => import('./components/ProjectDetailJasaDigital').then(m => ({ default: m.ProjectDetailJasaDigital })));
+const ProjectDetailPadds = lazy(() => import('./components/ProjectDetailPadds').then(m => ({ default: m.ProjectDetailPadds })));
+const ProjectDetailUsahaKeluarga = lazy(() => import('./components/ProjectDetailUsahaKeluarga').then(m => ({ default: m.ProjectDetailUsahaKeluarga })));
 
 type ActiveProject = 'jasa-digital' | 'padds-smansat' | 'usaha-keluarga' | null;
 
@@ -103,46 +105,54 @@ export default function App() {
 
       {/* Main Content Area */}
       <main className="flex-1 w-full overflow-x-hidden pt-20">
-        {activeProject === 'jasa-digital' ? (
-          <ProjectDetailJasaDigital onBack={handleBackToHome} />
-        ) : activeProject === 'padds-smansat' ? (
-          <ProjectDetailPadds onBack={handleBackToHome} />
-        ) : activeProject === 'usaha-keluarga' ? (
-          <ProjectDetailUsahaKeluarga onBack={handleBackToHome} />
-        ) : (
-          /* Home Page View */
-          <>
-            {/* 01 HOME */}
-            <Hero onOpenCvModal={() => setIsCvModalOpen(true)} />
+        <Suspense fallback={null}>
+          {activeProject === 'jasa-digital' ? (
+            <ProjectDetailJasaDigital onBack={handleBackToHome} />
+          ) : activeProject === 'padds-smansat' ? (
+            <ProjectDetailPadds onBack={handleBackToHome} />
+          ) : activeProject === 'usaha-keluarga' ? (
+            <ProjectDetailUsahaKeluarga onBack={handleBackToHome} />
+          ) : (
+            /* Home Page View */
+            <>
+              {/* 01 HOME */}
+              <Hero onOpenCvModal={() => setIsCvModalOpen(true)} />
 
-            {/* 02 ABOUT & EXPERIENCE */}
-            <AboutExperience
-              onOpenStoreModal={() => setPhotoModalTarget('Visual Operasional Retail')}
-            />
+              {/* 02 ABOUT & EXPERIENCE */}
+              <AboutExperience
+                onOpenStoreModal={() => setPhotoModalTarget('Visual Operasional Retail')}
+              />
 
-            {/* 03 PORTFOLIO PROJECTS (THREE FOCAL MOCKUPS AS VISUAL ENTRY POINTS) */}
-            <RealWork onSelectProject={handleSelectProject} />
+              {/* 03 PORTFOLIO PROJECTS (THREE FOCAL MOCKUPS AS VISUAL ENTRY POINTS) */}
+              <RealWork onSelectProject={handleSelectProject} />
 
-            {/* 04 RETAIL LEARNING */}
-            <RetailLearning />
+              {/* 04 RETAIL LEARNING */}
+              <RetailLearning />
 
-            {/* 05 SKILLS / CV / CONTACT */}
-            <SkillsContact onOpenCvModal={() => setIsCvModalOpen(true)} />
-          </>
-        )}
+              {/* 05 SKILLS / CV / CONTACT */}
+              <SkillsContact onOpenCvModal={() => setIsCvModalOpen(true)} />
+            </>
+          )}
+        </Suspense>
       </main>
 
       {/* Interactive Global Modals */}
-      <CvModal
-        isOpen={isCvModalOpen}
-        onClose={() => setIsCvModalOpen(false)}
-      />
+      <Suspense fallback={null}>
+        {isCvModalOpen && (
+          <CvModal
+            isOpen={isCvModalOpen}
+            onClose={() => setIsCvModalOpen(false)}
+          />
+        )}
 
-      <PhotoGuideModal
-        isOpen={Boolean(photoModalTarget)}
-        target={photoModalTarget || undefined}
-        onClose={() => setPhotoModalTarget(null)}
-      />
+        {Boolean(photoModalTarget) && (
+          <PhotoGuideModal
+            isOpen={Boolean(photoModalTarget)}
+            target={photoModalTarget || undefined}
+            onClose={() => setPhotoModalTarget(null)}
+          />
+        )}
+      </Suspense>
     </div>
   );
 }
