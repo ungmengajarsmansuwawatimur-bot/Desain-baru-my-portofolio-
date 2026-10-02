@@ -6,6 +6,8 @@ interface NavbarProps {
   onOpenCvModal?: () => void;
   activeSection?: string;
   onNavigateHome?: (targetSection?: string) => void;
+  onNavigateHire?: () => void;
+  isHirePage?: boolean;
   isDetailPage?: boolean;
 }
 
@@ -23,24 +25,29 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenCvModal,
   activeSection: externalActiveSection,
   onNavigateHome,
+  onNavigateHire,
+  isHirePage = false,
   isDetailPage = false,
 }) => {
   const [internalActiveSection, setInternalActiveSection] = useState<string>('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isHireActive, setIsHireActive] = useState(false);
 
+  const isHireButtonActive = isHirePage || isHireActive;
+
   const handleHireClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    setIsHireActive(true);
-
-    // Tunggu hingga animasi pegas lingkaran panah dan warna selesai (~420ms)
-    setTimeout(() => {
-      onOpenCvModal?.();
-      // Reset status animasi secara halus sehingga siap dianimasikan lagi
+    if (onNavigateHire) {
+      onNavigateHire();
+    } else {
+      setIsHireActive(true);
       setTimeout(() => {
-        setIsHireActive(false);
-      }, 500);
-    }, 420);
+        onOpenCvModal?.();
+        setTimeout(() => {
+          setIsHireActive(false);
+        }, 500);
+      }, 420);
+    }
   };
 
   const activeSection = externalActiveSection || internalActiveSection;
@@ -156,19 +163,19 @@ export const Navbar: React.FC<NavbarProps> = ({
               layout
               transition={{ type: 'spring', stiffness: 320, damping: 26 }}
               className={`font-display group inline-flex items-center gap-1.5 p-1 rounded-full cursor-pointer select-none transition-colors duration-300 shadow-sm border border-[#171717]/20 active:scale-95 ${
-                isHireActive
+                isHireButtonActive
                   ? 'flex-row-reverse bg-[#F9B51B]'
                   : 'flex-row bg-[#31543A]'
               }`}
               title="Hire Me"
               aria-label="Hire Me Button"
             >
-              {/* Lingkaran Panah: Kebalikan View My Work (Awal Kuning Hitam di kiri, saat diklik Putih di kanan) */}
+              {/* Lingkaran Panah: Kebalikan View My Work */}
               <motion.span
                 layout
                 transition={{ type: 'spring', stiffness: 320, damping: 26 }}
                 className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 shadow-xs transition-colors duration-300 ${
-                  isHireActive
+                  isHireButtonActive
                     ? 'bg-white text-[#171717]'
                     : 'bg-[#F9B51B] text-[#171717]'
                 }`}
@@ -189,12 +196,12 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </motion.svg>
               </motion.span>
 
-              {/* Teks HIRE ME: Kebalikan View My Work (Awal Putih teks Hitam di kanan, saat diklik Hijau teks Putih di kiri) */}
+              {/* Teks HIRE ME */}
               <motion.span
                 layout
                 transition={{ type: 'spring', stiffness: 320, damping: 26 }}
                 className={`px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase flex items-center justify-center transition-colors duration-300 ${
-                  isHireActive
+                  isHireButtonActive
                     ? 'bg-[#31543A] text-white'
                     : 'bg-white text-[#171717]'
                 }`}
@@ -214,7 +221,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               layout
               transition={{ type: 'spring', stiffness: 320, damping: 26 }}
               className={`font-display inline-flex items-center gap-1 p-0.5 rounded-full cursor-pointer select-none transition-colors duration-300 border border-[#171717]/20 active:scale-95 ${
-                isHireActive
+                isHireButtonActive
                   ? 'flex-row-reverse bg-[#F9B51B]'
                   : 'flex-row bg-[#31543A]'
               }`}
@@ -226,7 +233,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 layout
                 transition={{ type: 'spring', stiffness: 320, damping: 26 }}
                 className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 transition-colors duration-300 ${
-                  isHireActive
+                  isHireButtonActive
                     ? 'bg-white text-[#171717]'
                     : 'bg-[#F9B51B] text-[#171717]'
                 }`}
@@ -252,7 +259,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 layout
                 transition={{ type: 'spring', stiffness: 320, damping: 26 }}
                 className={`px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase flex items-center justify-center transition-colors duration-300 ${
-                  isHireActive
+                  isHireButtonActive
                     ? 'bg-[#31543A] text-white'
                     : 'bg-white text-[#171717]'
                 }`}
@@ -289,14 +296,14 @@ export const Navbar: React.FC<NavbarProps> = ({
       {isMobileMenuOpen && (
         <div className="lg:hidden border-b border-[#171717]/15 dark:border-white/10 bg-white dark:bg-[#121212] px-4 pt-3 pb-6 space-y-2 transition-colors duration-200 shadow-xl">
           {NAV_LINKS.map((link) => {
-            const isActive = activeSection === link.id;
+            const isActive = !isHirePage && activeSection === link.id;
             return (
               <a
                 key={link.id}
                 href={link.href}
                 onClick={(e) => {
                   setIsMobileMenuOpen(false);
-                  if (isDetailPage && onNavigateHome) {
+                  if ((isDetailPage || isHirePage) && onNavigateHome) {
                     e.preventDefault();
                     onNavigateHome(link.id);
                   }
@@ -312,6 +319,23 @@ export const Navbar: React.FC<NavbarProps> = ({
               </a>
             );
           })}
+
+          {/* Dedicated Hire Me Row in Mobile Menu */}
+          <button
+            type="button"
+            onClick={(e) => {
+              setIsMobileMenuOpen(false);
+              handleHireClick(e);
+            }}
+            className={`w-full font-display flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-bold tracking-wide transition-all cursor-pointer ${
+              isHirePage
+                ? 'bg-[#31543A] text-white border-2 border-[#171717]'
+                : 'bg-[#F9B51B] text-[#171717] border-2 border-[#171717]'
+            }`}
+          >
+            <span>HIRE ME / TAWARAN KERJA</span>
+            <span>&rarr;</span>
+          </button>
         </div>
       )}
     </header>

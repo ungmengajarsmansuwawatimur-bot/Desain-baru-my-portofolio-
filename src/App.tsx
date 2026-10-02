@@ -13,16 +13,19 @@ const PhotoGuideModal = lazy(() => import('./components/PhotoGuideModal').then(m
 const ProjectDetailJasaDigital = lazy(() => import('./components/ProjectDetailJasaDigital').then(m => ({ default: m.ProjectDetailJasaDigital })));
 const ProjectDetailPadds = lazy(() => import('./components/ProjectDetailPadds').then(m => ({ default: m.ProjectDetailPadds })));
 const ProjectDetailUsahaKeluarga = lazy(() => import('./components/ProjectDetailUsahaKeluarga').then(m => ({ default: m.ProjectDetailUsahaKeluarga })));
+const HireMePage = lazy(() => import('./components/HireMePage').then(m => ({ default: m.HireMePage })));
+import { Footer } from './components/Footer';
 
-type ActiveProject = 'jasa-digital' | 'padds-smansat' | 'usaha-keluarga' | null;
+type AppRoute = 'home' | 'hire-me' | 'jasa-digital' | 'padds-smansat' | 'usaha-keluarga';
 
 export default function App() {
-  const [activeProject, setActiveProject] = useState<ActiveProject>(() => {
+  const [currentRoute, setCurrentRoute] = useState<AppRoute>(() => {
     const hash = window.location.hash;
+    if (hash === '#/hire-me') return 'hire-me';
     if (hash === '#/project/jasa-digital') return 'jasa-digital';
     if (hash === '#/project/padds-smansat') return 'padds-smansat';
     if (hash === '#/project/usaha-keluarga') return 'usaha-keluarga';
-    return null;
+    return 'home';
   });
 
   const [isCvModalOpen, setIsCvModalOpen] = useState(false);
@@ -32,17 +35,20 @@ export default function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash;
-      if (hash === '#/project/jasa-digital') {
-        setActiveProject('jasa-digital');
+      if (hash === '#/hire-me') {
+        setCurrentRoute('hire-me');
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      } else if (hash === '#/project/jasa-digital') {
+        setCurrentRoute('jasa-digital');
         window.scrollTo({ top: 0, behavior: 'instant' });
       } else if (hash === '#/project/padds-smansat') {
-        setActiveProject('padds-smansat');
+        setCurrentRoute('padds-smansat');
         window.scrollTo({ top: 0, behavior: 'instant' });
       } else if (hash === '#/project/usaha-keluarga') {
-        setActiveProject('usaha-keluarga');
+        setCurrentRoute('usaha-keluarga');
         window.scrollTo({ top: 0, behavior: 'instant' });
       } else {
-        setActiveProject(null);
+        setCurrentRoute('home');
       }
     };
 
@@ -50,14 +56,28 @@ export default function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
+  const handleNavigateHire = () => {
+    setCurrentRoute('hire-me');
+    window.location.hash = '#/hire-me';
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  };
+
   const handleSelectProject = (id: 'jasa-digital' | 'padds-smansat' | 'usaha-keluarga') => {
-    setActiveProject(id);
+    setCurrentRoute(id);
     window.location.hash = `#/project/${id}`;
     window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
   const handleBackToHome = () => {
-    setActiveProject(null);
+    setCurrentRoute('home');
+    window.location.hash = '#home';
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 40);
+  };
+
+  const handleBackToWorkSection = () => {
+    setCurrentRoute('home');
     window.location.hash = '#work';
     setTimeout(() => {
       const el = document.getElementById('work');
@@ -70,7 +90,7 @@ export default function App() {
   };
 
   const handleNavigateHomeFromNav = (sectionId?: string) => {
-    setActiveProject(null);
+    setCurrentRoute('home');
     window.location.hash = sectionId ? `#${sectionId}` : '#home';
     setTimeout(() => {
       const target = sectionId || 'home';
@@ -82,6 +102,9 @@ export default function App() {
       }
     }, 40);
   };
+
+  const isDetailPage = currentRoute === 'jasa-digital' || currentRoute === 'padds-smansat' || currentRoute === 'usaha-keluarga';
+  const isHirePage = currentRoute === 'hire-me';
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#121212] text-[#171717] dark:text-[#F5F5F5] flex flex-col selection:bg-[#F9B51B] selection:text-[#171717] transition-colors duration-200 relative">
@@ -99,19 +122,26 @@ export default function App() {
       {/* Persistent Responsive Navbar */}
       <Navbar
         onOpenCvModal={() => setIsCvModalOpen(true)}
-        isDetailPage={Boolean(activeProject)}
+        isDetailPage={isDetailPage}
+        isHirePage={isHirePage}
+        onNavigateHire={handleNavigateHire}
         onNavigateHome={handleNavigateHomeFromNav}
       />
 
       {/* Main Content Area */}
       <main className="flex-1 w-full overflow-x-hidden pt-20">
         <Suspense fallback={null}>
-          {activeProject === 'jasa-digital' ? (
-            <ProjectDetailJasaDigital onBack={handleBackToHome} />
-          ) : activeProject === 'padds-smansat' ? (
-            <ProjectDetailPadds onBack={handleBackToHome} />
-          ) : activeProject === 'usaha-keluarga' ? (
-            <ProjectDetailUsahaKeluarga onBack={handleBackToHome} />
+          {currentRoute === 'hire-me' ? (
+            <HireMePage
+              onBackToHome={handleBackToHome}
+              onOpenCvModal={() => setIsCvModalOpen(true)}
+            />
+          ) : currentRoute === 'jasa-digital' ? (
+            <ProjectDetailJasaDigital onBack={handleBackToWorkSection} />
+          ) : currentRoute === 'padds-smansat' ? (
+            <ProjectDetailPadds onBack={handleBackToWorkSection} />
+          ) : currentRoute === 'usaha-keluarga' ? (
+            <ProjectDetailUsahaKeluarga onBack={handleBackToWorkSection} />
           ) : (
             /* Home Page View */
             <>
@@ -135,6 +165,9 @@ export default function App() {
           )}
         </Suspense>
       </main>
+
+      {/* Global Consistent Footer */}
+      <Footer onOpenCvModal={() => setIsCvModalOpen(true)} />
 
       {/* Interactive Global Modals */}
       <Suspense fallback={null}>

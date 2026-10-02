@@ -66,12 +66,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
 
   return (
     <section id="home" className="pt-24 sm:pt-28 md:pt-32 bg-white dark:bg-[#121212] transition-colors duration-200 overflow-x-clip overflow-y-visible relative z-20">
-      {/* Decorative top pill tab: Tepat berada di tengah garis atas foto persegi panjang */}
-      <div className="relative z-30 flex justify-center -mb-2 sm:-mb-2.5 md:-mb-3 pointer-events-none">
-        <div className="w-20 sm:w-28 md:w-36 h-4 sm:h-5 md:h-6 rounded-full bg-[#F9B51B] border-2 sm:border-[2.5px] border-[#171717] shadow-[2px_2px_0px_#171717]" />
-      </div>
-
-      {/* Full-Bleed Rectangular Banner Photo: Membentang Penuh ke Sisi Kiri & Kanan di Section Paling Atas */}
+      {/* Full-Bleed Rectangular Banner Photo */}
       <div className="w-full mb-10 sm:mb-14 relative">
         <EditableImage
           storageKey="hero_creative_banner"
@@ -307,46 +302,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
                   </svg>
                 </button>
               </div>
-
-              {/* Floating Pill Badge: Kasir & POS (Bottom Left) */}
-              <motion.div
-                initial={{ opacity: 0, x: -30, scale: 0.85 }}
-                animate={{
-                  opacity: 1,
-                  x: 0,
-                  scale: 1,
-                  y: [0, -5, 0],
-                }}
-                transition={{
-                  opacity: { duration: 0.8, delay: 0.85 },
-                  x: { type: 'spring', stiffness: 150, damping: 22, delay: 0.85 },
-                  scale: { type: 'spring', stiffness: 150, damping: 22, delay: 0.85 },
-                  y: { duration: 5.0, repeat: Infinity, ease: 'easeInOut', delay: 1.5 },
-                }}
-                className="font-display absolute bottom-16 sm:bottom-20 -left-2 sm:-left-4 z-20 bg-[#F9B51B] text-[#171717] text-xs sm:text-sm font-semibold tracking-wide px-4 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717] will-change-transform transform-gpu"
-              >
-                Kasir &amp; POS
-              </motion.div>
-
-              {/* Floating Pill Badge: Penataan Display (Bottom Right) */}
-              <motion.div
-                initial={{ opacity: 0, x: 30, scale: 0.85 }}
-                animate={{
-                  opacity: 1,
-                  x: 0,
-                  scale: 1,
-                  y: [0, -6, 0],
-                }}
-                transition={{
-                  opacity: { duration: 0.8, delay: 1.0 },
-                  x: { type: 'spring', stiffness: 150, damping: 22, delay: 1.0 },
-                  scale: { type: 'spring', stiffness: 150, damping: 22, delay: 1.0 },
-                  y: { duration: 5.6, repeat: Infinity, ease: 'easeInOut', delay: 1.7 },
-                }}
-                className="font-display absolute bottom-8 sm:bottom-10 -right-1 sm:right-2 z-20 bg-[#F9B51B] text-[#171717] text-xs sm:text-sm font-semibold tracking-wide px-4 py-1.5 rounded-full border-2 border-[#171717] shadow-[3px_3px_0px_#171717] will-change-transform transform-gpu"
-              >
-                Display &amp; Planogram
-              </motion.div>
             </div>
           </div>
 

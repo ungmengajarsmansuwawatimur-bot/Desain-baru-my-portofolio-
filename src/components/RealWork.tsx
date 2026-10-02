@@ -154,16 +154,28 @@ export const RealWork: React.FC<RealWorkProps> = ({ onSelectProject }) => {
           {projectEntries.map((entry) => (
             <article
               key={entry.id}
-              className="space-y-8"
+              className="border-t-2 border-[#171717] dark:border-white/20 pt-8 sm:pt-10 space-y-8"
             >
-              {/* Header Row: Number & Category */}
-              <div className="flex items-center gap-3 sm:gap-4">
-                <span className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-[#F9B51B] tracking-[-0.02em]">
-                  {entry.number}
-                </span>
-                <span className="font-info text-xs font-normal tracking-[0.08em] text-[#31543A] dark:text-[#F9B51B] uppercase">
-                  {entry.category}
-                </span>
+              {/* Header Row: Number, Category & Metadata (Clean zero-pill typography) */}
+              <div className="flex flex-wrap items-baseline justify-between gap-4 border-b border-[#171717]/10 dark:border-white/10 pb-4">
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <span className="font-display text-4xl sm:text-5xl md:text-6xl font-semibold text-[#F9B51B] tracking-[-0.03em] leading-none">
+                    {entry.number}
+                  </span>
+                  <div className="space-y-0.5">
+                    <span className="font-info text-xs font-semibold tracking-[0.1em] text-[#31543A] dark:text-[#F9B51B] uppercase block">
+                      {entry.category}
+                    </span>
+                    <span className="font-info text-xs text-[#888888] dark:text-[#999999] block">
+                      {entry.period}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2 text-xs font-info text-[#666666] dark:text-[#A3A3A3]">
+                  <span className="w-2 h-2 rounded-full bg-[#31543A] dark:bg-[#F9B51B]" aria-hidden="true" />
+                  <span className="font-medium tracking-wide uppercase">{entry.badge}</span>
+                </div>
               </div>
 
               {/* Title & Teaser Content */}
@@ -183,15 +195,15 @@ export const RealWork: React.FC<RealWorkProps> = ({ onSelectProject }) => {
                 onClick={() => handleCardClick(entry.id)}
               />
 
-              {/* Minimalist Action Button (Space-Saving, No Bento Pill) */}
-              <div className="flex items-center">
+              {/* Tactile Action Button */}
+              <div className="flex items-center pt-2">
                 <button
                   type="button"
                   onClick={() => handleCardClick(entry.id)}
-                  className="font-display group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#31543A] dark:text-[#F9B51B] hover:opacity-80 transition-all cursor-pointer select-none"
+                  className="font-display group inline-flex items-center gap-3 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase border-2 border-[#171717] dark:border-white bg-[#171717] dark:bg-white text-white dark:text-[#171717] hover:bg-[#F9B51B] hover:text-[#171717] hover:border-[#171717] dark:hover:bg-[#F9B51B] dark:hover:text-[#171717] dark:hover:border-[#F9B51B] shadow-[3px_3px_0px_#F9B51B] dark:shadow-[3px_3px_0px_#171717] transition-all duration-200 cursor-pointer select-none active:translate-x-0.5 active:translate-y-0.5"
                 >
                   <span>{entry.ctaText}</span>
-                  <span className="text-sm sm:text-base font-bold transition-transform group-hover:translate-x-1 duration-150" aria-hidden="true">
+                  <span className="w-6 h-6 rounded-full bg-white dark:bg-[#171717] text-[#171717] dark:text-white group-hover:bg-[#171717] group-hover:text-white dark:group-hover:bg-[#171717] dark:group-hover:text-white flex items-center justify-center text-xs font-bold transition-transform group-hover:translate-x-1" aria-hidden="true">
                     &rarr;
                   </span>
                 </button>

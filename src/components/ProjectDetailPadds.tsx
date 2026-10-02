@@ -54,26 +54,6 @@ export const ProjectDetailPadds: React.FC<ProjectDetailPaddsProps> = ({ onBack }
   return (
     <article className="min-h-screen py-10 md:py-16 bg-[#FFFFFF] dark:bg-[#121212] transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
-        {/* Top Back Navigation Breadcrumb */}
-        <div className="flex items-center justify-between gap-4 border-b border-[#171717]/15 dark:border-white/10 pb-5">
-          <button
-            type="button"
-            onClick={onBack}
-            className="font-display group inline-flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-[#171717] dark:text-white hover:text-[#31543A] dark:hover:text-[#F9B51B] transition-colors cursor-pointer"
-          >
-            <span className="w-8 h-8 rounded-full border-2 border-[#171717] dark:border-white flex items-center justify-center font-bold text-sm transition-transform group-hover:-translate-x-1">
-              &larr;
-            </span>
-            <span>Kembali ke Beranda</span>
-          </button>
-
-          <div className="font-info inline-flex items-center gap-2 text-xs font-normal uppercase tracking-wider text-[#31543A] dark:text-[#F9B51B]">
-            <span>PROYEK 02</span>
-            <span>&bull;</span>
-            <span>DETAIL LENGKAP</span>
-          </div>
-        </div>
-
         {/* Main Header Information */}
         <div className="space-y-4 max-w-4xl">
           <div className="flex items-center gap-3">
@@ -124,55 +104,13 @@ export const ProjectDetailPadds: React.FC<ProjectDetailPaddsProps> = ({ onBack }
             />
           </div>
 
-          {/* Bar Informasi & Navigasi Modul */}
+          {/* Bar Informasi Modul */}
           <div className="flex items-center justify-between text-xs text-[#666666] dark:text-[#A3A3A3] px-1 flex-wrap gap-3">
             <div className="flex items-center gap-2">
               <span className="font-display font-semibold text-[#171717] dark:text-white text-sm">
                 Modul {current.number}: {current.name}
               </span>
               <span className="font-info text-[#666666] dark:text-[#A3A3A3] hidden sm:inline font-normal">— {current.tag}</span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <div className="flex items-center gap-1 bg-[#F5F5F5] dark:bg-[#1E1E1E] border-2 border-[#171717] dark:border-[#333333] rounded-full px-3 py-1 shadow-[2px_2px_0px_#171717]">
-                <button
-                  type="button"
-                  onClick={handlePrev}
-                  aria-label="Modul Sebelumnya"
-                  title="Modul Sebelumnya"
-                  className="p-1 text-[#171717] dark:text-white hover:text-[#F9B51B] transition-colors cursor-pointer"
-                >
-                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
-                <span className="font-info text-[11px] px-1 text-[#171717] dark:text-white font-normal tabular-nums">
-                  {activeIndex + 1} / {total}
-                </span>
-                <button
-                  type="button"
-                  onClick={handleNext}
-                  aria-label="Modul Berikutnya"
-                  title="Modul Berikutnya"
-                  className="p-1 text-[#171717] dark:text-white hover:text-[#F9B51B] transition-colors cursor-pointer"
-                >
-                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </div>
-
-              <a
-                href={current.youtubeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-display inline-flex items-center gap-1.5 text-xs font-semibold text-[#31543A] dark:text-[#F9B51B] hover:underline"
-              >
-                <svg className="w-4 h-4 fill-current text-[#F9B51B]" viewBox="0 0 24 24">
-                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                </svg>
-                <span>Buka di YouTube</span>
-              </a>
             </div>
           </div>
 

@@ -102,6 +102,14 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
                   <p className="font-body text-xs sm:text-sm md:text-base text-white/80 leading-relaxed font-normal text-justify">
                     {card.desc}
                   </p>
+                  <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 pt-1.5 text-xs font-info text-[#F9B51B]">
+                    {card.tags.map((tag, idx) => (
+                      <React.Fragment key={idx}>
+                        <span>{tag}</span>
+                        {idx < card.tags.length - 1 && <span className="text-white/40" aria-hidden="true">·</span>}
+                      </React.Fragment>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}

@@ -30,26 +30,6 @@ export const ProjectDetailJasaDigital: React.FC<ProjectDetailJasaDigitalProps> =
   return (
     <article className="min-h-screen py-10 md:py-16 bg-[#FFFFFF] dark:bg-[#121212] transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
-        {/* Top Back Navigation Breadcrumb */}
-        <div className="flex items-center justify-between gap-4 border-b border-[#171717]/15 dark:border-white/10 pb-5">
-          <button
-            type="button"
-            onClick={onBack}
-            className="font-display group inline-flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-[#171717] dark:text-white hover:text-[#31543A] dark:hover:text-[#F9B51B] transition-colors cursor-pointer"
-          >
-            <span className="w-8 h-8 rounded-full border-2 border-[#171717] dark:border-white flex items-center justify-center font-bold text-sm transition-transform group-hover:-translate-x-1">
-              &larr;
-            </span>
-            <span>Kembali ke Beranda</span>
-          </button>
-
-          <div className="font-info inline-flex items-center gap-2 text-xs font-normal uppercase tracking-wider text-[#31543A] dark:text-[#F9B51B]">
-            <span>PROYEK 01</span>
-            <span>&bull;</span>
-            <span>DETAIL LENGKAP</span>
-          </div>
-        </div>
-
         {/* Main Header Information */}
         <div className="space-y-4 max-w-4xl">
           <div className="flex items-center gap-3">

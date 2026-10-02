@@ -50,7 +50,7 @@ const RetailLearningComponent: React.FC = () => {
           </p>
 
           {/* Editorial Category Navigation (Minimalist Clean Tabs) */}
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-2" role="tablist" aria-label="Kategori Pembelajaran">
+          <div className="flex flex-wrap items-center gap-2 pt-2" role="tablist" aria-label="Kategori Pembelajaran">
             {CATEGORIES.map((cat) => {
               const isActive = activeCategory === cat;
               return (
@@ -60,10 +60,10 @@ const RetailLearningComponent: React.FC = () => {
                   role="tab"
                   aria-selected={isActive}
                   onClick={() => setActiveCategory(cat)}
-                  className={`font-display text-xs sm:text-sm font-semibold tracking-wider uppercase transition-colors cursor-pointer py-1 ${
+                  className={`font-display text-xs font-semibold tracking-wider uppercase transition-all duration-150 cursor-pointer px-3.5 py-1.5 rounded-xs border select-none ${
                     isActive
-                      ? 'text-[#31543A] dark:text-[#F9B51B]'
-                      : 'text-[#888888] dark:text-[#A3A3A3] hover:text-[#171717] dark:hover:text-white'
+                      ? 'bg-[#171717] dark:bg-white text-white dark:text-[#171717] border-[#171717] dark:border-white shadow-xs'
+                      : 'bg-transparent text-[#666666] dark:text-[#A3A3A3] border-transparent hover:border-[#171717]/20 dark:hover:border-white/20 hover:text-[#171717] dark:hover:text-white'
                   }`}
                 >
                   {cat}
