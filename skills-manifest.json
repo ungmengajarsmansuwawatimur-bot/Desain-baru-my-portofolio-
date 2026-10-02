@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "ai-studio-agent-skills-manifest",
+  "version": "1.0.0",
+  "description": "Manifest catalog of 15 integrated agent skills for website design, engineering, animation, optimization, and auditing.",
+  "skills": [
+    {
+      "id": "emil-design-eng",
+      "name": "Emil Design Engineering",
+      "category": "design-engineering",
+      "primaryPath": "/skills/custom_skills/emil-design-eng/SKILL.md",
+      "agentPath": "/.agents/skills/emil-design-eng/SKILL.md",
+      "source": "https://github.com/emilkowalski/skills/blob/main/skills/emil-design-eng/SKILL.md",
+      "summary": "UI polish, micro-interactions, spring physics, and subtle details making interfaces feel great."
+    },
+    {
+      "id": "anthropic-frontend-design",
+      "name": "Anthropic Frontend Design",
+      "category": "visual-design",
+      "primaryPath": "/skills/custom_skills/anthropic-frontend-design/SKILL.md",
+      "agentPath": "/.agents/skills/anthropic-frontend-design/SKILL.md",
+      "source": "https://github.com/anthropics/skills/tree/main/skills/frontend-design",
+      "summary": "Intentional artistic direction, typography hierarchy, and non-generic aesthetic constitution."
+    },
+    {
+      "id": "ag-kit-frontend-design",
+      "name": "ag-kit Frontend Design",
+      "category": "frontend-architecture",
+      "primaryPath": "/skills/custom_skills/ag-kit-frontend-design/SKILL.md",
+      "agentPath": "/.agents/skills/ag-kit-frontend-design/SKILL.md",
+      "source": "https://github.com/vudovn/ag-kit/blob/main/.agents/skills/frontend-design/SKILL.md",
+      "summary": "Anti-slop web UI guidelines, real component systems, audit-first redesigns, and strict pre-flight checks."
+    },
+    {
+      "id": "tailwind-design-system",
+      "name": "Tailwind Design System",
+      "category": "styling-systems",
+      "primaryPath": "/skills/custom_skills/tailwind-design-system/SKILL.md",
+      "agentPath": "/.agents/skills/tailwind-design-system/SKILL.md",
+      "source": "https://github.com/wshobson/agents/blob/main/plugins/frontend-mobile-development/skills/tailwind-design-system/SKILL.md",
+      "summary": "Tailwind CSS v4 design tokens, CSS-first architecture, component variants, and consistent utility schemas."
+    },
+    {
+      "id": "color-palette",
+      "name": "Color Palette",
+      "category": "design-assets",
+      "primaryPath": "/skills/custom_skills/color-palette/SKILL.md",
+      "agentPath": "/.agents/skills/color-palette/SKILL.md",
+      "source": "https://github.com/jezweb/claude-skills/blob/main/plugins/design-assets/skills/color-palette/SKILL.md",
+      "summary": "Generation of accessible color palettes (50-950), semantic tokens, dark mode variants, and WCAG contrast checks."
+    },
+    {
+      "id": "gsap-core",
+      "name": "GSAP Core",
+      "category": "motion",
+      "primaryPath": "/skills/custom_skills/gsap-core/SKILL.md",
+      "agentPath": "/.agents/skills/gsap-core/SKILL.md",
+      "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-core",
+      "summary": "Core tweening engine (to, from, fromTo), duration, easing, stagger, defaults, and matchMedia."
+    },
+    {
+      "id": "gsap-timeline",
+      "name": "GSAP Timeline",
+      "category": "motion",
+      "primaryPath": "/skills/custom_skills/gsap-timeline/SKILL.md",
+      "agentPath": "/.agents/skills/gsap-timeline/SKILL.md",
+      "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-timeline",
+      "summary": "Choreographing multi-step animation sequences, position parameters, nesting, and playback controls."
+    },
+    {
+      "id": "gsap-scrolltrigger",
+      "name": "GSAP ScrollTrigger",
+      "category": "motion",
+      "primaryPath": "/skills/custom_skills/gsap-scrolltrigger/SKILL.md",
+      "agentPath": "/.agents/skills/gsap-scrolltrigger/SKILL.md",
+      "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-scrolltrigger",
+      "summary": "Scroll-linked animation, section pinning, scrubbed motions, and viewport enter/leave triggers."
+    },
+    {
+      "id": "gsap-plugins",
+      "name": "GSAP Plugins",
+      "category": "motion",
+      "primaryPath": "/skills/custom_skills/gsap-plugins/SKILL.md",
+      "agentPath": "/.agents/skills/gsap-plugins/SKILL.md",
+      "source": "https://github.com/greensock/gsap-skills/blob/main/skills/gsap-plugins/SKILL.md",
+      "summary": "Specialized plugins: Flip layout transitions, Draggable, Inertia, SplitText, and CustomEase."
+    },
+    {
+      "id": "gsap-react",
+      "name": "GSAP React",
+      "category": "motion",
+      "primaryPath": "/skills/custom_skills/gsap-react/SKILL.md",
+      "agentPath": "/.agents/skills/gsap-react/SKILL.md",
+      "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-react",
+      "summary": "Official React integration with useGSAP hook, scoping refs, and automatic teardown cleanup."
+    },
+    {
+      "id": "gsap-performance",
+      "name": "GSAP Performance",
+      "category": "motion-performance",
+      "primaryPath": "/skills/custom_skills/gsap-performance/SKILL.md",
+      "agentPath": "/.agents/skills/gsap-performance/SKILL.md",
+      "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-performance",
+      "summary": "60/120fps optimization, transform prioritization, will-change management, and layout thrashing prevention."
+    },
+    {
+      "id": "cloudflare-web-perf",
+      "name": "Cloudflare Web Performance",
+      "category": "infrastructure-performance",
+      "primaryPath": "/skills/custom_skills/cloudflare-web-perf/SKILL.md",
+      "agentPath": "/.agents/skills/cloudflare-web-perf/SKILL.md",
+      "source": "https://github.com/cloudflare/skills/blob/main/skills/web-perf/SKILL.md",
+      "summary": "Network delivery, HTTP protocols, edge caching, compression (Brotli), and asset preloading."
+    },
+    {
+      "id": "performance-optimization",
+      "name": "Performance Optimization",
+      "category": "web-performance",
+      "primaryPath": "/skills/custom_skills/performance-optimization/SKILL.md",
+      "agentPath": "/.agents/skills/performance-optimization/SKILL.md",
+      "source": "https://github.com/addyosmani/agent-skills/blob/main/skills/performance-optimization/SKILL.md",
+      "summary": "Core Web Vitals (LCP, INP, CLS), JS bundle pruning, code splitting, and lazy loading strategies."
+    },
+    {
+      "id": "web-design-reviewer",
+      "name": "Web Design Reviewer",
+      "category": "quality-assurance",
+      "primaryPath": "/skills/custom_skills/web-design-reviewer/SKILL.md",
+      "agentPath": "/.agents/skills/web-design-reviewer/SKILL.md",
+      "source": "https://github.com/github/awesome-copilot/blob/main/skills/web-design-reviewer/SKILL.md",
+      "summary": "Visual inspection, responsive breakage detection, accessibility audits, and source-level fixes."
+    },
+    {
+      "id": "prompt-engineer",
+      "name": "Prompt Engineer",
+      "category": "prompt-engineering",
+      "primaryPath": "/skills/custom_skills/prompt-engineer/SKILL.md",
+      "agentPath": "/.agents/skills/prompt-engineer/SKILL.md",
+      "source": "https://github.com/Jeffallan/claude-skills/blob/main/skills/prompt-engineer/SKILL.md",
+      "summary": "Designing, refactoring, and evaluating system prompts, JSON schemas, guardrails, and few-shot patterns."
+    }
+  ]
+}

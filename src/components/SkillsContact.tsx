@@ -180,15 +180,6 @@ export const SkillsContact: React.FC<SkillsContactProps> = ({ onOpenCvModal }) =
                       &ldquo;{testi.quote}&rdquo;
                     </p>
                   </div>
-
-                  {/* Verified Note inside Bubble */}
-                  <div className="mt-4 pt-3 border-t border-[#171717]/6 dark:border-white/6 flex items-center justify-between text-[11px] text-[#666666] dark:text-[#A3A3A3]">
-                    <span className="inline-flex items-center gap-1.5 font-info font-medium text-[#059669] dark:text-[#34D399]">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
-                      Ulasan Terverifikasi
-                    </span>
-                    <span className="font-info text-[11px] opacity-75">Respon Cepat</span>
-                  </div>
                 </div>
 
                 {/* Author Meta connected to bubble tail */}

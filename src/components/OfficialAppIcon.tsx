@@ -312,16 +312,56 @@ export const OfficialAppIcon: React.FC<OfficialAppIconProps> = ({ name, classNam
         </svg>
       );
 
-    // 11. OFFICIAL HIGGSFIELD
+    // 11. OFFICIAL HIGGSFIELD AI (Authentic Rebrand Logo from user image)
     case 'higgsfield':
       return (
-        <svg className={className} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="2" width="44" height="44" rx="10" fill="#E8F928" />
+        <svg
+          className={className}
+          viewBox="0 0 100 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Authentic Electric Lime Rounded Squircle */}
+          <rect width="100" height="100" rx="26" fill="#CCFF00" />
+          {/* Authentic Black Flowing Ribbon Ribbon Knot Mark */}
           <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M24 11C18.477 11 14 15.029 14 20C14 22.42 15.08 24.59 16.86 26.15C14.51 27.76 13 30.45 13 33.5C13 38.75 17.925 43 24 43C30.075 43 35 38.75 35 33.5C35 30.45 33.49 27.76 31.14 26.15C32.92 24.59 34 22.42 34 20C34 15.029 29.523 11 24 11ZM24 16C26.761 16 29 17.79 29 20C29 22.21 26.761 24 24 24C21.239 24 19 22.21 19 20C19 17.79 21.239 16 24 16ZM24 29C27.314 29 30 31.01 30 33.5C30 35.99 27.314 38 24 38C20.686 38 18 35.99 18 33.5C18 31.01 20.686 29 24 29Z"
-            fill="#111111"
+            d="M 15.5 30.5 C 23 30.5, 29 17.5, 38.5 17.5 C 48 17.5, 47 31, 38 41 C 29 51, 20.5 53, 20.5 61 C 20.5 70, 29 72, 38 64 C 47 56, 56 37, 65.5 33 C 74.5 29, 78.5 38, 78.5 48 C 78.5 59, 71 73, 62 81.5 C 55 88, 51 81, 53 74 C 55 64, 63 56, 73 53.5 L 84.5 53.5"
+            fill="none"
+            stroke="#000000"
+            strokeWidth="10.8"
+            strokeLinecap="butt"
+            strokeLinejoin="round"
+          />
+        </svg>
+      );
+
+    // 12. OFFICIAL LUMA DREAM MACHINE (LUMA AI) - Sunset Striped Disk
+    case 'luma':
+    case 'luma ai':
+    case 'luma dream machine':
+      return (
+        <svg
+          className={className}
+          viewBox="0 0 100 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <mask id="lumaSunsetStripesMask">
+              <rect width="100" height="100" fill="#FFFFFF" />
+              {/* 3 Authentic Horizontal Slit Cutouts */}
+              <rect x="0" y="53.6" width="100" height="4.4" fill="#000000" />
+              <rect x="0" y="68.6" width="100" height="4.4" fill="#000000" />
+              <rect x="0" y="83.6" width="100" height="4.4" fill="#000000" />
+            </mask>
+          </defs>
+          {/* Authentic Vibrant Luma Sunset Orange Circular Badge */}
+          <circle
+            cx="50"
+            cy="50"
+            r="48"
+            fill="#FF5B14"
+            mask="url(#lumaSunsetStripesMask)"
           />
         </svg>
       );

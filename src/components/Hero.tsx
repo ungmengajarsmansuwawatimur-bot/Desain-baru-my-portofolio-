@@ -4,6 +4,7 @@ import { candidateProfile } from '../data/portfolioData';
 import { MarqueeTicker } from './MarqueeTicker';
 import { EditableImage } from './EditableImage';
 import { portfolioImages } from '../assets/images';
+import { TiltedCardsBackdrop } from './TiltedCardsBackdrop';
 
 interface HeroProps {
   onOpenCvModal: () => void;
@@ -185,17 +186,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
           </div>
 
           {/* AREA KANAN — FOTO PORTRAIT (Col 6-12, ~55% width on desktop) Digeser ke Kanan Menempel di Atas Garis Running Text */}
-          <div className="lg:col-span-7 flex justify-center lg:justify-end items-end relative select-none pt-6 lg:pt-0 self-end">
-            {/* Visual Container: Digeser sedikit ke bawah agar menyatu tepat di atas garis batas marquee */}
-            <div className="relative w-full max-w-[420px] sm:max-w-[480px] lg:max-w-[540px] xl:max-w-[580px] h-[480px] sm:h-[560px] md:h-[620px] lg:h-[660px] flex items-end justify-center lg:translate-x-10 xl:translate-x-16 translate-y-[11px] sm:translate-y-[15px] transition-transform duration-300">
+          <div className="lg:col-span-7 flex justify-center lg:justify-end items-end relative select-none pt-6 lg:pt-0 self-end overflow-visible">
+            {/* Visual Container: Responsif terhadap ukuran device (mobile, tablet, desktop) */}
+            <div className="relative w-full max-w-[420px] sm:max-w-[480px] lg:max-w-[560px] xl:max-w-[620px] 2xl:max-w-[660px] h-[480px] sm:h-[560px] md:h-[620px] lg:h-[680px] xl:h-[720px] flex items-end justify-center lg:translate-x-10 xl:translate-x-16 translate-y-[11px] sm:translate-y-[15px] transition-transform duration-300 overflow-visible">
               
-              {/* Decorative Accent 1: Stylized Pop-Art Lightning Thunderbolt (Top Right) */}
+              {/* Decorative Accent 1: Stylized Pop-Art Lightning Thunderbolt (Top Right, pointing towards the left) */}
               <motion.div
-                initial={{ opacity: 0, scale: 0, rotate: -20 }}
+                initial={{ opacity: 0, scale: 0, rotate: 20 }}
                 animate={{
                   opacity: 1,
                   scale: 1,
-                  rotate: [0, 3, -2, 0],
+                  rotate: [0, -3, 2, 0],
                   y: [0, -8, 0],
                 }}
                 transition={{
@@ -208,31 +209,32 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
                 aria-hidden="true"
               >
                 <motion.svg
-                  whileHover={{ scale: 1.12, rotate: 6 }}
+                  whileHover={{ scale: 1.12, rotate: -6 }}
                   transition={{ type: 'spring', stiffness: 260, damping: 20 }}
-                  className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 drop-shadow-[4px_4px_0px_#171717] cursor-pointer"
-                  viewBox="0 0 48 48"
+                  className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 cursor-pointer overflow-visible"
+                  viewBox="0 0 100 100"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  {/* Thunderbolt Silhouette with Bold Comic Outline */}
+                  {/* Layer 1: Solid Black Offset Shadow Silhouette (Mirrored to face left) */}
                   <path
-                    d="M27.5 3L8 25.5H23L17.5 45L40 20H25.5L31 3H27.5Z"
-                    fill="#F9B51B"
+                    d="M 71 27 L 47 16 L 32 54 L 50 62 L 36 88 L 74 56 L 54 48 Z"
+                    transform="translate(4.5, 6.5)"
+                    fill="#171717"
                     stroke="#171717"
-                    strokeWidth="3.2"
+                    strokeWidth="3.6"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
-                  {/* Glossy Bevel Highlight Facet */}
+                  {/* Layer 2: Main Front Warm Golden Amber Thunderbolt pointing towards the left */}
                   <path
-                    d="M26 6.5L13 23H23.5L20 37L35.5 22H24.5L28.5 6.5H26Z"
-                    fill="#FFF385"
-                    opacity="0.9"
+                    d="M 71 27 L 47 16 L 32 54 L 50 62 L 36 88 L 74 56 L 54 48 Z"
+                    fill="#F6A618"
+                    stroke="#171717"
+                    strokeWidth="3.6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
-                  {/* Energy Sparkle Accents */}
-                  <circle cx="39" cy="8" r="2.5" fill="#F9B51B" stroke="#171717" strokeWidth="1.5" />
-                  <circle cx="43" cy="14" r="1.5" fill="#171717" />
                 </motion.svg>
               </motion.div>
 
@@ -257,15 +259,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
                 ✦
               </motion.div>
 
-              {/* Signature Warm Yellow Rounded Rectangle / Arch Backdrop resting directly on the ticker line (Solid Clean Yellow) */}
+              {/* Tilted Stacked Neo-Brutalist Cards Backdrop (Matching user reference) */}
               <motion.div
-                initial={{ opacity: 0, scaleY: 0.65, y: 25 }}
-                animate={{ opacity: 1, scaleY: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.88, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 1.3, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
-                style={{ transformOrigin: 'bottom' }}
-                className="absolute inset-x-4 sm:inset-x-8 bottom-0 top-16 sm:top-20 lg:top-24 rounded-t-[40px] sm:rounded-t-[48px] lg:rounded-t-[56px] rounded-b-none bg-[#F9B51B] border-4 border-[#171717] shadow-[6px_0px_0px_#171717]"
+                style={{ transformOrigin: 'bottom center' }}
+                className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-visible"
                 aria-hidden="true"
-              />
+              >
+                <TiltedCardsBackdrop />
+              </motion.div>
 
               {/* Authentic Portrait Photo: Centered, Scaled Up, Dynamically Popping Out Above the Container */}
               <div className="relative z-10 w-full h-full flex items-end justify-center pointer-events-none pb-0 overflow-visible">

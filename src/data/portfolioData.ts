@@ -613,11 +613,11 @@ export const toolsData: ToolItem[] = [
     percentage: '95%',
   },
   {
-    name: 'WhatsApp',
-    role: 'WhatsApp',
-    category: 'Messaging',
-    iconName: 'whatsapp',
-    percentage: '98%',
+    name: 'Luma Dream Machine',
+    role: '(AI video generator)',
+    category: 'Multimedia',
+    iconName: 'luma',
+    percentage: '88%',
   },
   {
     name: 'Google Chrome',

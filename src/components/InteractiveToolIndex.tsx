@@ -12,7 +12,7 @@ export const digitalToolsList: DigitalToolItem[] = [
   { name: 'Microsoft Excel', subtitle: 'Pengolahan data', iconName: 'excel' },
   { name: 'Google Sheets', subtitle: 'Spreadsheet online', iconName: 'sheets' },
   { name: 'Google Drive', subtitle: 'Penyimpanan cloud', iconName: 'drive' },
-  { name: 'WhatsApp', subtitle: 'Komunikasi', iconName: 'whatsapp' },
+  { name: 'Luma Dream Machine', subtitle: 'AI video generator', iconName: 'luma' },
   { name: 'Google Chrome', subtitle: 'Akses internet', iconName: 'chrome' },
   { name: 'Notion', subtitle: 'Manajemen catatan', iconName: 'notion' },
   { name: 'Website Platform', subtitle: 'Pengelolaan website', iconName: 'web' },

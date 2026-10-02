@@ -67,7 +67,7 @@ export const MarqueeTicker: React.FC<MarqueeTickerProps> = ({
                       <span className="font-display text-sm sm:text-base font-semibold tracking-wider text-[#171717] px-4 sm:px-5 uppercase whitespace-nowrap">
                         {item}
                       </span>
-                      <span className="text-base sm:text-lg font-bold text-[#171717] shrink-0" aria-hidden="true">
+                      <span className="text-xl sm:text-2xl font-black text-[#171717] shrink-0 inline-flex items-center justify-center leading-none" aria-hidden="true">
                         ✦
                       </span>
                     </div>
@@ -98,7 +98,7 @@ export const MarqueeTicker: React.FC<MarqueeTickerProps> = ({
                 <span className="font-display text-sm sm:text-base font-semibold tracking-wider text-[#171717] px-4 sm:px-5 uppercase whitespace-nowrap">
                   {item}
                 </span>
-                <span className="text-base sm:text-lg font-bold text-[#171717] shrink-0" aria-hidden="true">
+                <span className="text-xl sm:text-2xl font-black text-[#171717] shrink-0 inline-flex items-center justify-center leading-none" aria-hidden="true">
                   ✦
                 </span>
               </div>
