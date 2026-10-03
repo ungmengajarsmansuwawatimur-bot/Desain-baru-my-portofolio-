@@ -319,23 +319,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               </a>
             );
           })}
-
-          {/* Dedicated Hire Me Row in Mobile Menu */}
-          <button
-            type="button"
-            onClick={(e) => {
-              setIsMobileMenuOpen(false);
-              handleHireClick(e);
-            }}
-            className={`w-full font-display flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-bold tracking-wide transition-all cursor-pointer ${
-              isHirePage
-                ? 'bg-[#31543A] text-white border-2 border-[#171717]'
-                : 'bg-[#F9B51B] text-[#171717] border-2 border-[#171717]'
-            }`}
-          >
-            <span>HIRE ME / TAWARAN KERJA</span>
-            <span>&rarr;</span>
-          </button>
         </div>
       )}
     </header>
